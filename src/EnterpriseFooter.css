@@ -384,17 +384,46 @@
 }
 
 /* 11. RESPONSIVE ADJUSTMENTS */
-@media (max-width: 768px) {
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1024px) and (min-width: 769px) {
   .enterprise-footer-new {
-    padding: 100px 24px 60px;
+    padding: clamp(80px, 15vh, 180px) clamp(24px, 6vw, 80px) clamp(60px, 10vh, 100px);
   }
 
   .footer-grid-new {
-    gap: 60px;
+    gap: clamp(40px, 6vw, 80px);
+  }
+
+  .footer-brand-title-new {
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    letter-spacing: 0.6em;
+  }
+
+  .footer-email-new {
+    font-size: clamp(1.3rem, 2.5vw, 2rem);
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .enterprise-footer-new {
+    padding: clamp(80px, 12vh, 120px) clamp(20px, 5vw, 40px) clamp(50px, 8vh, 80px);
+  }
+
+  .footer-grid-new {
+    gap: clamp(40px, 6vh, 60px);
+    margin-bottom: clamp(60px, 10vh, 100px);
+  }
+
+  .footer-brand-section-new {
+    gap: clamp(30px, 5vh, 50px);
   }
 
   .footer-brand-header-new {
     gap: 16px;
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .footer-logo-container-new {
@@ -402,7 +431,172 @@
     height: 40px;
   }
 
+  .footer-brand-title-new {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    letter-spacing: 0.5em;
+  }
+
+  .footer-description-new {
+    max-width: 100%;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+  }
+
+  .footer-capabilities-section-new,
+  .footer-resolution-section-new {
+    gap: clamp(24px, 4vh, 40px);
+  }
+
+  .footer-email-new {
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+    word-break: break-word;
+  }
+
+  .footer-email-meta-new {
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom-new {
+    padding-top: clamp(30px, 5vh, 50px);
+    gap: clamp(24px, 4vh, 40px);
+  }
+
+  .footer-legal-new {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(20px, 4vw, 40px);
+  }
+
   .watermark-text-new {
     font-size: 35vw;
+  }
+
+  .footer-glow-new {
+    height: 400px;
+    filter: blur(100px);
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .enterprise-footer-new {
+    padding: clamp(60px, 10vh, 100px) 20px clamp(40px, 6vh, 60px);
+  }
+
+  .footer-grid-new {
+    gap: clamp(35px, 5vh, 50px);
+    margin-bottom: clamp(50px, 8vh, 80px);
+  }
+
+  .footer-brand-header-new {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .footer-logo-container-new {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer-brand-title-new {
+    font-size: clamp(0.9rem, 5vw, 1.1rem);
+    letter-spacing: 0.4em;
+  }
+
+  .footer-brand-subtitle-new {
+    font-size: 7px;
+  }
+
+  .footer-description-new {
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+    line-height: 1.6;
+  }
+
+  .footer-protocol-link-new {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    gap: 12px;
+  }
+
+  .footer-section-title-new {
+    font-size: 9px;
+    letter-spacing: 0.8em;
+  }
+
+  .footer-capability-item-new {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+  }
+
+  .footer-email-new {
+    font-size: clamp(1rem, 6vw, 1.5rem);
+  }
+
+  .footer-meta-text-new {
+    font-size: 9px;
+    letter-spacing: 0.4em;
+  }
+
+  .footer-copyright-new {
+    font-size: 9px;
+    letter-spacing: 0.6em;
+    text-align: center;
+  }
+
+  .footer-legal-link-new {
+    font-size: 9px;
+    letter-spacing: 0.5em;
+  }
+
+  .footer-bottom-left-new {
+    align-items: center;
+    text-align: center;
+  }
+
+  .watermark-text-new {
+    font-size: 40vw;
+  }
+
+  .footer-glow-new {
+    height: 300px;
+    filter: blur(80px);
+  }
+}
+
+/* Very Small Mobile Devices */
+@media (max-width: 360px) {
+  .enterprise-footer-new {
+    padding: 50px 16px 40px;
+  }
+
+  .footer-grid-new {
+    gap: 30px;
+  }
+
+  .footer-brand-title-new {
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+  }
+
+  .footer-email-new {
+    font-size: 1rem;
+  }
+
+  .footer-legal-new {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .enterprise-footer-new {
+    padding: clamp(50px, 8vh, 80px) clamp(20px, 5vw, 40px) clamp(40px, 6vh, 60px);
+  }
+
+  .footer-grid-new {
+    gap: clamp(30px, 5vh, 50px);
+    margin-bottom: clamp(40px, 6vh, 60px);
   }
 }
