@@ -111,61 +111,61 @@ function App() {
         .from(".upper-portal .portal-kinetic-item", { opacity: 0, y: 100, stagger: 0.5, duration: 3 })
 
         // --- STAGE 4: SMOOTH CLOUD TRANSIT (SEAMLESS TRANSITION) ---
-        // First, hide mountain content before clouds appear
+        // First, hide mountain content quickly before clouds appear
         .to(heroImgRef.current, { 
           opacity: 0, 
           visibility: "hidden", 
-          duration: 2,
-          ease: "power2.inOut"
-        }, "+=0.5")
+          duration: 1,
+          ease: "power2.in"
+        }, "+=0.3")
         .to(".upper-portal", { 
           opacity: 0, 
-          y: -50, 
-          duration: 2, 
+          y: -30, 
+          duration: 1, 
           pointerEvents: "none",
-          ease: "power2.inOut"
-        }, "-=2")
+          ease: "power2.in"
+        }, "-=1")
         
-        // Then clouds come and transition
+        // Then clouds come quickly and transition smoothly
         .to(cloudRef.current, {
           opacity: 1,
           visibility: "visible",
           y: "-350vh",
           scale: 12,
-          duration: 6,
+          duration: 3.5,
           ease: "power2.inOut"
-        }, "+=0.5")
+        }, "+=0.2")
         
-        // Road image starts appearing smoothly as clouds transition
+        // Road image appears simultaneously with clouds for seamless transition
         .to(roadImgRef.current, { 
           opacity: 1, 
           scale: 1, 
-          duration: 6, 
+          duration: 3.5, 
           ease: "power2.inOut" 
-        }, "-=4")
+        }, "-=3.5")
 
         // --- STAGE 5: CLOUDS FADE OUT & CONTACT PAGE APPEARS ---
-        // Clouds fade out smoothly after transition completes
+        // Clouds fade out quickly after transition
         .to(cloudRef.current, {
           opacity: 0,
           visibility: "hidden",
-          duration: 3,
-          ease: "power2.inOut"
-        }, "-=2")
+          duration: 1.5,
+          ease: "power2.in"
+        }, "-=1")
         
-        // Road image subtle zoom for depth
+        // Road image subtle zoom for depth (starts earlier)
         .to(roadImgRef.current.querySelector('img'), {
           scale: 1.1,
-          duration: 8,
+          duration: 6,
           ease: "power1.out"
-        }, "-=3")
+        }, "-=2.5")
         
-        // Slide portal to show contact form
+        // Slide portal to show contact form (faster)
         .to(portalRef.current, {
           y: "-100vh",
-          duration: 3,
+          duration: 2,
           ease: "power2.inOut"
-        }, "-=3")
+        }, "-=2")
 
         // Contact header fades in with slide
         .from(".contact-header", {
