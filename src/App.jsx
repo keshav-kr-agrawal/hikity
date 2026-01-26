@@ -32,19 +32,19 @@ function App() {
   // Targeted scroll function for CTA sync
   const scrollToContact = () => {
     gsap.to(window, {
-      duration: 2,
+      duration: 2.5,
       // Target the contact form phase (approx 90% progress of 1100vh)
       scrollTo: innerHeight * 9.5,
-      ease: "power2.inOut"
+      ease: "power1.inOut"
     });
   };
 
   // Scroll to top function for logo
   const scrollToTop = () => {
     gsap.to(window, {
-      duration: 1.8,
+      duration: 2,
       scrollTo: 0,
-      ease: "power2.inOut"
+      ease: "power1.inOut"
     });
   };
 
@@ -59,7 +59,7 @@ function App() {
           start: "top top",
           end: "1300% top",
           pin: true,
-          scrub: 0.5,
+          scrub: 0.3,
           anticipatePin: 1,
           onUpdate: (self) => {
             // Adaptive Branding: Toggles black text for the White Editorial stage
@@ -73,12 +73,17 @@ function App() {
       });
 
       // --- STAGE 1: HERO EXIT PROTOCOL ---
-      tl.to([textBoxRef.current, ".hero-tagline"], { opacity: 0, y: -100, duration: 1.5 })
+      tl.to([textBoxRef.current, ".hero-tagline"], { 
+          opacity: 0, 
+          y: -100, 
+          duration: 2,
+          ease: "power1.out"
+        })
         .to(heroImgRef.current, {
           scale: isMobile ? 0.45 : 0.38,
           borderRadius: "40px",
-          duration: 2.5,
-          ease: "power2.inOut"
+          duration: 3,
+          ease: "power1.inOut"
         })
         .to(heroImgRef.current, {
           rotateY: 180, // Flip transition from Person to Mountain back
@@ -92,64 +97,86 @@ function App() {
             const img = heroImgRef.current.getBoundingClientRect();
             return (zone.top + zone.height / 2) - (img.top + img.height / 2);
           },
-          duration: 3,
-          ease: "expo.out"
+          duration: 3.5,
+          ease: "power2.out"
         })
 
         // --- STAGE 2: EDITORIAL REVEAL ---
-        .to(whiteLayerRef.current, { opacity: 1, duration: 2 }, "-=4")
-        .from(".reveal-item", { opacity: 0, y: 40, stagger: 0.2, duration: 2.5 }, "-=2.5")
+        .to(whiteLayerRef.current, { 
+          opacity: 1, 
+          duration: 2.5,
+          ease: "power1.inOut"
+        }, "-=4")
+        .from(".reveal-item", { 
+          opacity: 0, 
+          y: 40, 
+          stagger: 0.25, 
+          duration: 3,
+          ease: "power2.out"
+        }, "-=2.5")
 
         // --- STAGE 3: PEAK EXPANSION (MOUNTAIN PHASE) ---
         .to(heroImgRef.current, {
           width: "100vw", height: "100vh",
           x: 0, y: 0, scale: 1, borderRadius: "0px",
-          duration: 5, ease: "power2.inOut"
+          duration: 5.5, 
+          ease: "power1.inOut"
         })
-        .to(portalRef.current, { autoAlpha: 1, visibility: "visible", pointerEvents: "auto", duration: 1 }, "-=4")
-        .to(whiteLayerRef.current, { opacity: 0, pointerEvents: "none", duration: 2 }, "-=4")
+        .to(portalRef.current, { 
+          autoAlpha: 1, 
+          visibility: "visible", 
+          pointerEvents: "auto", 
+          duration: 1.5,
+          ease: "power1.out"
+        }, "-=4")
+        .to(whiteLayerRef.current, { 
+          opacity: 0, 
+          pointerEvents: "none", 
+          duration: 2.5,
+          ease: "power1.inOut"
+        }, "-=4")
         
         // Title appears first from right to left
         .to(".upper-portal .portal-title", { 
           opacity: 1, 
           x: 0, 
-          duration: 0.8, 
-          ease: "power3.out" 
-        }, "+=0.3")
+          duration: 1.2, 
+          ease: "power2.out" 
+        }, "+=0.5")
         
-        // Review cards appear one by one from right to left with 0.5s delay
+        // Review cards appear one by one from right to left with smooth stagger
         .to(".review-card", { 
           opacity: 1, 
           x: 0, 
-          duration: 0.8, 
-          stagger: 0.5, 
-          ease: "power3.out" 
-        }, "+=0.5")
+          duration: 1, 
+          stagger: 0.4, 
+          ease: "power2.out" 
+        }, "+=0.6")
         
         // Logo marquee wrapper appears after first review card (with "OUR CLIENTS" title)
         .to(".logo-marquee-wrapper", { 
           opacity: 1, 
           x: 0,
-          duration: 0.8,
-          ease: "power3.out"
-        }, "+=1")
+          duration: 1.2,
+          ease: "power2.out"
+        }, "+=1.2")
         
         // "OUR CLIENTS" title appears first
         .to(".marquee-title", {
           opacity: 1,
           x: 0,
-          duration: 0.8,
-          ease: "power3.out"
-        }, "-=0.8")
+          duration: 1,
+          ease: "power2.out"
+        }, "-=1")
         
         // Then marquees appear (both forward and reverse) - make sure they're visible
         .to(".logo-marquee", {
           opacity: 1,
           x: 0,
-          duration: 0.8,
-          stagger: 0.3,
-          ease: "power3.out"
-        }, "-=0.5")
+          duration: 1,
+          stagger: 0.25,
+          ease: "power2.out"
+        }, "-=0.7")
         
         // Ensure marquee tracks and spans are visible
         .set(".marquee-track", {
@@ -163,112 +190,112 @@ function App() {
         }, "-=0.8")
 
         // --- STAGE 4: SMOOTH CLOUD TRANSIT (SEAMLESS TRANSITION) ---
-        // First, hide mountain content quickly before clouds appear
+        // First, hide mountain content smoothly before clouds appear
         .to(heroImgRef.current, { 
           opacity: 0, 
           visibility: "hidden", 
-          duration: 1,
-          ease: "power2.in"
-        }, "+=0.3")
+          duration: 1.5,
+          ease: "power1.in"
+        }, "+=0.5")
         .to(".upper-portal", { 
           opacity: 0, 
           y: -30, 
-          duration: 1, 
+          duration: 1.5, 
           pointerEvents: "none",
-          ease: "power2.in"
-        }, "-=1")
+          ease: "power1.in"
+        }, "-=1.5")
         
-        // Then clouds come quickly and transition smoothly
+        // Then clouds come smoothly and transition peacefully
         .to(cloudRef.current, {
           opacity: 1,
           visibility: "visible",
           y: "-350vh",
           scale: 12,
-          duration: 3.5,
-          ease: "power2.inOut"
-        }, "+=0.2")
+          duration: 4,
+          ease: "power1.inOut"
+        }, "+=0.3")
         
         // Road image appears simultaneously with clouds for seamless transition
         .to(roadImgRef.current, { 
           opacity: 1, 
           scale: 1, 
-          duration: 3.5, 
-          ease: "power2.inOut" 
-        }, "-=3.5")
+          duration: 4, 
+          ease: "power1.inOut" 
+        }, "-=4")
 
         // --- STAGE 5: CLOUDS FADE OUT & CONTACT PAGE APPEARS ---
-        // Clouds fade out quickly after transition
+        // Clouds fade out smoothly after transition
         .to(cloudRef.current, {
           opacity: 0,
           visibility: "hidden",
-          duration: 1.5,
-          ease: "power2.in"
-        }, "-=1")
+          duration: 2,
+          ease: "power1.in"
+        }, "-=1.5")
         
         // Road image subtle zoom for depth (starts earlier)
         .to(roadImgRef.current.querySelector('img'), {
           scale: 1.1,
-          duration: 6,
+          duration: 7,
           ease: "power1.out"
-        }, "-=2.5")
+        }, "-=3")
         
-        // Slide portal to show contact form (faster)
+        // Slide portal to show contact form (smooth)
         .to(portalRef.current, {
           y: "-100vh",
-          duration: 2,
-          ease: "power2.inOut"
-        }, "-=2")
+          duration: 2.5,
+          ease: "power1.inOut"
+        }, "-=2.5")
 
-        // Contact header fades in with slide
+        // Contact header fades in with gentle slide
         .from(".contact-header", {
           opacity: 0,
-          y: 40,
-          duration: 3.5,
-          ease: "power3.out"
-        }, "-=2.5")
+          y: 30,
+          duration: 2.5,
+          ease: "power2.out"
+        }, "-=2")
 
-        // Glass form container appears with scale and fade
+        // Glass form container appears with gentle scale and fade
         .from(".glass-form", {
           opacity: 0,
-          scale: 0.9,
-          y: 50,
-          duration: 4,
-          ease: "power3.out"
-        }, "-=2.5")
+          scale: 0.95,
+          y: 30,
+          duration: 2.5,
+          ease: "power2.out"
+        }, "-=2")
 
-        // Form intro appears
+        // Form intro appears smoothly
         .from(".form-intro", {
           opacity: 0,
-          y: 20,
-          duration: 3,
-          ease: "power3.out"
-        }, "-=2")
+          y: 15,
+          duration: 2,
+          ease: "power2.out"
+        }, "-=1.5")
 
-        // Form fields reveal with staggered left slide animation
+        // Form fields reveal with gentle staggered slide animation
         .from(".form-group", {
           opacity: 0,
-          x: -40,
-          stagger: 0.2,
-          duration: 3,
-          ease: "power3.out"
-        }, "-=1.5")
+          x: -30,
+          stagger: 0.15,
+          duration: 2,
+          ease: "power2.out"
+        }, "-=1.2")
         
-        // Contact info appears
+        // Contact info appears smoothly
         .from(".contact-info", {
           opacity: 0,
-          y: 20,
-          duration: 3,
-          ease: "power3.out"
-        }, "-=2")
+          y: 15,
+          duration: 2,
+          ease: "power2.out"
+        }, "-=1.5")
         
-        // Submit button appears with bounce
+        // Submit button appears with gentle bounce
         .from(".submit-trigger", {
           opacity: 0,
-          scale: 0.8,
-          y: 30,
-          duration: 3,
-          ease: "back.out(1.4)"
-        }, "-=1.5");
+          scale: 0.9,
+          y: 20,
+          duration: 2,
+          ease: "back.out(1.2)"
+        }, "-=1");
 
       // Separate ScrollTrigger for footer (triggers after pinned section ends)
       if (footerRef.current && mainRef.current) {
@@ -279,22 +306,22 @@ function App() {
             gsap.to(footerRef.current, {
               opacity: 1,
               visibility: "visible",
-              duration: 1.5,
-              ease: "power2.out"
+              duration: 2,
+              ease: "power1.out"
             });
             gsap.from(".enterprise-footer-new", {
               opacity: 0,
-              y: 80,
-              duration: 2,
-              ease: "power3.out"
+              y: 60,
+              duration: 2.5,
+              ease: "power2.out"
             });
           },
           onLeaveBack: () => {
             gsap.to(footerRef.current, {
               opacity: 0,
               visibility: "hidden",
-              duration: 0.5,
-              ease: "power2.in"
+              duration: 0.8,
+              ease: "power1.in"
             });
           }
         });
@@ -357,10 +384,10 @@ function App() {
             {/* First scroller - forward direction */}
             <div className="logo-marquee">
               <div className="marquee-track marquee-forward">
-                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIX-GUN'].map((p, i) => (
+                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                   <span key={i}> {p}</span>
                 ))}
-                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIX-GUN'].map((p, i) => (
+                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                   <span key={i + 100}> {p}</span>
                 ))}
               </div>
@@ -369,10 +396,10 @@ function App() {
             {/* Second scroller - reverse direction */}
             <div className="logo-marquee logo-marquee-reverse">
               <div className="marquee-track marquee-reverse">
-                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIX-GUN'].map((p, i) => (
+                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                   <span key={i}> {p}</span>
                 ))}
-                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIX-GUN'].map((p, i) => (
+                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                   <span key={i + 100}> {p}</span>
                 ))}
               </div>

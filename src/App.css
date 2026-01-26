@@ -35,6 +35,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 }
 
 .main-container {
@@ -126,12 +127,15 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
   text-transform: uppercase;
   letter-spacing: 2px;
-  transition: all 0.4s ease;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: pointer;
 }
 
 .nav-contact:hover {
   background: var(--hikity-white);
   color: var(--hikity-black);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* 3. WHITE PAGE: EDITORIAL GRID */
@@ -259,6 +263,7 @@ body {
   filter: brightness(0.4) contrast(1.1);
   transform: translateZ(0);
   backface-visibility: hidden;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .road-dark-overlay {
@@ -292,6 +297,7 @@ body {
   will-change: transform, opacity;
   backface-visibility: hidden;
   visibility: hidden;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 /* 6. PORTAL HUB (TERMINAL CONTINUITY) */
@@ -391,6 +397,12 @@ body {
   transform: translateX(200px);
   will-change: transform, opacity;
   visibility: visible;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(255, 180, 162, 0.2);
 }
 
 /* PHASE A: MOUNTAIN REVIEWS */
@@ -514,7 +526,7 @@ body {
 
 .info-value:hover {
   color: var(--hikity-peach);
-  transform: translateX(5px);
+  transform: translateX(3px);
 }
 
 .contact-header .portal-title {
@@ -604,7 +616,7 @@ body {
     inset 0 0 140px rgba(255, 180, 162, 0.12),
     inset 0 0 0 1px rgba(255, 255, 255, 0.25),
     0 30px 90px rgba(0, 0, 0, 0.7);
-  transform: translateY(-4px) scale(1.01);
+  transform: translateY(-2px) scale(1.005);
 }
 
 .form-group {
@@ -636,7 +648,7 @@ body {
 
 .form-group:hover {
   border-bottom-color: rgba(255, 180, 162, 0.4);
-  transform: translateX(5px);
+  transform: translateX(3px);
 }
 
 .form-group:focus-within {
@@ -679,7 +691,7 @@ body {
 .form-group textarea:focus {
   background: rgba(255, 180, 162, 0.1);
   color: #fff;
-  transform: translateX(5px);
+  transform: translateX(3px);
 }
 
 .form-group input::placeholder,
@@ -740,7 +752,7 @@ body {
 }
 
 .submit-trigger:hover {
-  transform: translateY(-4px) scale(1.02);
+  transform: translateY(-3px) scale(1.015);
   box-shadow:
     0 20px 60px rgba(255, 180, 162, 0.6),
     0 0 100px rgba(255, 180, 162, 0.4),
@@ -809,7 +821,7 @@ body {
 
 .hero-tagline {
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: clamp(3px, 0.5vw, 5px);
   font-size: clamp(0.7rem, 1vw, 0.9rem);
   margin-top: clamp(20px, 3vh, 30px);
   color: var(--hikity-peach);
@@ -821,9 +833,20 @@ body {
     0 2px 10px rgba(0, 0, 0, 0.5);
   z-index: 101;
   position: relative;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 /* 10. RESPONSIVE REFINEMENTS */
+@media (max-width: 1440px) {
+  .contact-protocol-wrapper {
+    max-width: 1400px;
+  }
+  
+  .editorial-layout {
+    max-width: 1400px;
+  }
+}
+
 @media (max-width: 1024px) {
   .editorial-layout {
     flex-direction: column;
@@ -845,6 +868,14 @@ body {
   .parking-zone {
     width: 100%;
     height: 40vh;
+  }
+
+  .hero-text {
+    font-size: clamp(2.5rem, 10vw, 12vw);
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 7vw, 7.5vw);
   }
 
   .logo-marquee-wrapper {
@@ -872,18 +903,24 @@ body {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --side-gutter: clamp(16px, 5vw, 40px);
+  }
+
   .contact-header {
     text-align: center;
   }
 
   .contact-header .hero-text {
-    font-size: 8vw !important;
+    font-size: clamp(2.5rem, 8vw, 4rem) !important;
     text-align: center !important;
+    line-height: 1.1 !important;
   }
 
   .contact-description {
     text-align: center;
     max-width: 100%;
+    font-size: clamp(0.95rem, 2.5vw, 1.15rem);
   }
 
   .contact-info {
@@ -1003,7 +1040,22 @@ body {
   }
 
   .navbar {
-    padding: 20px 24px;
+    padding: 16px 20px;
+  }
+
+  .nav-brand-container {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-text {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+  }
+
+  .nav-contact {
+    font-size: 0.65rem;
+    padding: 10px 18px;
   }
 
   .footer-entrance-zone {
@@ -1013,6 +1065,10 @@ body {
 }
 
 @media (max-width: 480px) {
+  :root {
+    --side-gutter: clamp(12px, 4vw, 24px);
+  }
+
   .upper-portal {
     padding: 0 16px;
   }
