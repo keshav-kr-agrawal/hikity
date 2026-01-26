@@ -108,7 +108,59 @@ function App() {
         })
         .to(portalRef.current, { autoAlpha: 1, visibility: "visible", pointerEvents: "auto", duration: 1 }, "-=4")
         .to(whiteLayerRef.current, { opacity: 0, pointerEvents: "none", duration: 2 }, "-=4")
-        .from(".upper-portal .portal-kinetic-item", { opacity: 0, y: 100, stagger: 0.5, duration: 3 })
+        
+        // Title appears first from right to left
+        .to(".upper-portal .portal-title", { 
+          opacity: 1, 
+          x: 0, 
+          duration: 0.8, 
+          ease: "power3.out" 
+        }, "+=0.3")
+        
+        // Review cards appear one by one from right to left with 0.5s delay
+        .to(".review-card", { 
+          opacity: 1, 
+          x: 0, 
+          duration: 0.8, 
+          stagger: 0.5, 
+          ease: "power3.out" 
+        }, "+=0.5")
+        
+        // Logo marquee wrapper appears after first review card (with "OUR CLIENTS" title)
+        .to(".logo-marquee-wrapper", { 
+          opacity: 1, 
+          x: 0,
+          duration: 0.8,
+          ease: "power3.out"
+        }, "+=1")
+        
+        // "OUR CLIENTS" title appears first
+        .to(".marquee-title", {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power3.out"
+        }, "-=0.8")
+        
+        // Then marquees appear (both forward and reverse) - make sure they're visible
+        .to(".logo-marquee", {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          stagger: 0.3,
+          ease: "power3.out"
+        }, "-=0.5")
+        
+        // Ensure marquee tracks and spans are visible
+        .set(".marquee-track", {
+          opacity: 1,
+          visibility: "visible"
+        }, "-=0.8")
+        
+        .set(".marquee-track span", {
+          opacity: 1,
+          visibility: "visible"
+        }, "-=0.8")
 
         // --- STAGE 4: SMOOTH CLOUD TRANSIT (SEAMLESS TRANSITION) ---
         // First, hide mountain content quickly before clouds appear
@@ -284,29 +336,46 @@ function App() {
           <div className="portal-kinetic-item">
             <h2 className="portal-title">Strategic Feedback</h2>
             <div className="review-container">
-              <div className="review-card">
+              <div className="review-card review-card-1">
                 <p>"HIKITY redefined our digital presence with architectural precision."</p>
                 <span>— NEXUS SOLUTIONS</span>
               </div>
-              <div className="review-card">
+              <div className="review-card review-card-2">
                 <p>"The kinetic hand-off between phases is a masterclass in UI design."</p>
                 <span>— AETHER CORP</span>
               </div>
-              <div className="review-card">
+              <div className="review-card review-card-3">
                 <p>"Engineering digital continuity across global ecosystems."</p>
                 <span>— HIKAT GLOBAL</span>
               </div>
             </div>
           </div>
 
-          <div className="portal-kinetic-item logo-marquee">
-            <div className="marquee-track">
-              {['VERCEL', 'ADOBE', 'GOOGLE', 'MICROSOFT', 'NVIDIA', 'OPENAI'].map((p, i) => (
-                <span key={i}>PARTNER // {p}</span>
-              ))}
-              {['VERCEL', 'ADOBE', 'GOOGLE', 'MICROSOFT', 'NVIDIA', 'OPENAI'].map((p, i) => (
-                <span key={i + 100}>PARTNER // {p}</span>
-              ))}
+          <div className="portal-kinetic-item logo-marquee-wrapper">
+            <h3 className="marquee-title">OUR CLIENTS</h3>
+            
+            {/* First scroller - forward direction */}
+            <div className="logo-marquee">
+              <div className="marquee-track marquee-forward">
+                {['VERCEL', 'ADOBE', 'GOOGLE', 'MICROSOFT', 'NVIDIA', 'OPENAI'].map((p, i) => (
+                  <span key={i}>PARTNER // {p}</span>
+                ))}
+                {['VERCEL', 'ADOBE', 'GOOGLE', 'MICROSOFT', 'NVIDIA', 'OPENAI'].map((p, i) => (
+                  <span key={i + 100}>PARTNER // {p}</span>
+                ))}
+              </div>
+            </div>
+            
+            {/* Second scroller - reverse direction */}
+            <div className="logo-marquee logo-marquee-reverse">
+              <div className="marquee-track marquee-reverse">
+                {['AMAZON', 'META', 'APPLE', 'NETFLIX', 'TESLA', 'SPOTIFY'].map((p, i) => (
+                  <span key={i}>PARTNER // {p}</span>
+                ))}
+                {['AMAZON', 'META', 'APPLE', 'NETFLIX', 'TESLA', 'SPOTIFY'].map((p, i) => (
+                  <span key={i + 100}>PARTNER // {p}</span>
+                ))}
+              </div>
             </div>
           </div>
         </section>

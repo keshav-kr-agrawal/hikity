@@ -23,7 +23,7 @@
   right: 0;
   pointer-events: none;
   user-select: none;
-  opacity: 0.02;
+  opacity: 0.08;
   overflow: hidden;
   z-index: 1;
 }
@@ -32,7 +32,7 @@
   font-size: 28vw;
   font-weight: 200;
   letter-spacing: -0.05em;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.15);
   text-align: center;
   line-height: 1;
   transform: translateY(25%);
