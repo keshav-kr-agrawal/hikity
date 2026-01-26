@@ -357,11 +357,11 @@ function App() {
             {/* First scroller - forward direction */}
             <div className="logo-marquee">
               <div className="marquee-track marquee-forward">
-                {['VERCEL', 'ADOBE', 'GOOGLE', 'MICROSOFT', 'NVIDIA', 'OPENAI'].map((p, i) => (
-                  <span key={i}>PARTNER // {p}</span>
+                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIX-GUN'].map((p, i) => (
+                  <span key={i}> {p}</span>
                 ))}
-                {['VERCEL', 'ADOBE', 'GOOGLE', 'MICROSOFT', 'NVIDIA', 'OPENAI'].map((p, i) => (
-                  <span key={i + 100}>PARTNER // {p}</span>
+                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIX-GUN'].map((p, i) => (
+                  <span key={i + 100}> {p}</span>
                 ))}
               </div>
             </div>
@@ -369,11 +369,11 @@ function App() {
             {/* Second scroller - reverse direction */}
             <div className="logo-marquee logo-marquee-reverse">
               <div className="marquee-track marquee-reverse">
-                {['AMAZON', 'META', 'APPLE', 'NETFLIX', 'TESLA', 'SPOTIFY'].map((p, i) => (
-                  <span key={i}>PARTNER // {p}</span>
+                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIX-GUN'].map((p, i) => (
+                  <span key={i}> {p}</span>
                 ))}
-                {['AMAZON', 'META', 'APPLE', 'NETFLIX', 'TESLA', 'SPOTIFY'].map((p, i) => (
-                  <span key={i + 100}>PARTNER // {p}</span>
+                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIX-GUN'].map((p, i) => (
+                  <span key={i + 100}> {p}</span>
                 ))}
               </div>
             </div>
@@ -405,47 +405,7 @@ function App() {
               </div>
             </div>
 
-            <div className="glass-form">
-              <div className="form-intro">
-                <h3 className="form-title">Send us a message</h3>
-                <p className="form-subtitle">Fill out the form below and we'll get back to you as soon as possible.</p>
-              </div>
-              
-              <div className="form-fields">
-                <div className="form-group">
-                  <label htmlFor="name">NAME</label>
-                  <input 
-                    type="text" 
-                    id="name"
-                    name="name"
-                    placeholder="John Doe" 
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="email">EMAIL</label>
-                  <input 
-                    type="email" 
-                    id="email"
-                    name="email"
-                    placeholder="john@example.com" 
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="message">MESSAGE</label>
-                  <textarea 
-                    id="message"
-                    name="message"
-                    placeholder="Tell us about your project, goals, or any questions you have..." 
-                    rows="5"
-                    required
-                  ></textarea>
-                </div>
-              </div>
-              
-              <button type="submit" className="submit-trigger">SEND MESSAGE</button>
-            </div>
+            
           </div>
         </section>
       </div>
