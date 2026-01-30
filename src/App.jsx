@@ -444,9 +444,10 @@ function App() {
             <h2 className="reveal-item section-title">Design<br />That<br />Scales.</h2>
             <p className="reveal-item section-desc">We architect digital ecosystems with technical excellence.</p>
             <div className="reveal-item service-stack">
-              <div className="service-row"><span>01</span><p>ARCHITECTURE</p></div>
-              <div className="service-row"><span>02</span><p>INTERACTION</p></div>
-              <div className="service-row"><span>03</span><p>INTELLIGENCE</p></div>
+              <div className="service-row"><span>01</span><p>AI AGENTS</p></div>
+              <div className="service-row"><span>02</span><p>AUTOMATION</p></div>
+              <div className="service-row"><span>03</span><p>DIGITAL PRESENCE</p></div>
+              <div className="service-row"><span>03</span><p>SOFTWARE</p></div>
             </div>
           </div>
           <div ref={parkingZoneRef} className="parking-zone"></div>
