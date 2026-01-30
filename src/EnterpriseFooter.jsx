@@ -132,7 +132,7 @@ const EnterpriseFooter = ({ onNavigate }) => {
             <p className="footer-copyright-new">
               © {currentYear} HIKITY ARCHITECTURAL
             </p>
-            <span className="footer-build-ref-new">Ref: 2029_v12</span>
+            {/* <span className="footer-build-ref-new">Ref: 2029_v12</span> */}
           </div>
 
           {/* <div className="footer-legal-new">
