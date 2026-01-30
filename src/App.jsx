@@ -447,7 +447,7 @@ function App() {
               <div className="service-row"><span>01</span><p>AI AGENTS</p></div>
               <div className="service-row"><span>02</span><p>AUTOMATION</p></div>
               <div className="service-row"><span>03</span><p>DIGITAL PRESENCE</p></div>
-              <div className="service-row"><span>03</span><p>SOFTWARE</p></div>
+              <div className="service-row"><span>04</span><p>SOFTWARE</p></div>
             </div>
           </div>
           <div ref={parkingZoneRef} className="parking-zone"></div>
