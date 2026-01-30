@@ -365,11 +365,11 @@ function App() {
             <div className="review-container">
               <div className="review-card review-card-1">
                 <p>"HIKITY redefined our digital presence with architectural precision."</p>
-                <span>— NEXUS SOLUTIONS</span>
+                <span>— SPARSH MUKTHI</span>
               </div>
               <div className="review-card review-card-2">
                 <p>"The kinetic hand-off between phases is a masterclass in UI design."</p>
-                <span>— AETHER CORP</span>
+                <span>— NAVI MEET</span>
               </div>
               <div className="review-card review-card-3">
                 <p>"Engineering digital continuity across global ecosystems."</p>
@@ -384,10 +384,10 @@ function App() {
             {/* First scroller - forward direction */}
             <div className="logo-marquee">
               <div className="marquee-track marquee-forward">
-                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
+                {['SPARSH MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                   <span key={i}> {p}</span>
                 ))}
-                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
+                {['SPARSH MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                   <span key={i + 100}> {p}</span>
                 ))}
               </div>
@@ -396,10 +396,10 @@ function App() {
             {/* Second scroller - reverse direction */}
             <div className="logo-marquee logo-marquee-reverse">
               <div className="marquee-track marquee-reverse">
-                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
+                {['SPARSH MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                   <span key={i}> {p}</span>
                 ))}
-                {['SPARHS MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
+                {['SPARSH MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                   <span key={i + 100}> {p}</span>
                 ))}
               </div>
