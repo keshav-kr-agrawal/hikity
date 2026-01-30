@@ -96,7 +96,7 @@ const EnterpriseFooter = ({ onNavigate }) => {
           <motion.div variants={itemVars} className="footer-capabilities-section-new">
             <h4 className="footer-section-title-new">Capabilities</h4>
             <ul className="footer-capabilities-list-new">
-              {['Agentic Systems', 'Immersive Engineering', 'Digital Continuity'].map((cap) => (
+              {['Agentic Systems', 'Immersive Engineering', 'Digital Continuity' , 'Automations' , 'Digital Presence'].map((cap) => (
                 <li key={cap} className="footer-capability-item-new">
                   {cap}
                 </li>
