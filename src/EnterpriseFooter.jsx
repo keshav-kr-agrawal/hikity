@@ -135,7 +135,7 @@ const EnterpriseFooter = ({ onNavigate }) => {
             <span className="footer-build-ref-new">Ref: 2029_v12</span>
           </div>
 
-          <div className="footer-legal-new">
+          {/* <div className="footer-legal-new">
             {['Privacy', 'Terms', 'Systems'].map((legal) => (
               <button 
                 key={legal}
@@ -145,7 +145,7 @@ const EnterpriseFooter = ({ onNavigate }) => {
                 {legal}
               </button>
             ))}
-          </div>
+          </div> */}
         </motion.div>
       </motion.div>
     </footer>
