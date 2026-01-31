@@ -72,8 +72,8 @@ function App() {
         }
       });
 
-      // --- STAGE 1: HERO EXIT PROTOCOL ---
-      tl.to([textBoxRef.current, ".hero-tagline"], { 
+        // --- STAGE 1: HERO EXIT PROTOCOL ---
+      tl.to([textBoxRef.current, ".hero-tagline", ".hero-subheadline"], { 
           opacity: 0, 
           y: -100, 
           duration: 2,
@@ -83,30 +83,55 @@ function App() {
           scale: isMobile ? 0.45 : 0.38,
           borderRadius: "40px",
           duration: 3,
-          ease: "power1.inOut"
+          ease: "power2.inOut"
         })
         .to(heroImgRef.current, {
-          rotateY: 180, // Flip transition from Person to Mountain back
+          rotateY: 180, // Flip transition from Mountain to Scene
           x: () => {
+            if (!parkingZoneRef.current || !heroImgRef.current) return 0;
             const zone = parkingZoneRef.current.getBoundingClientRect();
             const img = heroImgRef.current.getBoundingClientRect();
             return (zone.left + zone.width / 2) - (img.left + img.width / 2);
           },
           y: () => {
+            if (!parkingZoneRef.current || !heroImgRef.current) return 0;
             const zone = parkingZoneRef.current.getBoundingClientRect();
             const img = heroImgRef.current.getBoundingClientRect();
             return (zone.top + zone.height / 2) - (img.top + img.height / 2);
           },
           duration: 3.5,
-          ease: "power2.out"
-        })
+          ease: "expo.out"
+        }, "-=2")
+        .to(".flip-card-front", {
+          opacity: 0,
+          visibility: "hidden",
+          duration: 0.5,
+          ease: "power1.in"
+        }, "-=3")
+        .to(".flip-card-back", {
+          opacity: 1,
+          visibility: "visible",
+          duration: 0.5,
+          ease: "power1.out"
+        }, "-=3")
 
-        // --- STAGE 2: EDITORIAL REVEAL ---
+        // --- STAGE 2: EDITORIAL REVEAL (WHITE PAGE WITH SCENE IN PLACE) ---
         .to(whiteLayerRef.current, { 
           opacity: 1, 
           duration: 2.5,
           ease: "power1.inOut"
         }, "-=4")
+        .to(".mountain-preview", {
+          opacity: 1,
+          scale: 1,
+          duration: 2,
+          ease: "power2.out"
+        }, "-=2")
+        .call(() => {
+          if (parkingZoneRef.current) {
+            parkingZoneRef.current.classList.add('mountain-visible');
+          }
+        }, null, "-=2")
         .from(".reveal-item", { 
           opacity: 0, 
           y: 40, 
@@ -115,26 +140,41 @@ function App() {
           ease: "power2.out"
         }, "-=2.5")
 
-        // --- STAGE 3: PEAK EXPANSION (MOUNTAIN PHASE) ---
+        // --- STAGE 3: PEAK EXPANSION (SCENE ENLARGES FROM PARKING ZONE) ---
+        // Hide preview as the actual image expands
+        .to(".mountain-preview", {
+          opacity: 0,
+          scale: 0.95,
+          duration: 1,
+          ease: "power1.in"
+        }, "+=0.5")
+        // Expand the flipped scene image from parking zone to full screen
         .to(heroImgRef.current, {
-          width: "100vw", height: "100vh",
-          x: 0, y: 0, scale: 1, borderRadius: "0px",
+          width: "100vw", 
+          height: "100vh",
+          x: 0, 
+          y: 0, 
+          scale: 1, 
+          borderRadius: "0px",
+          rotateY: 180, // Keep flipped to show scene
           duration: 5.5, 
+          ease: "power2.inOut"
+        }, "-=0.5")
+        // White layer fades out as mountain expands
+        .to(whiteLayerRef.current, { 
+          opacity: 0, 
+          pointerEvents: "none", 
+          duration: 2,
           ease: "power1.inOut"
-        })
+        }, "-=4")
+        // Portal appears after white layer starts fading
         .to(portalRef.current, { 
           autoAlpha: 1, 
           visibility: "visible", 
           pointerEvents: "auto", 
           duration: 1.5,
           ease: "power1.out"
-        }, "-=4")
-        .to(whiteLayerRef.current, { 
-          opacity: 0, 
-          pointerEvents: "none", 
-          duration: 2.5,
-          ease: "power1.inOut"
-        }, "-=4")
+        }, "-=3.5")
         
         // Title appears first from right to left
         .to(".upper-portal .portal-title", { 
@@ -441,34 +481,59 @@ function App() {
       <div ref={whiteLayerRef} className="layer white-layer">
         <div className="editorial-layout">
           <div className="content-side">
-            <h2 className="reveal-item section-title">Design<br />That<br />Scales.</h2>
-            <p className="reveal-item section-desc">We architect digital ecosystems with technical excellence.</p>
+            <h2 className="reveal-item section-title">ENGINEERING THE NEXT DIMENSION.</h2>
             <div className="reveal-item service-stack">
-              <div className="service-row"><span>01</span><p>AI AGENTS</p></div>
-              <div className="service-row"><span>02</span><p>AUTOMATION</p></div>
-              <div className="service-row"><span>03</span><p>DIGITAL PRESENCE</p></div>
-              <div className="service-row"><span>04</span><p>SOFTWARE</p></div>
+              <div className="service-row">
+                <span className="service-number">01</span>
+                <div className="service-content">
+                  <p className="service-title">AI AGENTS</p>
+                  <p className="service-desc">Custom-trained autonomous intelligence to scale your operations.</p>
+                </div>
+              </div>
+              <div className="service-row">
+                <span className="service-number">02</span>
+                <div className="service-content">
+                  <p className="service-title">SMART AUTOMATION</p>
+                  <p className="service-desc">Engineering seamless, zero-overhead digital workflows.</p>
+                </div>
+              </div>
+              <div className="service-row">
+                <span className="service-number">03</span>
+                <div className="service-content">
+                  <p className="service-title">3D INTERACTIVE</p>
+                  <p className="service-desc">Immersive WebGL environments that redefine user engagement.</p>
+                </div>
+              </div>
+              <div className="service-row">
+                <span className="service-number">04</span>
+                <div className="service-content">
+                  <p className="service-title">BRAND SYSTEMS</p>
+                  <p className="service-desc">High-fidelity visual identities for the tech-forward era.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div ref={parkingZoneRef} className="parking-zone"></div>
+          <div ref={parkingZoneRef} className="parking-zone">
+            <img src="/scene.jpg" alt="Scene" className="mountain-preview" />
+          </div>
         </div>
       </div>
 
       {/* 6. HERO STACK (PERSON/MOUNTAIN) */}
       <div className="layer hero-layer">
         <div ref={textBoxRef} className="text-box">
-          <h1 className="hero-text">REIMAGINE</h1>
-          <h1 className="hero-text outline">THE FUTURE</h1>
-          <p className="hero-tagline">we build what you imagine</p>
+          <h1 className="hero-text">WE BUILD WHAT YOU IMAGINE.</h1>
+          <p className="hero-subheadline">Where High-Fidelity 3D Interactivity Meets Autonomous AI Intelligence.</p>
+          <p className="hero-tagline">Future-Proofing Digital Architecture.</p>
         </div>
 
         <div className="perspective-wrapper">
           <div ref={heroImgRef} className="flip-card">
             <div className="flip-card-front">
-              <img src="/person.jpg" className="full-img" alt="Person" />
+              <img src="/mountain.png" className="full-img" alt="the " />
             </div>
             <div className="flip-card-back">
-              <img src="/mountain.png" className="full-img" alt="Mountain" />
+              <img src="/scene.jpg" className="full-img" alt="Scene" />
             </div>
           </div>
         </div>
