@@ -110,7 +110,7 @@ const EnterpriseFooter = ({ onNavigate }) => {
             <div className="footer-resolution-content-new">
               <motion.a 
                 whileHover={{ x: -10 }}
-                href="mailto:contact@hikat.xyz" 
+                href="mailto:contact@hikity.xyz" 
                 className="footer-email-new"
               >
                 contact@hikity.xyz
