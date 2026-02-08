@@ -113,7 +113,7 @@ const EnterpriseFooter = ({ onNavigate }) => {
                 href="mailto:contact@hikat.xyz" 
                 className="footer-email-new"
               >
-                contact@hikat.xyz
+                contact@hikity.xyz
               </motion.a>
               <div className="footer-email-meta-new">
                 <div className="footer-meta-line-new" />
