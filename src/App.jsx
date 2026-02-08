@@ -463,7 +463,7 @@ function App() {
               <div className="contact-info">
                 <div className="contact-info-item">
                   <span className="info-label">EMAIL</span>
-                  <a href="mailto:contact@hikat.xyz" className="info-value">contact@hikat.xyz</a>
+                  <a href="mailto:contact@hikity.xyz" className="info-value">contact@hikity.xyz</a>
                 </div>
                 <div className="contact-info-item">
                   <span className="info-label">RESPONSE TIME</span>
