@@ -306,6 +306,35 @@
   margin: 0;
 }
 
+.footer-linkedin-link-new {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: rgba(255, 180, 162, 0.6);
+  text-decoration: none;
+  transition: all 0.4s ease;
+  width: fit-content;
+  margin-top: 8px;
+}
+
+.footer-linkedin-link-new:hover {
+  color: var(--hikity-peach);
+}
+
+.footer-linkedin-link-new:hover .footer-protocol-line-new {
+  width: 48px;
+}
+
+@media (min-width: 768px) {
+  .footer-linkedin-link-new {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+  }
+}
+
 /* 9. FOOTER BOTTOM */
 .footer-bottom-new {
   padding-top: clamp(40px, 6vh, 64px);

@@ -22,17 +22,17 @@ const EnterpriseFooter = ({ onNavigate }) => {
 
   const itemVars = {
     initial: { opacity: 0, y: 30, filter: "blur(10px)" },
-    whileInView: { 
-      opacity: 1, 
-      y: 0, 
+    whileInView: {
+      opacity: 1,
+      y: 0,
       filter: "blur(0px)",
-      transition: { duration: 1.5, ease: [0.19, 1, 0.22, 1] } 
+      transition: { duration: 1.5, ease: [0.19, 1, 0.22, 1] }
     }
   };
 
   return (
     <footer className="enterprise-footer-new">
-      
+
       {/* 1. ARCHITECTURAL WATERMARK */}
       <div className="footer-watermark-new">
         <h2 className="watermark-text-new">
@@ -43,7 +43,7 @@ const EnterpriseFooter = ({ onNavigate }) => {
       {/* 2. ATMOSPHERIC GLOW */}
       <div className="footer-glow-new" />
 
-      <motion.div 
+      <motion.div
         variants={containerVars}
         initial="initial"
         whileInView="whileInView"
@@ -51,35 +51,35 @@ const EnterpriseFooter = ({ onNavigate }) => {
         className="footer-content-wrapper-new"
       >
         <div className="footer-grid-new">
-          
+
           {/* BRAND PILLAR: Including HIKAT Linkage */}
           <motion.div variants={itemVars} className="footer-brand-section-new">
             <div className="footer-brand-header-new" onClick={() => onNavigate('main')}>
-               <div className="footer-logo-container-new">
-                  <img src="/hikity.jpeg" alt="HIKITY" className="footer-logo-img-new" />
-               </div>
-               <div className="footer-brand-text-new">
-                  <h2 className="footer-brand-title-new">HIKITY</h2>
-                  <span className="footer-brand-subtitle-new">Ref: Architectural Division</span>
-               </div>
+              <div className="footer-logo-container-new">
+                <img src="/hikity.jpeg" alt="HIKITY" className="footer-logo-img-new" />
+              </div>
+              <div className="footer-brand-text-new">
+                <h2 className="footer-brand-title-new">HIKITY</h2>
+                <span className="footer-brand-subtitle-new">Ref: Architectural Division</span>
+              </div>
             </div>
 
             <div className="footer-brand-content-new">
               <p className="footer-description-new">
-                A specialized venture under 
-                <a 
-                  href="https://hikat.xyz" 
-                  target="_blank" 
+                A specialized venture under
+                <a
+                  href="https://hikat.xyz"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="footer-hikat-link"
                 >
                   HIKAT
-                </a>. 
+                </a>.
                 Maintaining architectural integrity across every digital landscape.
               </p>
 
               {/* HIKAT EXTERNAL PROTOCOL LINK */}
-              <motion.a 
+              <motion.a
                 href="https://hikat.xyz"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -96,7 +96,7 @@ const EnterpriseFooter = ({ onNavigate }) => {
           <motion.div variants={itemVars} className="footer-capabilities-section-new">
             <h4 className="footer-section-title-new">Capabilities</h4>
             <ul className="footer-capabilities-list-new">
-              {['Agentic Systems', 'Immersive Engineering', 'Digital Continuity' , 'Automations' , 'Digital Presence'].map((cap) => (
+              {['Agentic Systems', 'Immersive Engineering', 'Digital Continuity', 'Automations', 'Digital Presence'].map((cap) => (
                 <li key={cap} className="footer-capability-item-new">
                   {cap}
                 </li>
@@ -108,9 +108,9 @@ const EnterpriseFooter = ({ onNavigate }) => {
           <motion.div variants={itemVars} className="footer-resolution-section-new">
             <h4 className="footer-section-title-new">Resolution</h4>
             <div className="footer-resolution-content-new">
-              <motion.a 
+              <motion.a
                 whileHover={{ x: -10 }}
-                href="mailto:contact@hikity.xyz" 
+                href="mailto:contact@hikity.xyz"
                 className="footer-email-new"
               >
                 contact@hikity.xyz
@@ -119,12 +119,23 @@ const EnterpriseFooter = ({ onNavigate }) => {
                 <div className="footer-meta-line-new" />
                 <p className="footer-meta-text-new">Global Ops // 2026</p>
               </div>
+
+              <motion.a
+                href="https://www.linkedin.com/in/hikity/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: -10 }}
+                className="footer-linkedin-link-new"
+              >
+                <span>Connect via LinkedIn</span>
+                <div className="footer-protocol-line-new" />
+              </motion.a>
             </div>
           </motion.div>
         </div>
 
         {/* 3. LEGAL FOUNDATION */}
-        <motion.div 
+        <motion.div
           variants={itemVars}
           className="footer-bottom-new"
         >
