@@ -1,0 +1,33 @@
+/* TEAM */
+
+Company: HIKITY - A HIKAT Venture
+Website: https://hikity.xyz
+Email: contact@hikity.xyz
+Location: India
+
+/* SITE */
+
+Last update: 2026/02/10
+Standards: HTML5, CSS3, JavaScript ES6+, React
+Components: Vite, Three.js, GSAP
+Software: VS Code, Git, npm
+
+/* THANKS */
+
+To all the open-source contributors and the web development community.
+
+/* DESCRIPTION */
+
+HIKITY specializes in digital architecture and agentic systems.
+We build what you imagine - combining high-fidelity 3D interactivity 
+with autonomous AI intelligence to create exceptional web experiences.
+
+Services:
+- Custom Website Design
+- Web Development
+- AI Agents & Smart Automation
+- 3D Interactive Experiences
+- Brand Systems
+- Digital Transformation
+- Free Landing Page Design
+- Enterprise Web Solutions
