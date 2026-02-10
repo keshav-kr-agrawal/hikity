@@ -1,35 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://hikity.xyz/</loc>
     <lastmod>2026-02-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    
+    <!-- Primary Brand Image -->
     <image:image>
       <image:loc>https://hikity.xyz/hikity.jpeg</image:loc>
       <image:title>HIKITY - Digital Architecture and Agentic Systems</image:title>
-      <image:caption>HIKITY logo - Professional web solutions and digital transformation services</image:caption>
+      <image:caption>HIKITY logo - Professional web solutions, AI agents, and digital transformation services by HIKAT</image:caption>
     </image:image>
+    
+    <!-- Service Showcase Images -->
     <image:image>
       <image:loc>https://hikity.xyz/mountain.png</image:loc>
       <image:title>HIKITY Web Development Services</image:title>
-      <image:caption>Custom website design and web solutions by HIKITY</image:caption>
+      <image:caption>Custom website design, responsive web solutions, and enterprise web development by HIKITY</image:caption>
     </image:image>
+    
     <image:image>
       <image:loc>https://hikity.xyz/scene.jpg</image:loc>
       <image:title>HIKITY Digital Solutions Portfolio</image:title>
-      <image:caption>AI agents, 3D interactive experiences, and smart automation services</image:caption>
+      <image:caption>AI agents, 3D interactive experiences, smart automation, and innovative digital solutions</image:caption>
     </image:image>
+    
     <image:image>
       <image:loc>https://hikity.xyz/cloud.png</image:loc>
-      <image:title>HIKITY Cloud Solutions</image:title>
-      <image:caption>Enterprise web solutions and digital transformation</image:caption>
+      <image:title>HIKITY Cloud & Enterprise Solutions</image:title>
+      <image:caption>Enterprise web solutions, digital transformation, and scalable cloud-based applications</image:caption>
     </image:image>
+    
     <image:image>
       <image:loc>https://hikity.xyz/road.jpg</image:loc>
-      <image:title>HIKITY Contact and Web Services</image:title>
-      <image:caption>Get in touch for custom web development and landing page design</image:caption>
+      <image:title>HIKITY Contact & Web Services</image:title>
+      <image:caption>Get in touch for custom web development, free landing page design, and professional digital solutions</image:caption>
     </image:image>
   </url>
 </urlset>
+

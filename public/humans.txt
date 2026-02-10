@@ -3,18 +3,26 @@
 Company: HIKITY - A HIKAT Venture
 Website: https://hikity.xyz
 Email: contact@hikity.xyz
+LinkedIn: https://www.linkedin.com/in/hikity/
 Location: India
+
+Digital Solutions Architect
+LinkedIn: https://www.linkedin.com/in/hikity/
+Role: Founder & Lead Developer
 
 /* SITE */
 
 Last update: 2026/02/10
-Standards: HTML5, CSS3, JavaScript ES6+, React
-Components: Vite, Three.js, GSAP
-Software: VS Code, Git, npm
+Standards: HTML5, CSS3, JavaScript ES6+, React, Schema.org
+Components: Vite, Three.js, GSAP, React Three Fiber
+Software: VS Code, Git, npm, Node.js
+Hosting: Vercel
+Version Control: GitHub
 
 /* THANKS */
 
 To all the open-source contributors and the web development community.
+Special thanks to the creators of Three.js, React, and Vite.
 
 /* DESCRIPTION */
 
@@ -23,11 +31,35 @@ We build what you imagine - combining high-fidelity 3D interactivity
 with autonomous AI intelligence to create exceptional web experiences.
 
 Services:
-- Custom Website Design
-- Web Development
+- Custom Website Design & Development
 - AI Agents & Smart Automation
 - 3D Interactive Experiences
-- Brand Systems
-- Digital Transformation
+- Brand Systems & Digital Identity
+- Digital Transformation Solutions
 - Free Landing Page Design
 - Enterprise Web Solutions
+- Responsive Web Applications
+- Progressive Web Apps (PWA)
+
+/* TECHNOLOGY STACK */
+
+Frontend: React, Vite, Three.js, GSAP
+Styling: CSS3, Modern CSS Features
+3D Graphics: Three.js, React Three Fiber
+Animation: GSAP, Framer Motion
+Build Tools: Vite, npm
+Version Control: Git, GitHub
+Deployment: Vercel, CI/CD
+
+/* SOCIAL MEDIA */
+
+LinkedIn: https://www.linkedin.com/in/hikity/
+Website: https://hikity.xyz
+Email: contact@hikity.xyz
+
+/* SEO */
+
+Structured Data: JSON-LD, Schema.org
+Sitemap: https://hikity.xyz/sitemap.xml
+Robots: https://hikity.xyz/robots.txt
+

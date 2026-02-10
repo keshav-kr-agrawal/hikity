@@ -1,12 +1,64 @@
+# HIKITY - Robots.txt Configuration
+# Updated: 2026-02-10
+
+# Default Rules for All Bots
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://hikity.xyz/sitemap.xml
-
-# Crawl-delay (optional, helps prevent server overload)
 Crawl-delay: 1
+
+# Google Bot - Full Access
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing Bot - Full Access
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# AI Crawlers - Controlled Access
+# OpenAI GPT Bot
+User-agent: GPTBot
+Allow: /
+
+# ChatGPT User Agent
+User-agent: ChatGPT-User
+Allow: /
+
+# Google Bard/Gemini
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+
+# Common Crawlers
+User-agent: Slurp
+Allow: /
+
+# Social Media Bots
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterest
+Allow: /
 
 # Disallow admin/private paths (if any in future)
 # Disallow: /admin/
 # Disallow: /private/
+# Disallow: /.git/
+
+# Sitemap Location
+Sitemap: https://hikity.xyz/sitemap.xml
+
+# Additional Information
+# Host: https://hikity.xyz
+# Contact: contact@hikity.xyz
+
