@@ -56,7 +56,7 @@ const EnterpriseFooter = ({ onNavigate }) => {
           <motion.div variants={itemVars} className="footer-brand-section-new">
             <div className="footer-brand-header-new" onClick={() => onNavigate('main')}>
               <div className="footer-logo-container-new">
-                <img src="/hikity.jpeg" alt="HIKITY" className="footer-logo-img-new" />
+                <img src="/hikity.jpeg" alt="HIKITY Falcon Logo" className="footer-logo-img-new" />
               </div>
               <div className="footer-brand-text-new">
                 <h2 className="footer-brand-title-new">HIKITY</h2>

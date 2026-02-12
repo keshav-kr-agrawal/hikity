@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://hikity.xyz/</loc>
     <lastmod>2026-02-10</lastmod>
@@ -11,8 +10,8 @@
     <!-- Primary Brand Image -->
     <image:image>
       <image:loc>https://hikity.xyz/hikity.jpeg</image:loc>
-      <image:title>HIKITY - Digital Architecture and Agentic Systems</image:title>
-      <image:caption>HIKITY logo - Professional web solutions, AI agents, and digital transformation services by HIKAT</image:caption>
+      <image:title>HIKITY Falcon Logo - Digital Architecture &amp; Agentic Systems</image:title>
+      <image:caption>HIKITY Falcon Logo - Professional web solutions, AI agents, and digital transformation services by HIKAT</image:caption>
     </image:image>
     
     <!-- Service Showcase Images -->
@@ -30,13 +29,13 @@
     
     <image:image>
       <image:loc>https://hikity.xyz/cloud.png</image:loc>
-      <image:title>HIKITY Cloud & Enterprise Solutions</image:title>
+      <image:title>HIKITY Cloud &amp; Enterprise Solutions</image:title>
       <image:caption>Enterprise web solutions, digital transformation, and scalable cloud-based applications</image:caption>
     </image:image>
     
     <image:image>
       <image:loc>https://hikity.xyz/road.jpg</image:loc>
-      <image:title>HIKITY Contact & Web Services</image:title>
+      <image:title>HIKITY Contact &amp; Web Services</image:title>
       <image:caption>Get in touch for custom web development, free landing page design, and professional digital solutions</image:caption>
     </image:image>
   </url>

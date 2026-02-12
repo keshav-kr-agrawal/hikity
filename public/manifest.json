@@ -1,7 +1,7 @@
 {
     "name": "HIKITY - Digital Solutions",
     "short_name": "HIKITY",
-    "description": "Professional web solutions, custom website design, AI agents, 3D interactive experiences, and digital transformation services by HIKITY.",
+    "description": "Professional web solutions, custom website design, AI agents, 3D interactive experiences, and digital transformation services by HIKITY (Falcon Edition).",
     "start_url": "/",
     "scope": "/",
     "display": "standalone",
