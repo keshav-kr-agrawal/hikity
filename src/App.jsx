@@ -471,7 +471,7 @@ function App() {
                   </div>
                 </div>
 
-                <button type="submit" className="submit-trigger">INITIATE UPLOAD</button>
+                <button type="submit" className="submit-trigger"><span>INITIATE UPLOAD</span></button>
               </form>
             </div>
           </section>
