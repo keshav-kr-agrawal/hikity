@@ -435,19 +435,39 @@ function App() {
                 </div>
 
                 <div className="form-fields">
-                  <div className="form-group">
-                    <label htmlFor="name">IDENTIFIER</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your name" />
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="name">IDENTIFIER</label>
+                      <input type="text" id="name" name="name" required placeholder="Enter your name" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="email">CONTACT POINT</label>
+                      <input type="email" id="email" name="email" required placeholder="name@company.com" />
+                    </div>
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="email">CONTACT POINT</label>
-                    <input type="email" id="email" name="email" required placeholder="name@company.com" />
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="phone">PHONE (OPTIONAL)</label>
+                      <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="project-type">PROJECT TYPE</label>
+                      <select id="project-type" name="project_type" required defaultValue="">
+                        <option value="" disabled>Select a category</option>
+                        <option value="Web Design">Web Design & Development</option>
+                        <option value="Full Stack">Full Stack Application</option>
+                        <option value="AI Solutions">AI & Automation Solutions</option>
+                        <option value="3D Experience">3D Interactive Experience</option>
+                        <option value="Brand Identity">Brand Identity System</option>
+                        <option value="Other">Other / Custom Request</option>
+                      </select>
+                    </div>
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="message">DATA PACKET</label>
-                    <textarea id="message" name="message" required placeholder="Describe project parameters..."></textarea>
+                  <div className="form-group full-width">
+                    <label htmlFor="message">PROJECT DETAILS</label>
+                    <textarea id="message" name="message" placeholder="Describe your vision, timeline, or specific requirements..."></textarea>
                   </div>
                 </div>
 
