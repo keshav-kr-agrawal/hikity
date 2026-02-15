@@ -577,8 +577,8 @@ body {
   /* Changed from grid to flex */
   flex-direction: column;
   /* Vertical stack */
-  gap: clamp(60px, 10vh, 120px);
-  /* Significant vertical spacing */
+  gap: clamp(30px, 4vh, 50px);
+  /* Significant vertical spacing reduced */
   width: 100%;
   max-width: 1200px;
   /* Reduced max-width for centered look */
@@ -613,7 +613,7 @@ body {
   z-index: 220;
   display: flex;
   flex-direction: column;
-  gap: clamp(25px, 4vh, 45px);
+  gap: clamp(15px, 2vh, 25px);
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
@@ -697,6 +697,10 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-size: clamp(2.5rem, 5vw, 4rem) !important;
+  /* Force smaller size for this section */
+  line-height: 1.1;
+  margin-top: 10px;
 }
 
 .glass-form {
@@ -705,10 +709,10 @@ body {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   /* Minimal border */
-  padding: clamp(40px, 6vw, 80px);
+  padding: clamp(30px, 4vw, 50px);
   display: flex;
   flex-direction: column;
-  gap: clamp(40px, 5vh, 60px);
+  gap: clamp(25px, 3vh, 40px);
   position: relative;
   z-index: 220;
   box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
@@ -756,13 +760,13 @@ body {
 .form-fields {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 30px;
   /* Increased internal gap */
 }
 

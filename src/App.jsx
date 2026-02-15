@@ -408,7 +408,7 @@ function App() {
             <div className="contact-protocol-wrapper">
               <div className="contact-header">
                 <h2 className="portal-title">Initiate Protocol</h2>
-                <h1 className="hero-text terminal-header" style={{ fontSize: '3.8vw', textAlign: 'left', marginTop: '20px', lineHeight: '1' }}>
+                <h1 className="hero-text terminal-header">
                   LET'S ARCHITECT<br />YOUR VISION.
                 </h1>
                 <p className="contact-description">
