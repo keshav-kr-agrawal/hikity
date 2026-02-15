@@ -291,51 +291,7 @@ function App() {
           opacity: 0,
           y: 30,
           duration: 2.5,
-          ease: "power2.out"
-        }, "-=2")
-
-        // Glass form container appears with gentle scale and fade
-        .from(".glass-form", {
-          opacity: 0,
-          scale: 0.95,
-          y: 30,
-          duration: 2.5,
-          ease: "power2.out"
-        }, "-=2")
-
-        // Form intro appears smoothly
-        .from(".form-intro", {
-          opacity: 0,
-          y: 15,
-          duration: 2,
-          ease: "power2.out"
-        }, "-=1.5")
-
-        // Form fields reveal with gentle staggered slide animation
-        .from(".form-group", {
-          opacity: 0,
-          x: -30,
-          stagger: 0.15,
-          duration: 2,
-          ease: "power2.out"
-        }, "-=1.2")
-
-        // Contact info appears smoothly
-        .from(".contact-info", {
-          opacity: 0,
-          y: 15,
-          duration: 2,
-          ease: "power2.out"
-        }, "-=1.5")
-
-        // Submit button appears with gentle bounce
-        .from(".submit-trigger", {
-          opacity: 0,
-          scale: 0.9,
-          y: 20,
-          duration: 2,
-          ease: "back.out(1.2)"
-        }, "-=1");
+        }, "-=2");
 
       // Separate ScrollTrigger for footer (triggers after pinned section ends)
       if (footerRef.current && mainRef.current) {
