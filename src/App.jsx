@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, Fragment } from 'react'
+import React, { useState, useEffect, useRef, Fragment } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
@@ -28,15 +28,33 @@ function App() {
   const cloudRef = useRef(null);
   const portalRef = useRef(null);
   const footerRef = useRef(null);
+  const dropdownRef = useRef(null);
+  const tlRef = useRef(null);
+
+  // Custom Dropdown State
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState('');
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   // Targeted scroll function for CTA sync
   const scrollToContact = () => {
-    gsap.to(window, {
-      duration: 2.5,
-      // Target the contact form phase (approx 90% progress of 1100vh)
-      scrollTo: innerHeight * 9.5,
-      ease: "power1.inOut"
-    });
+    if (tlRef.current) {
+      gsap.to(window, {
+        duration: 2.5,
+        scrollTo: tlRef.current.scrollTrigger.labelToScroll('contact'),
+        ease: "power1.inOut"
+      });
+    }
   };
 
   // Scroll to top function for logo
@@ -71,6 +89,7 @@ function App() {
           }
         }
       });
+      tlRef.current = tl;
 
       // --- STAGE 1: HERO EXIT PROTOCOL ---
       tl.to([textBoxRef.current, ".hero-tagline", ".hero-subheadline"], {
@@ -291,7 +310,8 @@ function App() {
           opacity: 0,
           y: 30,
           duration: 2.5,
-        }, "-=2");
+        }, "-=2")
+        .addLabel('contact'); // Label for precise navigation
 
       // Separate ScrollTrigger for footer (triggers after pinned section ends)
       if (footerRef.current && mainRef.current) {
@@ -430,8 +450,8 @@ function App() {
 
               <form action="https://formsubmit.co/contact@hikity.xyz" method="POST" className="glass-form">
                 <div className="form-intro">
-                  <h3 className="form-title">TRANSMISSION</h3>
-                  <p className="form-subtitle">Secure channel open. Project details required.</p>
+                  <h3 className="form-title">VISION INPUT</h3>
+                  <p className="form-subtitle">Define the parameters of your next product.</p>
                 </div>
 
                 <div className="form-fields">
@@ -452,21 +472,45 @@ function App() {
                       <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="project-type">PROJECT TYPE</label>
-                      <select id="project-type" name="project_type" required defaultValue="">
-                        <option value="" disabled>Select a category</option>
-                        <option value="Web Design">Web Design & Development</option>
-                        <option value="Full Stack">Full Stack Application</option>
-                        <option value="AI Solutions">AI & Automation Solutions</option>
-                        <option value="3D Experience">3D Interactive Experience</option>
-                        <option value="Brand Identity">Brand Identity System</option>
-                        <option value="Other">Other / Custom Request</option>
-                      </select>
+                      <label htmlFor="project-type">PRODUCT TYPE</label>
+                      <input type="hidden" name="project_type" value={selectedProject} />
+                      <div
+                        ref={dropdownRef}
+                        className={`custom-select-wrapper ${isDropdownOpen ? 'active' : ''}`}
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      >
+                        <div className="custom-select-trigger">
+                          <span className={!selectedProject ? 'placeholder' : ''}>
+                            {selectedProject || "Select a category"}
+                          </span>
+                          <svg
+                            className={`select-arrow ${isDropdownOpen ? 'rotated' : ''}`}
+                            width="10" height="6" viewBox="0 0 10 6" fill="none"
+                          >
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div>
+                        <div className={`custom-options ${isDropdownOpen ? 'open' : ''}`}>
+                          {['Web Design & Development', 'Full Stack Application', 'AI Solutions', '3D Experience', 'Brand Identity System', 'Other / Custom Request'].map((option) => (
+                            <div
+                              key={option}
+                              className="custom-option"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedProject(option);
+                                setIsDropdownOpen(false);
+                              }}
+                            >
+                              {option}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
 
                   <div className="form-group full-width">
-                    <label htmlFor="message">PROJECT DETAILS</label>
+                    <label htmlFor="message">PRODUCT DETAILS</label>
                     <textarea id="message" name="message" placeholder="Describe your vision, timeline, or specific requirements..."></textarea>
                   </div>
                 </div>
