@@ -130,6 +130,29 @@ const EnterpriseFooter = ({ onNavigate }) => {
                 <span>Connect via LinkedIn</span>
                 <div className="footer-protocol-line-new" />
               </motion.a>
+
+              <motion.a
+                href="https://www.instagram.com/hikityofficial/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: -10 }}
+                className="footer-instagram-link"
+              >
+                <span>Connect via Instagram</span>
+                <div className="footer-protocol-line-new" />
+              </motion.a>
+
+              <motion.a
+                href="https://www.facebook.com/profile.php?id=61587760536147"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: -10 }}
+                className="footer-facebook-link"
+              >
+                <span>Connect via Facebook</span>
+                <div className="footer-protocol-line-new" />
+              </motion.a>
+
             </div>
           </motion.div>
         </div>
