@@ -46,7 +46,7 @@ const TermsAndConditions = () => {
             color: '#1f2937',
             marginBottom: '15px',
             marginTop: '40px',
-            borderLeft: '4px solid #ef4444', // Red for emphasis
+            borderLeft: '4px solid #3b82f6', // Revert to friendly blue
             paddingLeft: '15px',
             textTransform: 'uppercase',
         },
@@ -70,16 +70,7 @@ const TermsAndConditions = () => {
             textDecoration: 'none',
             fontWeight: '500',
         },
-        disclaimerBox: {
-            backgroundColor: '#fff1f2',
-            borderLeft: '4px solid #be123c',
-            color: '#881337',
-            padding: '20px',
-            borderRadius: '4px',
-            marginBottom: '30px',
-            fontSize: '0.95rem',
-            fontWeight: 'bold',
-        },
+        // Removed redDisclaimerBox
         capsText: {
             textTransform: 'uppercase',
             fontWeight: 'bold',
@@ -123,12 +114,11 @@ const TermsAndConditions = () => {
                 </header>
 
                 <section style={styles.section}>
-                    <div style={styles.disclaimerBox}>
-                        IMPORTANT LEGAL NOTICE: THESE TERMS CONTAIN A MANDATORY ARBITRATION PROVISION AND CLASS ACTION WAIVER. PLEASE READ CAREFULLY. BY ACCESSING THIS SITE, YOU WAIVE YOUR RIGHT TO SUE IN COURT AND WAIVE YOUR RIGHT TO PARTICIPATE IN A CLASS ACTION LAWSUIT. IF YOU DO NOT AGREE, DO NOT USE THIS SERVICE.
-                    </div>
-
                     <p style={styles.paragraph}>
                         These Terms of Service ("Terms") constitute a legally binding agreement between you ("User", "You") and Hikity ("Company", "We", "Us"). By accessing or using the Hikity website, services, or any associated content (collectively, the "Service"), you agree to be bound by these Terms and our Privacy Policy.
+                    </p>
+                    <p style={styles.paragraph}>
+                        Please note that these Terms contain provisions that govern how claims you and we have against each other are resolved (see Section 4 "Dispute Resolution"). These provisions will, with limited exception, require you to submit claims you have against us to binding and final arbitration on an individual basis, not as a plaintiff or class member in any class, group or representative action or proceeding.
                     </p>
                     <p style={styles.paragraph}>
                         <strong>We reserve the right to modify, replace, or update these Terms at any time without prior notice.</strong> Your continued use of the Service after any such changes constitutes your acceptance of the new Terms. It is your sole responsibility to check this page periodically for updates.
@@ -166,15 +156,12 @@ const TermsAndConditions = () => {
                 </section>
 
                 <section style={styles.section}>
-                    <h2 style={styles.sectionTitle}>4. MANDATORY BINDING ARBITRATION</h2>
+                    <h2 style={styles.sectionTitle}>4. DISPUTE RESOLUTION</h2>
                     <p style={styles.paragraph}>
-                        <strong>PLEASE READ THIS SECTION CAREFULLY. IT AFFECTS YOUR LEGAL RIGHTS.</strong>
+                        <strong>Binding Arbitration.</strong> Any dispute, claim, or controversy arising out of or relating to these Terms or the breach, termination, enforcement, interpretation, or validity thereof, or the use of the Service (collectively, "Disputes") shall be resolved <strong>exclusively by binding arbitration</strong>, rather than in court.
                     </p>
                     <p style={styles.paragraph}>
-                        Any dispute, claim, or controversy arising out of or relating to these Terms or the breach, termination, enforcement, interpretation, or validity thereof, or the use of the Service (collectively, "Disputes") shall be resolved <strong>exclusively by binding arbitration</strong>, rather than in court.
-                    </p>
-                    <p style={styles.paragraph}>
-                        You agree that arbitration shall take place on an individual basis. <strong>Class arbitrations and class actions are not permitted.</strong> You are giving up the right to commence or participate in a class action or other representative proceeding.
+                        <strong>Class Action Waiver.</strong> You agree that arbitration shall take place on an individual basis. <strong>Class arbitrations and class actions are not permitted.</strong> You are giving up the right to commence or participate in a class action or other representative proceeding. Further, unless both you and Hikity agree otherwise, the arbitrator may not consolidate more than one person's claims with your claims, and may not otherwise preside over any form of a representative or class proceeding.
                     </p>
                     <p style={styles.paragraph}>
                         The arbitration shall be conducted in a location determined solely by Hikity, in accordance with the rules of arbitration chosen by Hikity. The arbitrator's decision shall be final and binding.
@@ -182,38 +169,28 @@ const TermsAndConditions = () => {
                 </section>
 
                 <section style={styles.section}>
-                    <h2 style={styles.sectionTitle}>5. CLASS ACTION WAIVER</h2>
-                    <p style={styles.paragraph}>
-                        <strong>YOU AND HIKITY AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING.</strong>
-                    </p>
-                    <p style={styles.paragraph}>
-                        Further, unless both you and Hikity agree otherwise, the arbitrator may not consolidate more than one person's claims with your claims, and may not otherwise preside over any form of a representative or class proceeding.
-                    </p>
-                </section>
-
-                <section style={styles.section}>
-                    <h2 style={styles.sectionTitle}>6. TAX AND LEGAL COMPLIANCE</h2>
+                    <h2 style={styles.sectionTitle}>5. TAX AND LEGAL COMPLIANCE</h2>
                     <p style={styles.paragraph}>
                         You are solely responsible for determining your own tax liabilities and compliance with all applicable laws. Hikity makes no representation regarding the tax implications of any transactions or services. Hikity operates as a private digital entity and does not warrant compliance with specific regional tax registrations or bureaucratic requirements unless explicitly stated. You acknowledge that you use the service at your own risk regarding regulatory compliance.
                     </p>
                 </section>
 
                 <section style={styles.section}>
-                    <h2 style={styles.sectionTitle}>7. SEVERABILITY AND WAIVER</h2>
+                    <h2 style={styles.sectionTitle}>6. SEVERABILITY AND WAIVER</h2>
                     <p style={styles.paragraph}>
                         If any provision of these Terms is held to be invalid or unenforceable, such provision will be struck and the remaining provisions will remain in full force and effect. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.
                     </p>
                 </section>
 
                 <section style={styles.section}>
-                    <h2 style={styles.sectionTitle}>8. ENTIRE AGREEMENT</h2>
+                    <h2 style={styles.sectionTitle}>7. ENTIRE AGREEMENT</h2>
                     <p style={styles.paragraph}>
                         These Terms constitute the entire agreement between you and Hikity regarding our Service, and supersede and replace any prior agreements, oral or written, we might have had between us regarding the Service.
                     </p>
                 </section>
 
                 <section style={styles.section}>
-                    <h2 style={styles.sectionTitle}>9. CONTACT</h2>
+                    <h2 style={styles.sectionTitle}>8. CONTACT</h2>
                     <p style={styles.paragraph}>
                         Legal correspondence must be sent to: contact@hikity.xyz
                     </p>
