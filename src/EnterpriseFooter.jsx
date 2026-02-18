@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './EnterpriseFooter.css';
 
@@ -169,17 +170,11 @@ const EnterpriseFooter = ({ onNavigate }) => {
             {/* <span className="footer-build-ref-new">Ref: 2029_v12</span> */}
           </div>
 
-          {/* <div className="footer-legal-new">
-            {['Privacy', 'Terms', 'Systems'].map((legal) => (
-              <button 
-                key={legal}
-                onClick={() => onNavigate(legal.toLowerCase())}
-                className="footer-legal-link-new"
-              >
-                {legal}
-              </button>
-            ))}
-          </div> */}
+          <div className="footer-legal-new">
+            <Link to="/t&c" className="footer-legal-link-new">
+              TERMS & CONDITIONS
+            </Link>
+          </div>
         </motion.div>
       </motion.div>
     </footer>
