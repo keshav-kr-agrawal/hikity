@@ -127,23 +127,23 @@ const TermsAndConditions = () => {
 
                 <section style={styles.section}>
                     <h2 style={styles.sectionTitle}>1. DISCLAIMER OF WARRANTIES ("AS-IS")</h2>
-                    <p style={styles.paragraph} style={styles.capsText}>
+                    <p style={styles.paragraph}>
                         THE SERVICE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. TO THE MAXIMUM EXTENT PERMITTED BY LAW, HIKITY EXPRESSLY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
                     </p>
-                    <p style={styles.paragraph} style={styles.capsText}>
+                    <p style={styles.paragraph}>
                         WE DO NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, SECURE, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. YOU USE THE SERVICE AT YOUR OWN SOLE RISK.
                     </p>
                 </section>
 
                 <section style={styles.section}>
                     <h2 style={styles.sectionTitle}>2. LIMITATION OF LIABILITY</h2>
-                    <p style={styles.paragraph} style={styles.capsText}>
+                    <p style={styles.paragraph}>
                         TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL HIKITY, ITS AFFILIATES, OPERATORS, DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING WITHOUT LIMITATION DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR RELATING TO THE USE OF, OR INABILITY TO USE, THE SERVICE.
                     </p>
-                    <p style={styles.paragraph} style={styles.capsText}>
+                    <p style={styles.paragraph}>
                         UNDER NO CIRCUMSTANCES WILL HIKITY BE RESPONSIBLE FOR ANY DAMAGE, LOSS, OR INJURY RESULTING FROM HACKING, TAMPERING, OR OTHER UNAUTHORIZED ACCESS OR USE OF THE SERVICE OR YOUR ACCOUNT OR THE INFORMATION CONTAINED THEREIN.
                     </p>
-                    <p style={styles.paragraph} style={styles.capsText}>
+                    <p style={styles.paragraph}>
                         <strong>MAXIMUM LIABILITY CAP:</strong> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, HIKITY'S TOTAL CUMULATIVE LIABILITY TO YOU FOR ANY CLAIMS ARISING FROM OR RELATING TO THESE TERMS OR YOUR USE OF THE SERVICE SHALL NOT EXCEED THE GREATER OF: (A) THE AMOUNT YOU HAVE PAID TO HIKITY IN THE DIRECTLY PRECEDING ONE (1) MONTH PERIOD, OR (B) FIFTY US DOLLARS (USD $50.00). THIS LIMITATION APPLES REGARDLESS OF THE LEGAL THEORY ON WHICH THE CLAIM IS BASED.
                     </p>
                 </section>
