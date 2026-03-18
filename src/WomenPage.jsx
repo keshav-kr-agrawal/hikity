@@ -476,8 +476,8 @@ const WomenPage = () => {
                             <div className="w-popup-alert">
                                 <span>⚠️ Valid till 21st March 2026. Contact now, or miss out!</span>
                             </div>
-                            <a href="/#contact" className="women-btn-primary" onClick={() => setShowPopup(false)}>
-                                Claim Offer Now
+                            <a href="mailto:contact@hikity.xyz" className="women-btn-primary" onClick={() => setShowPopup(false)}>
+                                Contact Now
                             </a>
                         </div>
                     </div>
