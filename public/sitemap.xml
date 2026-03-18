@@ -9,32 +9,32 @@
     
     <!-- Primary Brand Image -->
     <image:image>
-      <image:loc>https://hikity.xyz/hikity.jpeg</image:loc>
+      <image:loc>https://hikity.xyz/assets/hikity.jpeg</image:loc>
       <image:title>HIKITY Falcon Logo - Digital Architecture &amp; Agentic Systems</image:title>
       <image:caption>HIKITY Falcon Logo - Professional web solutions, AI agents, and digital transformation services by HIKAT</image:caption>
     </image:image>
     
     <!-- Service Showcase Images -->
     <image:image>
-      <image:loc>https://hikity.xyz/mountain.png</image:loc>
+      <image:loc>https://hikity.xyz/assets/mountain.png</image:loc>
       <image:title>HIKITY Web Development Services</image:title>
       <image:caption>Custom website design, responsive web solutions, and enterprise web development by HIKITY</image:caption>
     </image:image>
     
     <image:image>
-      <image:loc>https://hikity.xyz/scene.jpg</image:loc>
+      <image:loc>https://hikity.xyz/assets/scene.jpg</image:loc>
       <image:title>HIKITY Digital Solutions Portfolio</image:title>
       <image:caption>AI agents, 3D interactive experiences, smart automation, and innovative digital solutions</image:caption>
     </image:image>
     
     <image:image>
-      <image:loc>https://hikity.xyz/cloud.png</image:loc>
+      <image:loc>https://hikity.xyz/assets/cloud.png</image:loc>
       <image:title>HIKITY Cloud &amp; Enterprise Solutions</image:title>
       <image:caption>Enterprise web solutions, digital transformation, and scalable cloud-based applications</image:caption>
     </image:image>
     
     <image:image>
-      <image:loc>https://hikity.xyz/road.jpg</image:loc>
+      <image:loc>https://hikity.xyz/assets/road.jpg</image:loc>
       <image:title>HIKITY Contact &amp; Web Services</image:title>
       <image:caption>Get in touch for custom web development, free landing page design, and professional digital solutions</image:caption>
     </image:image>

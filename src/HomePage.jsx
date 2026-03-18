@@ -354,7 +354,7 @@ function HomePage() {
                 <nav className="navbar">
                     <div ref={logoRef} className="logo-section" onClick={scrollToTop}>
                         <div className="nav-brand-container">
-                            <img src="/hikity.jpeg" alt="HIKITY - Professional Web Solutions, Digital Agency, Custom Website Design" className="nav-logo-img" />
+                            <img src="/assets/hikity.jpeg" alt="HIKITY - Professional Web Solutions, Digital Agency, Custom Website Design" className="nav-logo-img" />
                         </div>
                         <span className="logo-text">HIKITY</span>
                     </div>
@@ -364,11 +364,11 @@ function HomePage() {
                 </nav>
 
                 {/* 2. TRANSITIONAL OVERLAYS */}
-                <img ref={cloudRef} src="/cloud.png" className="parallax-cloud" alt="HIKITY Cloud Solutions - Enterprise Web Development and Digital Transformation" />
+                <img ref={cloudRef} src="/assets/cloud.png" className="parallax-cloud" alt="HIKITY Cloud Solutions - Enterprise Web Development and Digital Transformation" />
 
                 {/* 3. PINNED BACKGROUNDS (ROAD LAYER - STAYS VISIBLE) */}
                 <div ref={roadImgRef} className="road-background-layer" style={{ opacity: 0 }}>
-                    <img src="/road.jpg" className="full-img" alt="HIKITY Contact - Web Solution Services, Landing Page Design, Custom Development" />
+                    <img src="/assets/road.jpg" className="full-img" alt="HIKITY Contact - Web Solution Services, Landing Page Design, Custom Development" />
                     <div className="road-dark-overlay"></div>
                 </div>
 
@@ -558,7 +558,7 @@ function HomePage() {
                             </div>
                         </div>
                         <div ref={parkingZoneRef} className="parking-zone">
-                            <img src="/scene.jpg" alt="HIKITY Digital Solutions - AI Agents, 3D Interactive Design, Smart Automation Services" className="mountain-preview" />
+                            <img src="/assets/scene.jpg" alt="HIKITY Digital Solutions - AI Agents, 3D Interactive Design, Smart Automation Services" className="mountain-preview" />
                         </div>
                     </div>
                 </div>
@@ -574,10 +574,10 @@ function HomePage() {
                     <div className="perspective-wrapper">
                         <div ref={heroImgRef} className="flip-card">
                             <div className="flip-card-front">
-                                <img src="/mountain.png" className="full-img" alt="HIKITY Web Development - Custom Websites, Responsive Design, Professional Web Agency" />
+                                <img src="/assets/mountain.png" className="full-img" alt="HIKITY Web Development - Custom Websites, Responsive Design, Professional Web Agency" />
                             </div>
                             <div className="flip-card-back">
-                                <img src="/scene.jpg" className="full-img" alt="HIKAT Digital Architecture - Agentic Systems, Brand Systems, Web Solutions India" />
+                                <img src="/assets/scene.jpg" className="full-img" alt="HIKAT Digital Architecture - Agentic Systems, Brand Systems, Web Solutions India" />
                             </div>
                         </div>
                     </div>

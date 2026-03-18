@@ -104,13 +104,13 @@ const WomenPage = () => {
             <nav className={`women-nav ${scrolled ? 'scrolled' : ''}`}>
                 <Link to="/" className="women-nav-logo">
                     <div className="women-nav-logo-circle">
-                        <img src="/hikity.jpeg" alt="Hikity" />
+                        <img src="/assets/hikity.jpeg" alt="Hikity" />
                     </div>
                     <span>HIKITY</span>
                 </Link>
                 <div className="women-nav-links">
                     <Link to="/" className="women-nav-link">Home</Link>
-                    <a href="mailto:contact@hikity.xyz" className="women-nav-cta">Contact Us</a>
+                    <Link to="/" className="women-nav-cta">Contact Us</Link>
                 </div>
             </nav>
 

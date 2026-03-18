@@ -2,9 +2,9 @@
 <browserconfig>
   <msapplication>
     <tile>
-      <square150x150logo src="/hikity.jpeg"/>
-      <square310x310logo src="/hikity.jpeg"/>
-      <wide310x150logo src="/hikity.jpeg"/>
+      <square150x150logo src="/assets/hikity.jpeg"/>
+      <square310x310logo src="/assets/hikity.jpeg"/>
+      <wide310x150logo src="/assets/hikity.jpeg"/>
       <TileColor>#000000</TileColor>
     </tile>
     <notification>

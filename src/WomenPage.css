@@ -23,12 +23,15 @@ body:has(.women-page) {
 
 /* ===== VARIABLES ===== */
 :root {
-    --w-peach: #ffb4a2;
-    --w-rose: #ff6b9d;
-    --w-gold: #ffd166;
+    --w-peach: #f9a8d4;
+    /* soft pink */
+    --w-rose: #c4b5fd;
+    /* lavender */
+    --w-gold: #7dd3fc;
+    /* sky blue */
     --w-deep: #0d0d0d;
     --w-glass: rgba(255, 255, 255, 0.04);
-    --w-border: rgba(255, 180, 162, 0.18);
+    --w-border: rgba(249, 168, 212, 0.2);
     --w-gutter: clamp(20px, 6vw, 100px);
 }
 
@@ -147,16 +150,16 @@ body:has(.women-page) {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(255, 107, 157, 0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(255, 180, 162, 0.10) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 50% at 70% 80%, rgba(255, 209, 102, 0.07) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(196, 181, 253, 0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(249, 168, 212, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 50% at 70% 80%, rgba(125, 211, 252, 0.08) 0%, transparent 50%),
         #000;
 }
 
 .women-hero-dots {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(255, 180, 162, 0.12) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(196, 181, 253, 0.14) 1px, transparent 1px);
     background-size: 48px 48px;
     opacity: 0.5;
 }
@@ -218,7 +221,7 @@ body:has(.women-page) {
 }
 
 .women-hero-title-accent {
-    background: linear-gradient(135deg, var(--w-peach), var(--w-rose), var(--w-gold));
+    background: linear-gradient(135deg, #f9a8d4, #c4b5fd, #7dd3fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -353,7 +356,7 @@ body:has(.women-page) {
 .women-stat-number {
     font-size: clamp(1.4rem, 2.5vw, 2rem);
     font-weight: 800;
-    background: linear-gradient(135deg, var(--w-peach), var(--w-gold));
+    background: linear-gradient(135deg, #f9a8d4, #c4b5fd);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -826,7 +829,7 @@ body:has(.women-page) {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--w-rose), var(--w-peach), var(--w-gold));
+    background: linear-gradient(90deg, #c4b5fd, #f9a8d4, #7dd3fc);
     opacity: 0;
     transition: opacity 0.4s ease;
 }
@@ -985,7 +988,7 @@ body:has(.women-page) {
     width: 600px;
     height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 107, 157, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(196, 181, 253, 0.10) 0%, rgba(249, 168, 212, 0.06) 50%, transparent 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1215,7 +1218,7 @@ body:has(.women-page) {
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--w-rose), var(--w-peach));
+    background: linear-gradient(135deg, #c4b5fd, #f9a8d4);
     flex-shrink: 0;
 }
 
@@ -1248,9 +1251,9 @@ body:has(.women-page) {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(255, 107, 157, 0.1) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 40% at 20% 30%, rgba(255, 180, 162, 0.07) 0%, transparent 50%),
-        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(255, 209, 102, 0.06) 0%, transparent 50%);
+        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(196, 181, 253, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 30%, rgba(249, 168, 212, 0.09) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(125, 211, 252, 0.07) 0%, transparent 50%);
 }
 
 .women-cta-content {
@@ -1269,7 +1272,7 @@ body:has(.women-page) {
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.03em;
-    background: linear-gradient(135deg, #fff 0%, var(--w-peach) 60%, var(--w-gold) 100%);
+    background: linear-gradient(135deg, #fff 0%, #f9a8d4 50%, #c4b5fd 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
