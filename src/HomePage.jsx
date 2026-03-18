@@ -425,7 +425,7 @@ function HomePage() {
 
                     {/* PHASE B: ROAD TERMINAL (Contact Form) */}
                     <section className="portal-section lower-portal">
-                        <div className="contact-protocol-wrapper">
+                        <div id="contact" className="contact-protocol-wrapper">
                             <div className="contact-header">
                                 <h2 className="portal-title">Initiate Protocol</h2>
                                 <h1 className="hero-text terminal-header">

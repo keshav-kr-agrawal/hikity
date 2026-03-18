@@ -109,7 +109,7 @@ const DentistPage = () => {
                 </Link>
                 <div className="dentist-nav-links">
                     <Link to="/" className="dentist-nav-link">Home</Link>
-                    <Link to="/" className="dentist-nav-cta">Contact Us (Book)</Link>
+                    <a href="/#contact" className="dentist-nav-cta">Contact Us (Book)</a>
                 </div>
             </nav>
 
@@ -135,11 +135,8 @@ const DentistPage = () => {
                             </p>
 
                             <div className="dentist-hero-actions">
-                                <Link to="/" className="dentist-btn-primary large">
+                                <a href="/#contact" className="dentist-btn-primary large">
                                     <span>Upgrade & Contact Us</span>
-                                </Link>
-                                <a href="#features" className="dentist-btn-secondary">
-                                    View Our Solutions
                                 </a>
                             </div>
 
@@ -312,9 +309,9 @@ const DentistPage = () => {
                             Let's build a digital presence that reflects your clinical excellence and attracts the patients you deserve.
                         </p>
                         <div className="dentist-cta-actions">
-                            <Link to="/" className="dentist-btn-primary large">
+                            <a href="/#contact" className="dentist-btn-primary large">
                                 <span>Contact Us for an Audit</span>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>
