@@ -352,148 +352,104 @@ p {
     align-items: center;
 }
 
-.dentist-hero-mockup {
-    background: #fff;
-    width: 100%;
-    max-width: 440px;
-    border-radius: 16px;
-    border: 1px solid var(--d-border);
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-    overflow: hidden;
+.dentist-hero-card-stack {
     position: relative;
-    transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+    width: 280px;
+    height: 320px;
 }
 
-.mockup-header {
-    background: var(--d-bg-light);
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--d-border);
-    display: flex;
-    gap: 6px;
-}
-
-.mockup-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-
-.mockup-dot.r {
-    background: #ef4444;
-}
-
-.mockup-dot.y {
-    background: #f59e0b;
-}
-
-.mockup-dot.g {
-    background: #10b981;
-}
-
-.mockup-body {
-    padding: 30px;
-}
-
-.mockup-profile {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.mockup-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--d-bg-tint);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    border: 2px solid var(--d-primary);
-}
-
-.mockup-lines {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.mockup-line {
-    height: 12px;
-    border-radius: 6px;
-    background: var(--d-border);
-}
-
-.mockup-line.w-full {
-    width: 80%;
-    background: var(--d-text-med);
-}
-
-.mockup-line.w-half {
-    width: 40%;
-}
-
-.mockup-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 30px;
-}
-
-.mockup-box {
-    height: 80px;
-    border-radius: 8px;
-    background: var(--d-bg-light);
-    border: 1px solid var(--d-border);
-}
-
-.mockup-btn {
-    background: var(--d-primary);
-    color: #fff;
-    text-align: center;
-    padding: 14px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 0.85rem;
-}
-
-.mockup-float {
+.dentist-float-card {
     position: absolute;
-    bottom: 30px;
-    left: -30px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.95);
     border: 1px solid var(--d-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-radius: 12px;
-    padding: 16px;
+    padding: 18px 22px;
     display: flex;
     align-items: center;
-    gap: 14px;
-    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
-}
-
-.nf-icon {
-    font-size: 1.6rem;
-    background: #dcfce7;
-    padding: 10px;
-    border-radius: 50%;
-}
-
-.nf-text {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.nf-text strong {
+    gap: 12px;
     font-size: 0.85rem;
+    font-weight: 700;
     color: var(--d-text-dark);
+    white-space: nowrap;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06), 0 4px 12px rgba(14, 165, 233, 0.08);
 }
 
-.nf-text span {
-    font-size: 0.75rem;
-    color: var(--d-text-light);
+.card-icon {
+    font-size: 1.4rem;
+}
+
+.card-1 {
+    top: 0;
+    left: 0;
+    animation: floatCard1 6s ease-in-out infinite;
+}
+
+.card-2 {
+    top: 40px;
+    right: -30px;
+    animation: floatCard2 7s ease-in-out infinite;
+}
+
+.card-3 {
+    bottom: 80px;
+    left: -10px;
+    animation: floatCard3 5.5s ease-in-out infinite;
+}
+
+.card-4 {
+    bottom: 20px;
+    right: 0;
+    animation: floatCard4 8s ease-in-out infinite;
+}
+
+@keyframes floatCard1 {
+
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-14px)
+    }
+}
+
+@keyframes floatCard2 {
+
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-10px)
+    }
+}
+
+@keyframes floatCard3 {
+
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-12px)
+    }
+}
+
+@keyframes floatCard4 {
+
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-8px)
+    }
 }
 
 .dentist-hero-scroll-indicator {

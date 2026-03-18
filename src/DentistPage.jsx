@@ -109,7 +109,7 @@ const DentistPage = () => {
                 </Link>
                 <div className="dentist-nav-links">
                     <Link to="/" className="dentist-nav-link">Home</Link>
-                    <Link to="/" className="dentist-nav-cta">Book Consultation</Link>
+                    <Link to="/" className="dentist-nav-cta">Contact Us (Book)</Link>
                 </div>
             </nav>
 
@@ -136,7 +136,7 @@ const DentistPage = () => {
 
                             <div className="dentist-hero-actions">
                                 <Link to="/" className="dentist-btn-primary large">
-                                    <span>Upgrade Your Practice</span>
+                                    <span>Upgrade & Contact Us</span>
                                 </Link>
                                 <a href="#features" className="dentist-btn-secondary">
                                     View Our Solutions
@@ -157,33 +157,22 @@ const DentistPage = () => {
                         </div>
 
                         <div className="dentist-hero-visual">
-                            <div className="dentist-hero-mockup">
-                                <div className="mockup-header">
-                                    <span className="mockup-dot r" />
-                                    <span className="mockup-dot y" />
-                                    <span className="mockup-dot g" />
+                            <div className="dentist-hero-card-stack">
+                                <div className="dentist-float-card card-1">
+                                    <span className="card-icon">🦷</span>
+                                    <span>Top Rated Local SEO</span>
                                 </div>
-                                <div className="mockup-body">
-                                    <div className="mockup-profile">
-                                        <div className="mockup-avatar">🦷</div>
-                                        <div className="mockup-lines">
-                                            <div className="mockup-line w-full" />
-                                            <div className="mockup-line w-half" />
-                                        </div>
-                                    </div>
-                                    <div className="mockup-grid">
-                                        <div className="mockup-box" />
-                                        <div className="mockup-box" />
-                                        <div className="mockup-box" />
-                                    </div>
-                                    <div className="mockup-btn">Book Appointment</div>
+                                <div className="dentist-float-card card-2">
+                                    <span className="card-icon">📅</span>
+                                    <span>Appointment System</span>
                                 </div>
-                                <div className="mockup-float notification">
-                                    <span className="nf-icon">📅</span>
-                                    <div className="nf-text">
-                                        <strong>New Booking</strong>
-                                        <span>Dental Implant Consult</span>
-                                    </div>
+                                <div className="dentist-float-card card-3">
+                                    <span className="card-icon">⭐</span>
+                                    <span>5-Star Patient Reviews</span>
+                                </div>
+                                <div className="dentist-float-card card-4">
+                                    <span className="card-icon">📈</span>
+                                    <span>New Patients Booked</span>
                                 </div>
                             </div>
                         </div>
@@ -324,7 +313,7 @@ const DentistPage = () => {
                         </p>
                         <div className="dentist-cta-actions">
                             <Link to="/" className="dentist-btn-primary large">
-                                <span>Get Your Free Practice Audit</span>
+                                <span>Contact Us for an Audit</span>
                             </Link>
                         </div>
                     </div>
