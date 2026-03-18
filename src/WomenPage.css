@@ -6,31 +6,37 @@ body:has(.women-page) {
     overflow-y: auto !important;
 }
 
-/* ===== ROOT VARIABLES — PROFESSIONAL CALM PALETTE ===== */
+/* ===== ROOT VARIABLES — FRESH PINK & BLUE PALETTE ===== */
 :root {
-    --w-pink: #d1bba8;
-    /* calm warm taupe / muted blush */
-    --w-lavender: #bbaaa3;
-    /* sophisticated dusty mushroom */
-    --w-sky: #dbd3ce;
-    /* soft sand/stone */
-    --w-cream: #fcfcfb;
-    /* crisp yet warm off-white page background */
-    --w-rose-bg: #f5f3f0;
-    /* very subtle warm-grey contrast bg */
-    --w-lav-bg: #f0ebe6;
-    /* slightly deeper stone bg */
-    --w-sky-bg: #ebe7e4;
-    /* soft beige bg */
-    --w-ink: #342e2a;
-    /* elegant espresso (primary text) */
-    --w-ink-2: rgba(52, 46, 42, 0.75);
-    /* secondary text */
-    --w-ink-3: rgba(52, 46, 42, 0.45);
-    /* tertiary text */
-    --w-border: rgba(187, 170, 163, 0.35);
-    /* soft mushroom border */
-    --w-card: rgba(255, 255, 255, 0.90);
+    /* Primary Accents — Eye-catchy but non-neon */
+    --w-pink: #f472b6;
+    /* elegant bright pink (Tailwind pink-400) */
+    --w-blue: #38bdf8;
+    /* elegant bright blue (Tailwind sky-400) */
+    --w-purple: #c084fc;
+    /* elegant purple (Tailwind purple-400) */
+
+    /* Backgrounds — Crisp, clean, uplifting */
+    --w-cream: #ffffff;
+    /* pure white for premium crispness */
+    --w-rose-bg: #fdf2f8;
+    /* lightest pink tint (pink-50) */
+    --w-sky-bg: #f0f9ff;
+    /* lightest blue tint (sky-50) */
+    --w-lav-bg: #f5f3ff;
+    /* lightest purple tint (purple-50) */
+
+    /* Typography — Deep slate for professional contrast */
+    --w-ink: #0f172a;
+    /* very dark slate (slate-900) */
+    --w-ink-2: #475569;
+    /* medium slate (slate-600) */
+    --w-ink-3: #94a3b8;
+    /* light slate (slate-400) */
+
+    /* Layout */
+    --w-border: #e2e8f0;
+    /* clean structural border (slate-200) */
     --w-gutter: clamp(20px, 6vw, 100px);
 }
 
@@ -60,10 +66,10 @@ body:has(.women-page) {
 }
 
 .women-nav.scrolled {
-    background: rgba(252, 252, 251, 0.92);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 1px 0 rgba(187, 170, 163, 0.3);
+    box-shadow: 0 1px 0 var(--w-border);
 }
 
 .women-nav-logo {
@@ -87,8 +93,8 @@ body:has(.women-page) {
     height: 38px;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid rgba(187, 170, 163, 0.5);
-    box-shadow: 0 2px 12px rgba(187, 170, 163, 0.25);
+    border: 2px solid var(--w-pink);
+    box-shadow: 0 4px 12px rgba(244, 114, 182, 0.2);
 }
 
 .women-nav-logo-circle img {
@@ -114,11 +120,11 @@ body:has(.women-page) {
 }
 
 .women-nav-link:hover {
-    color: var(--w-ink);
+    color: var(--w-pink);
 }
 
 .women-nav-cta {
-    background: var(--w-ink);
+    background: linear-gradient(135deg, var(--w-pink), var(--w-purple));
     color: #fff;
     text-decoration: none;
     padding: 10px clamp(18px, 2vw, 26px);
@@ -128,14 +134,13 @@ body:has(.women-page) {
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: all 0.4s ease;
-    box-shadow: 0 4px 16px rgba(52, 46, 42, 0.15);
+    box-shadow: 0 6px 16px rgba(192, 132, 252, 0.25);
+    border: none;
 }
 
 .women-nav-cta:hover {
-    background: var(--w-pink);
-    color: var(--w-ink);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(209, 187, 168, 0.5);
+    box-shadow: 0 8px 20px rgba(244, 114, 182, 0.4);
 }
 
 /* ===== HERO ===== */
@@ -161,17 +166,17 @@ body:has(.women-page) {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(209, 187, 168, 0.15) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(187, 170, 163, 0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 50% at 70% 80%, rgba(219, 211, 206, 0.18) 0%, transparent 50%);
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(244, 114, 182, 0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 50% at 70% 80%, rgba(192, 132, 252, 0.1) 0%, transparent 50%);
 }
 
 .women-hero-dots {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(187, 170, 163, 0.25) 1px, transparent 1px);
+    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
     background-size: 48px 48px;
-    opacity: 0.6;
+    opacity: 0.4;
 }
 
 .women-hero-content {
@@ -188,24 +193,25 @@ body:has(.women-page) {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(187, 170, 163, 0.18);
-    border: 1px solid rgba(187, 170, 163, 0.5);
+    background: #fff;
+    border: 1px solid var(--w-pink);
     border-radius: 100px;
     padding: 8px 20px;
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 3px;
-    color: var(--w-ink);
+    color: var(--w-pink);
     width: fit-content;
     animation: fadeInUp 0.8s ease both;
+    box-shadow: 0 4px 12px rgba(244, 114, 182, 0.15);
 }
 
 .women-hero-badge-dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--w-ink);
-    box-shadow: 0 0 8px rgba(52, 46, 42, 0.4);
+    background: var(--w-pink);
+    box-shadow: 0 0 8px var(--w-pink);
     animation: pulse 2.5s ease infinite;
 }
 
@@ -214,10 +220,12 @@ body:has(.women-page) {
     0%,
     100% {
         opacity: 1;
+        transform: scale(1);
     }
 
     50% {
-        opacity: 0.3;
+        opacity: 0.5;
+        transform: scale(1.2);
     }
 }
 
@@ -232,7 +240,7 @@ body:has(.women-page) {
 }
 
 .women-hero-title-accent {
-    background: linear-gradient(135deg, #a39081, #7c726d, #bdafa6);
+    background: linear-gradient(135deg, var(--w-pink), var(--w-purple), var(--w-blue));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -261,11 +269,12 @@ body:has(.women-page) {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: var(--w-ink);
+    background: linear-gradient(135deg, var(--w-pink), var(--w-purple));
     color: #fff;
     text-decoration: none;
     padding: 16px 32px;
-    border-radius: 5px;
+    border-radius: 8px;
+    /* Slightly softer than 5px */
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -275,17 +284,16 @@ body:has(.women-page) {
     overflow: hidden;
     cursor: pointer;
     border: none;
-    box-shadow: 0 6px 20px rgba(52, 46, 42, 0.2);
+    box-shadow: 0 10px 24px rgba(244, 114, 182, 0.3);
 }
 
 .women-btn-primary::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #a39081, #7c726d);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    background: linear-gradient(135deg, var(--w-purple), var(--w-blue));
+    opacity: 0;
+    transition: opacity 0.4s ease;
     z-index: 0;
 }
 
@@ -296,12 +304,12 @@ body:has(.women-page) {
 }
 
 .women-btn-primary:hover::before {
-    transform: scaleX(1);
+    opacity: 1;
 }
 
 .women-btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(124, 114, 109, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(56, 189, 248, 0.3);
 }
 
 .women-btn-primary.large {
@@ -317,13 +325,13 @@ body:has(.women-page) {
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: color 0.3s ease;
-    border-bottom: 1px solid rgba(52, 46, 42, 0.3);
+    border-bottom: 2px solid var(--w-border);
     padding-bottom: 3px;
 }
 
 .women-btn-secondary:hover {
-    color: var(--w-ink);
-    border-color: var(--w-ink);
+    color: var(--w-pink);
+    border-color: var(--w-pink);
 }
 
 .women-btn-outline {
@@ -333,21 +341,22 @@ body:has(.women-page) {
     color: var(--w-ink);
     text-decoration: none;
     padding: 16px 32px;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    border: 1.5px solid rgba(187, 170, 163, 0.8);
+    border: 2px solid var(--w-border);
     transition: all 0.4s ease;
-    background: rgba(187, 170, 163, 0.08);
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
 }
 
 .women-btn-outline:hover {
-    border-color: var(--w-ink);
-    color: var(--w-ink);
-    background: rgba(52, 46, 42, 0.05);
+    border-color: var(--w-blue);
+    color: var(--w-blue);
     transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);
 }
 
 .women-btn-outline.large {
@@ -371,7 +380,7 @@ body:has(.women-page) {
 .women-stat-number {
     font-size: clamp(1.4rem, 2.5vw, 2rem);
     font-weight: 800;
-    background: linear-gradient(135deg, #7c726d, #bbaaa3);
+    background: linear-gradient(135deg, var(--w-pink), var(--w-blue));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -383,13 +392,14 @@ body:has(.women-page) {
     color: var(--w-ink-3);
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
+    /* Bolder for visibility */
 }
 
 .women-stat-divider {
-    width: 1px;
+    width: 2px;
     height: 36px;
-    background: rgba(187, 170, 163, 0.5);
+    background: var(--w-border);
 }
 
 /* ===== HERO VISUAL (floating cards) ===== */
@@ -414,11 +424,10 @@ body:has(.women-page) {
 .women-float-card {
     position: absolute;
     background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(187, 170, 163, 0.4);
+    border: 1px solid var(--w-border);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-radius: 12px;
-    /* cleaner slightly sharper corners */
     padding: 18px 22px;
     display: flex;
     align-items: center;
@@ -427,7 +436,8 @@ body:has(.women-page) {
     font-weight: 600;
     color: var(--w-ink);
     white-space: nowrap;
-    box-shadow: 0 8px 32px rgba(52, 46, 42, 0.08), 0 2px 8px rgba(209, 187, 168, 0.1);
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06), 0 4px 12px rgba(244, 114, 182, 0.08);
+    /* slight pink tint to shadow */
 }
 
 .card-icon {
@@ -521,9 +531,9 @@ body:has(.women-page) {
 }
 
 .scroll-line {
-    width: 1px;
+    width: 2px;
     height: 44px;
-    background: linear-gradient(to bottom, transparent, var(--w-ink-3));
+    background: linear-gradient(to bottom, transparent, var(--w-blue));
     animation: scrollPulse 2.5s ease infinite;
 }
 
@@ -548,7 +558,7 @@ body:has(.women-page) {
     font-size: 0.55rem;
     letter-spacing: 4px;
     color: var(--w-ink-3);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -557,9 +567,9 @@ body:has(.women-page) {
     width: 100%;
     overflow: hidden;
     padding: 22px 0;
-    border-top: 1px solid rgba(187, 170, 163, 0.3);
-    border-bottom: 1px solid rgba(187, 170, 163, 0.3);
-    background: linear-gradient(90deg, rgba(209, 187, 168, 0.1) 0%, rgba(187, 170, 163, 0.15) 50%, rgba(219, 211, 206, 0.1) 100%);
+    border-top: 1px solid var(--w-border);
+    border-bottom: 1px solid var(--w-border);
+    background: linear-gradient(90deg, var(--w-rose-bg) 0%, var(--w-lav-bg) 50%, var(--w-sky-bg) 100%);
 }
 
 .women-manifesto-inner {
@@ -570,10 +580,10 @@ body:has(.women-page) {
 }
 
 .women-manifesto-item {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 4px;
-    color: var(--w-ink-2);
+    letter-spacing: 3px;
+    color: var(--w-ink);
     text-transform: uppercase;
     padding: 0 24px;
     white-space: nowrap;
@@ -583,7 +593,7 @@ body:has(.women-page) {
 }
 
 .manifesto-dot {
-    color: var(--w-ink-3);
+    color: var(--w-pink);
     font-size: 0.55rem;
 }
 
@@ -608,6 +618,7 @@ body:has(.women-page) {
 /* ===== SECTIONS BASE ===== */
 .women-section {
     padding: clamp(80px, 12vh, 140px) 0;
+    background: var(--w-cream);
 }
 
 .women-section-header {
@@ -621,11 +632,11 @@ body:has(.women-page) {
     font-size: 0.62rem;
     font-weight: 800;
     letter-spacing: 4px;
-    color: var(--w-ink-2);
+    color: var(--w-purple);
     text-transform: uppercase;
     margin-bottom: 18px;
-    background: rgba(187, 170, 163, 0.15);
-    border: 1px solid rgba(187, 170, 163, 0.35);
+    background: var(--w-lav-bg);
+    border: 1px solid rgba(192, 132, 252, 0.3);
     padding: 6px 18px;
     border-radius: 100px;
 }
@@ -760,7 +771,8 @@ body:has(.women-page) {
 
 /* ===== BUSINESSES SECTION ===== */
 .women-businesses {
-    background: #fff;
+    background: var(--w-rose-bg);
+    /* subtle pink background to contrast white cards */
 }
 
 .women-businesses-grid {
@@ -771,19 +783,19 @@ body:has(.women-page) {
 
 .women-biz-card {
     background: #fff;
-    border: 1px solid rgba(187, 170, 163, 0.35);
+    border: 1px solid var(--w-border);
     border-radius: 12px;
     padding: clamp(22px, 3vw, 34px);
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     cursor: default;
-    box-shadow: 0 2px 16px rgba(52, 46, 42, 0.03);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
 }
 
 .women-biz-card:hover {
-    border-color: rgba(187, 170, 163, 0.6);
+    border-color: var(--w-pink);
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(52, 46, 42, 0.08);
-    background: linear-gradient(145deg, #fff, #fcfcfb);
+    box-shadow: 0 16px 40px rgba(244, 114, 182, 0.1);
+    /* vibrant soft pink shadow */
 }
 
 .women-biz-icon {
@@ -819,13 +831,13 @@ body:has(.women-page) {
 }
 
 .women-businesses-more strong {
-    color: var(--w-ink);
+    color: var(--w-pink);
     font-weight: 700;
 }
 
 /* ===== STAGES SECTION ===== */
 .women-stages-section {
-    background: var(--w-rose-bg);
+    background: var(--w-cream);
 }
 
 .women-stages-grid {
@@ -836,13 +848,13 @@ body:has(.women-page) {
 
 .women-stage-card {
     background: #fff;
-    border: 1px solid rgba(187, 170, 163, 0.35);
+    border: 1px solid var(--w-border);
     border-radius: 12px;
     padding: clamp(26px, 3.5vw, 42px);
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    box-shadow: 0 2px 14px rgba(187, 170, 163, 0.10);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
 }
 
 .women-stage-card::before {
@@ -851,16 +863,18 @@ body:has(.women-page) {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #a39081, #7c726d, #bdafa6);
+    height: 4px;
+    /* thicker accent line */
+    background: linear-gradient(90deg, var(--w-pink), var(--w-purple), var(--w-blue));
     opacity: 0;
     transition: opacity 0.4s ease;
 }
 
 .women-stage-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(187, 170, 163, 0.6);
-    box-shadow: 0 16px 36px rgba(52, 46, 42, 0.08);
+    border-color: var(--w-purple);
+    box-shadow: 0 20px 48px rgba(192, 132, 252, 0.12);
+    /* vibrant purple shadow */
 }
 
 .women-stage-card:hover::before {
@@ -871,15 +885,17 @@ body:has(.women-page) {
     font-size: 4rem;
     font-weight: 800;
     line-height: 1;
-    color: rgba(187, 170, 163, 0.3);
+    color: var(--w-sky-bg);
+    /* subtle blue number backing */
     margin-bottom: -8px;
+    text-shadow: 1px 1px 0 var(--w-border);
 }
 
 .women-stage-tag {
     font-size: 0.6rem;
     font-weight: 800;
     letter-spacing: 3.5px;
-    color: var(--w-ink-2);
+    color: var(--w-blue);
     text-transform: uppercase;
     margin-bottom: 14px;
 }
@@ -920,7 +936,7 @@ body:has(.women-page) {
 }
 
 .point-check {
-    color: var(--w-ink);
+    color: var(--w-pink);
     font-weight: 800;
     font-size: 0.75rem;
     flex-shrink: 0;
@@ -928,28 +944,38 @@ body:has(.women-page) {
 
 /* ===== SERVICES (HOW HIKITY HELPS) ===== */
 .women-services-section {
-    background: #fff;
+    background: var(--w-sky-bg);
+    /* subtle blue background */
 }
 
 .women-services-list {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid rgba(187, 170, 163, 0.35);
+    border-top: 2px solid var(--w-border);
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.05);
 }
 
 .women-service-row {
     display: flex;
     align-items: center;
     gap: clamp(20px, 3vw, 48px);
-    padding: clamp(20px, 2.8vh, 32px) 0;
-    border-bottom: 1px solid rgba(187, 170, 163, 0.25);
+    padding: clamp(20px, 2.8vh, 32px) 20px;
+    border-bottom: 1px solid var(--w-border);
     transition: all 0.3s ease;
     cursor: default;
 }
 
+.women-service-row:last-child {
+    border-bottom: none;
+}
+
 .women-service-row:hover {
-    padding-left: 14px;
-    background: linear-gradient(90deg, rgba(187, 170, 163, 0.1), transparent);
+    padding-left: 30px;
+    background: var(--w-sky-bg);
+    /* hover row goes blue-tinted */
     border-radius: 8px;
 }
 
@@ -957,7 +983,7 @@ body:has(.women-page) {
     font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 2px;
-    color: var(--w-lavender);
+    color: var(--w-blue);
     min-width: 38px;
     flex-shrink: 0;
 }
@@ -985,20 +1011,20 @@ body:has(.women-page) {
 }
 
 .women-service-arrow {
-    color: rgba(187, 170, 163, 0.6);
+    color: var(--w-ink-3);
     font-size: 1.3rem;
     flex-shrink: 0;
     transition: all 0.3s ease;
 }
 
 .women-service-row:hover .women-service-arrow {
-    color: var(--w-ink);
+    color: var(--w-blue);
     transform: translateX(6px);
 }
 
 /* ===== GLOBAL REACH SECTION ===== */
 .women-global-section {
-    background: linear-gradient(135deg, #f0ebe6 0%, #f5f3f0 50%, #ebe7e4 100%);
+    background: linear-gradient(135deg, var(--w-cream) 0%, var(--w-sky-bg) 50%, var(--w-cream) 100%);
     position: relative;
     overflow: hidden;
 }
@@ -1014,7 +1040,8 @@ body:has(.women-page) {
     width: 700px;
     height: 700px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(187, 170, 163, 0.2) 0%, rgba(209, 187, 168, 0.12) 50%, transparent 70%);
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(244, 114, 182, 0.08) 50%, transparent 70%);
+    /* Bright blue & pink glow */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1047,16 +1074,18 @@ body:has(.women-page) {
     display: flex;
     gap: 18px;
     align-items: flex-start;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(187, 170, 163, 0.35);
+    background: #fff;
+    border: 1px solid var(--w-border);
     border-radius: 12px;
     padding: 16px 20px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
 }
 
 .women-global-pillar:hover {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 6px 24px rgba(52, 46, 42, 0.06);
+    border-color: var(--w-blue);
+    box-shadow: 0 10px 24px rgba(56, 189, 248, 0.15);
+    /* blue glow shadow */
     transform: translateX(6px);
 }
 
@@ -1102,7 +1131,8 @@ body:has(.women-page) {
 
 .orbit-ring {
     position: absolute;
-    border: 1px solid rgba(187, 170, 163, 0.45);
+    border: 2px solid var(--w-border);
+    /* clean thicker borders */
     border-radius: 50%;
     animation: orbitSpin 20s linear infinite;
 }
@@ -1118,13 +1148,18 @@ body:has(.women-page) {
     height: 72%;
     animation-duration: 18s;
     animation-direction: reverse;
+    border-color: rgba(56, 189, 248, 0.3);
 }
 
+/* blue inner ring */
 .orbit-3 {
     width: 44%;
     height: 44%;
     animation-duration: 12s;
+    border-color: rgba(244, 114, 182, 0.3);
 }
+
+/* pink innermost ring */
 
 @keyframes orbitSpin {
     0% {
@@ -1147,13 +1182,13 @@ body:has(.women-page) {
     letter-spacing: 4px;
     color: var(--w-ink);
     text-align: center;
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(187, 170, 163, 0.6);
+    background: #fff;
+    border: 2px solid var(--w-blue);
     border-radius: 50%;
     width: 80px;
     height: 80px;
     justify-content: center;
-    box-shadow: 0 4px 24px rgba(52, 46, 42, 0.08);
+    box-shadow: 0 4px 24px rgba(56, 189, 248, 0.25);
 }
 
 .orbit-center-sub {
@@ -1169,20 +1204,21 @@ body:has(.women-page) {
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(187, 170, 163, 0.5);
+    background: #fff;
+    border: 2px solid var(--w-border);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    box-shadow: 0 4px 16px rgba(52, 46, 42, 0.1);
-    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+    /* clean deep shadow */
 }
 
 .node-1 {
     top: -5%;
     left: 50%;
     transform: translateX(-50%);
+    border-color: var(--w-pink);
 }
 
 .node-2 {
@@ -1193,12 +1229,14 @@ body:has(.women-page) {
 .node-3 {
     bottom: 20%;
     right: -5%;
+    border-color: var(--w-blue);
 }
 
 .node-4 {
     bottom: -5%;
     left: 50%;
     transform: translateX(-50%);
+    border-color: var(--w-purple);
 }
 
 .node-5 {
@@ -1209,6 +1247,7 @@ body:has(.women-page) {
 /* ===== TESTIMONIALS ===== */
 .women-testimonials {
     background: var(--w-lav-bg);
+    /* light purple bg */
 }
 
 .women-testimonials-grid {
@@ -1219,26 +1258,28 @@ body:has(.women-page) {
 
 .women-testimonial-card {
     background: #fff;
-    border: 1px solid rgba(187, 170, 163, 0.35);
+    border: 1px solid var(--w-border);
     border-radius: 12px;
     padding: clamp(28px, 4vw, 44px);
     position: relative;
     overflow: hidden;
     transition: all 0.4s ease;
-    box-shadow: 0 2px 14px rgba(187, 170, 163, 0.08);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
 }
 
 .women-testimonial-card:hover {
-    border-color: rgba(187, 170, 163, 0.6);
+    border-color: var(--w-purple);
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(52, 46, 42, 0.06);
+    box-shadow: 0 16px 40px rgba(192, 132, 252, 0.15);
+    /* purple hover shadow */
 }
 
 .testimonial-quote-mark {
     font-size: 5rem;
     font-weight: 800;
     line-height: 0.6;
-    color: rgba(187, 170, 163, 0.45);
+    color: var(--w-lav-bg);
+    text-shadow: 1px 1px 0 var(--w-border);
     font-family: Georgia, serif;
     margin-bottom: 20px;
 }
@@ -1247,7 +1288,7 @@ body:has(.women-page) {
     font-size: clamp(0.9rem, 1.2vw, 1rem);
     line-height: 1.8;
     color: var(--w-ink-2);
-    font-weight: 400;
+    font-weight: 500;
     margin: 0 0 28px;
     font-style: italic;
 }
@@ -1256,7 +1297,7 @@ body:has(.women-page) {
     display: flex;
     align-items: center;
     gap: 14px;
-    border-top: 1px solid rgba(187, 170, 163, 0.3);
+    border-top: 1px solid var(--w-border);
     padding-top: 20px;
 }
 
@@ -1264,15 +1305,16 @@ body:has(.women-page) {
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #bbaaa3, #d1bba8);
+    background: linear-gradient(135deg, var(--w-purple), var(--w-pink));
+    /* punchy gradient avatar */
     flex-shrink: 0;
-    box-shadow: 0 2px 10px rgba(187, 170, 163, 0.4);
+    box-shadow: 0 4px 12px rgba(244, 114, 182, 0.3);
 }
 
 .testimonial-name {
     display: block;
     font-size: 0.88rem;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--w-ink);
     letter-spacing: 0.5px;
 }
@@ -1280,8 +1322,8 @@ body:has(.women-page) {
 .testimonial-business {
     display: block;
     font-size: 0.72rem;
-    color: var(--w-ink-2);
-    font-weight: 500;
+    color: var(--w-purple);
+    font-weight: 700;
     margin-top: 3px;
     letter-spacing: 0.5px;
 }
@@ -1291,16 +1333,16 @@ body:has(.women-page) {
     position: relative;
     overflow: hidden;
     text-align: center;
-    background: linear-gradient(135deg, #fcfcfb 0%, #f5f3f0 50%, #ebe7e4 100%);
+    background: linear-gradient(135deg, var(--w-rose-bg) 0%, var(--w-sky-bg) 100%);
 }
 
 .women-cta-bg {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(187, 170, 163, 0.25) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 40% at 20% 30%, rgba(209, 187, 168, 0.20) 0%, transparent 50%),
-        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(219, 211, 206, 0.15) 0%, transparent 50%);
+        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(244, 114, 182, 0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 30%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(192, 132, 252, 0.1) 0%, transparent 50%);
 }
 
 .women-cta-content {
@@ -1319,7 +1361,7 @@ body:has(.women-page) {
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.03em;
-    background: linear-gradient(135deg, var(--w-ink) 0%, #7c726d 50%, #a39081 100%);
+    background: linear-gradient(135deg, var(--w-ink) 0%, var(--w-pink) 50%, var(--w-purple) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1330,7 +1372,7 @@ body:has(.women-page) {
     font-size: clamp(0.95rem, 1.3vw, 1.1rem);
     line-height: 1.8;
     color: var(--w-ink-2);
-    font-weight: 400;
+    font-weight: 500;
     max-width: 600px;
     margin: 0;
 }
@@ -1350,10 +1392,10 @@ body:has(.women-page) {
 }
 
 .women-cta-email a {
-    color: var(--w-ink);
+    color: var(--w-pink);
     text-decoration: none;
     transition: opacity 0.3s ease;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .women-cta-email a:hover {
