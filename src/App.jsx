@@ -6,6 +6,7 @@ import WomenPage from './WomenPage';
 import DentistPage from './DentistPage';
 import SchoolPage from './SchoolPage';
 import CafePage from './CafePage';
+import MusicPage from './MusicPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/dentist" element={<DentistPage />} />
         <Route path="/school" element={<SchoolPage />} />
         <Route path="/cafe" element={<CafePage />} />
+        <Route path="/art/music" element={<MusicPage />} />
       </Routes>
     </Router>
   );
