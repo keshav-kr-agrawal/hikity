@@ -9,6 +9,7 @@ import CafePage from './CafePage';
 import MusicPage from './MusicPage';
 import CraftPage from './CraftPage';
 import WorkPage from './WorkPage';
+import BusinessPage from './BusinessPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/art/music" element={<MusicPage />} />
         <Route path="/art/craft" element={<CraftPage />} />
         <Route path="/work" element={<WorkPage />} />
+        <Route path="/business" element={<BusinessPage />} />
       </Routes>
     </Router>
   );
