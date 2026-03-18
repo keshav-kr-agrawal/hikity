@@ -368,8 +368,11 @@ const WomenPage = () => {
                                 <div className="orbit-ring orbit-2" />
                                 <div className="orbit-ring orbit-3" />
                                 <div className="orbit-center">
-                                    <span>HIKITY</span>
-                                    <span className="orbit-center-sub">Global</span>
+                                    <img
+                                        src="/assets/hikity.jpeg"
+                                        alt="Hikity Logo"
+                                        className="orbit-center-logo"
+                                    />
                                 </div>
                                 <div className="orbit-node node-1"><span>🇮🇳</span></div>
                                 <div className="orbit-node node-2"><span>🇺🇸</span></div>
