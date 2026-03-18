@@ -6,37 +6,34 @@ body:has(.women-page) {
     overflow-y: auto !important;
 }
 
-/* ===== ROOT VARIABLES — FRESH PINK & BLUE PALETTE ===== */
+/* ===== ROOT VARIABLES — VIBRANT BEAUTY/FEMININE BRAND PALETTE ===== */
 :root {
-    /* Primary Accents — Eye-catchy but non-neon */
-    --w-pink: #f472b6;
-    /* elegant bright pink (Tailwind pink-400) */
-    --w-blue: #38bdf8;
-    /* elegant bright blue (Tailwind sky-400) */
-    --w-purple: #c084fc;
-    /* elegant purple (Tailwind purple-400) */
+    /* Primary Accents — Deep, vibrant, and extremely catchy (but not neon) */
+    --w-pink: #e83e8c;
+    /* rich vibrant rose pink */
+    --w-blue: #0d84fb;
+    /* deep vibrant sky blue */
+    --w-purple: #8a2be2;
+    /* deep vibrant purple */
 
-    /* Backgrounds — Crisp, clean, uplifting */
-    --w-cream: #ffffff;
-    /* pure white for premium crispness */
-    --w-rose-bg: #fdf2f8;
-    /* lightest pink tint (pink-50) */
-    --w-sky-bg: #f0f9ff;
-    /* lightest blue tint (sky-50) */
-    --w-lav-bg: #f5f3ff;
-    /* lightest purple tint (purple-50) */
+    /* Backgrounds — Tinted, decidedly female-oriented rather than plain white */
+    --w-cream: #fff0f5;
+    /* soft lavender blush */
+    --w-rose-bg: #ffe6eb;
+    /* warm misty rose */
+    --w-sky-bg: #e6f2ff;
+    /* soft azure tint */
+    --w-lav-bg: #f3e8ff;
+    /* soft lilac tint */
 
-    /* Typography — Deep slate for professional contrast */
-    --w-ink: #0f172a;
-    /* very dark slate (slate-900) */
-    --w-ink-2: #475569;
-    /* medium slate (slate-600) */
-    --w-ink-3: #94a3b8;
-    /* light slate (slate-400) */
+    /* Typography — Deep navy-slate for powerful, professional contrast */
+    --w-ink: #1a1d2d;
+    --w-ink-2: #4a5568;
+    --w-ink-3: #718096;
 
     /* Layout */
-    --w-border: #e2e8f0;
-    /* clean structural border (slate-200) */
+    --w-border: rgba(232, 62, 140, 0.2);
+    /* soft pink border */
     --w-gutter: clamp(20px, 6vw, 100px);
 }
 
@@ -66,7 +63,8 @@ body:has(.women-page) {
 }
 
 .women-nav.scrolled {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 240, 245, 0.95);
+    /* lavender blush */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 1px 0 var(--w-border);
@@ -94,7 +92,7 @@ body:has(.women-page) {
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(--w-pink);
-    box-shadow: 0 4px 12px rgba(244, 114, 182, 0.2);
+    box-shadow: 0 4px 12px rgba(232, 62, 140, 0.25);
 }
 
 .women-nav-logo-circle img {
@@ -113,7 +111,7 @@ body:has(.women-page) {
     color: var(--w-ink-2);
     text-decoration: none;
     font-size: 0.78rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: color 0.3s ease;
@@ -130,17 +128,17 @@ body:has(.women-page) {
     padding: 10px clamp(18px, 2vw, 26px);
     border-radius: 100px;
     font-size: 0.7rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: all 0.4s ease;
-    box-shadow: 0 6px 16px rgba(192, 132, 252, 0.25);
+    box-shadow: 0 6px 16px rgba(138, 43, 226, 0.3);
     border: none;
 }
 
 .women-nav-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(244, 114, 182, 0.4);
+    box-shadow: 0 8px 20px rgba(232, 62, 140, 0.45);
 }
 
 /* ===== HERO ===== */
@@ -166,17 +164,17 @@ body:has(.women-page) {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(244, 114, 182, 0.1) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 50% at 70% 80%, rgba(192, 132, 252, 0.1) 0%, transparent 50%);
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(232, 62, 140, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(13, 132, 251, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 50% at 70% 80%, rgba(138, 43, 226, 0.12) 0%, transparent 50%);
 }
 
 .women-hero-dots {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-image: radial-gradient(#e2d5e6 1px, transparent 1px);
     background-size: 48px 48px;
-    opacity: 0.4;
+    opacity: 0.7;
 }
 
 .women-hero-content {
@@ -198,12 +196,12 @@ body:has(.women-page) {
     border-radius: 100px;
     padding: 8px 20px;
     font-size: 0.65rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 3px;
     color: var(--w-pink);
     width: fit-content;
     animation: fadeInUp 0.8s ease both;
-    box-shadow: 0 4px 12px rgba(244, 114, 182, 0.15);
+    box-shadow: 0 4px 12px rgba(232, 62, 140, 0.2);
 }
 
 .women-hero-badge-dot {
@@ -250,7 +248,7 @@ body:has(.women-page) {
     font-size: clamp(0.95rem, 1.4vw, 1.15rem);
     line-height: 1.85;
     color: var(--w-ink-2);
-    font-weight: 400;
+    font-weight: 500;
     max-width: 600px;
     margin: 0;
     animation: fadeInUp 1s ease 0.2s both;
@@ -274,9 +272,8 @@ body:has(.women-page) {
     text-decoration: none;
     padding: 16px 32px;
     border-radius: 8px;
-    /* Slightly softer than 5px */
     font-size: 0.78rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
@@ -284,7 +281,7 @@ body:has(.women-page) {
     overflow: hidden;
     cursor: pointer;
     border: none;
-    box-shadow: 0 10px 24px rgba(244, 114, 182, 0.3);
+    box-shadow: 0 10px 24px rgba(232, 62, 140, 0.35);
 }
 
 .women-btn-primary::before {
@@ -309,7 +306,7 @@ body:has(.women-page) {
 
 .women-btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 14px 32px rgba(56, 189, 248, 0.3);
+    box-shadow: 0 14px 32px rgba(13, 132, 251, 0.4);
 }
 
 .women-btn-primary.large {
@@ -321,11 +318,11 @@ body:has(.women-page) {
     color: var(--w-ink-2);
     text-decoration: none;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: color 0.3s ease;
-    border-bottom: 2px solid var(--w-border);
+    border-bottom: 2px solid rgba(74, 85, 104, 0.3);
     padding-bottom: 3px;
 }
 
@@ -343,20 +340,20 @@ body:has(.women-page) {
     padding: 16px 32px;
     border-radius: 8px;
     font-size: 0.78rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 2px;
     text-transform: uppercase;
-    border: 2px solid var(--w-border);
+    border: 2px solid var(--w-pink);
     transition: all 0.4s ease;
     background: #fff;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    box-shadow: 0 4px 12px rgba(232, 62, 140, 0.1);
 }
 
 .women-btn-outline:hover {
     border-color: var(--w-blue);
     color: var(--w-blue);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);
+    box-shadow: 0 8px 24px rgba(13, 132, 251, 0.25);
 }
 
 .women-btn-outline.large {
@@ -392,8 +389,7 @@ body:has(.women-page) {
     color: var(--w-ink-3);
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    font-weight: 600;
-    /* Bolder for visibility */
+    font-weight: 700;
 }
 
 .women-stat-divider {
@@ -433,11 +429,10 @@ body:has(.women-page) {
     align-items: center;
     gap: 12px;
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--w-ink);
     white-space: nowrap;
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06), 0 4px 12px rgba(244, 114, 182, 0.08);
-    /* slight pink tint to shadow */
+    box-shadow: 0 12px 32px rgba(26, 29, 45, 0.08), 0 4px 12px rgba(232, 62, 140, 0.15);
 }
 
 .card-icon {
@@ -558,7 +553,7 @@ body:has(.women-page) {
     font-size: 0.55rem;
     letter-spacing: 4px;
     color: var(--w-ink-3);
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
 }
 
@@ -581,7 +576,7 @@ body:has(.women-page) {
 
 .women-manifesto-item {
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 3px;
     color: var(--w-ink);
     text-transform: uppercase;
@@ -635,10 +630,11 @@ body:has(.women-page) {
     color: var(--w-purple);
     text-transform: uppercase;
     margin-bottom: 18px;
-    background: var(--w-lav-bg);
-    border: 1px solid rgba(192, 132, 252, 0.3);
+    background: #fff;
+    border: 1px solid var(--w-purple);
     padding: 6px 18px;
     border-radius: 100px;
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.15);
 }
 
 .women-section-title {
@@ -654,7 +650,7 @@ body:has(.women-page) {
     font-size: clamp(0.95rem, 1.3vw, 1.1rem);
     line-height: 1.8;
     color: var(--w-ink-2);
-    font-weight: 400;
+    font-weight: 500;
     margin: 0;
 }
 
@@ -772,7 +768,7 @@ body:has(.women-page) {
 /* ===== BUSINESSES SECTION ===== */
 .women-businesses {
     background: var(--w-rose-bg);
-    /* subtle pink background to contrast white cards */
+    /* decidedly pink background */
 }
 
 .women-businesses-grid {
@@ -788,13 +784,13 @@ body:has(.women-page) {
     padding: clamp(22px, 3vw, 34px);
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     cursor: default;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    box-shadow: 0 4px 12px rgba(26, 29, 45, 0.04);
 }
 
 .women-biz-card:hover {
     border-color: var(--w-pink);
     transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(244, 114, 182, 0.1);
+    box-shadow: 0 16px 40px rgba(232, 62, 140, 0.2);
     /* vibrant soft pink shadow */
 }
 
@@ -807,7 +803,7 @@ body:has(.women-page) {
 
 .women-biz-title {
     font-size: 0.88rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.5px;
     margin: 0 0 10px;
     text-transform: uppercase;
@@ -819,7 +815,7 @@ body:has(.women-page) {
     line-height: 1.7;
     color: var(--w-ink-2);
     margin: 0;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .women-businesses-more {
@@ -827,12 +823,12 @@ body:has(.women-page) {
     margin-top: clamp(40px, 5vh, 60px);
     font-size: 1rem;
     color: var(--w-ink-2);
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .women-businesses-more strong {
     color: var(--w-pink);
-    font-weight: 700;
+    font-weight: 800;
 }
 
 /* ===== STAGES SECTION ===== */
@@ -854,7 +850,7 @@ body:has(.women-page) {
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    box-shadow: 0 4px 16px rgba(26, 29, 45, 0.05);
 }
 
 .women-stage-card::before {
@@ -873,7 +869,7 @@ body:has(.women-page) {
 .women-stage-card:hover {
     transform: translateY(-5px);
     border-color: var(--w-purple);
-    box-shadow: 0 20px 48px rgba(192, 132, 252, 0.12);
+    box-shadow: 0 20px 48px rgba(138, 43, 226, 0.2);
     /* vibrant purple shadow */
 }
 
@@ -902,7 +898,7 @@ body:has(.women-page) {
 
 .women-stage-title {
     font-size: clamp(1.1rem, 1.8vw, 1.4rem);
-    font-weight: 700;
+    font-weight: 800;
     margin: 0 0 14px;
     letter-spacing: -0.02em;
     line-height: 1.3;
@@ -914,7 +910,7 @@ body:has(.women-page) {
     line-height: 1.75;
     color: var(--w-ink-2);
     margin: 0 0 22px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .women-stage-points {
@@ -932,7 +928,7 @@ body:has(.women-page) {
     gap: 10px;
     font-size: 0.78rem;
     color: var(--w-ink-2);
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .point-check {
@@ -945,7 +941,7 @@ body:has(.women-page) {
 /* ===== SERVICES (HOW HIKITY HELPS) ===== */
 .women-services-section {
     background: var(--w-sky-bg);
-    /* subtle blue background */
+    /* decidedly blue background */
 }
 
 .women-services-list {
@@ -955,7 +951,7 @@ body:has(.women-page) {
     background: #fff;
     border-radius: 16px;
     padding: 20px;
-    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.05);
+    box-shadow: 0 10px 40px rgba(26, 29, 45, 0.05);
 }
 
 .women-service-row {
@@ -975,7 +971,6 @@ body:has(.women-page) {
 .women-service-row:hover {
     padding-left: 30px;
     background: var(--w-sky-bg);
-    /* hover row goes blue-tinted */
     border-radius: 8px;
 }
 
@@ -994,7 +989,7 @@ body:has(.women-page) {
 
 .women-service-title {
     font-size: clamp(0.9rem, 1.3vw, 1.05rem);
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.5px;
     margin: 0 0 6px;
     text-transform: uppercase;
@@ -1006,7 +1001,7 @@ body:has(.women-page) {
     line-height: 1.65;
     color: var(--w-ink-2);
     margin: 0;
-    font-weight: 400;
+    font-weight: 500;
     max-width: 680px;
 }
 
@@ -1040,7 +1035,7 @@ body:has(.women-page) {
     width: 700px;
     height: 700px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(244, 114, 182, 0.08) 50%, transparent 70%);
+    background: radial-gradient(circle, rgba(13, 132, 251, 0.15) 0%, rgba(232, 62, 140, 0.1) 50%, transparent 70%);
     /* Bright blue & pink glow */
     top: 50%;
     left: 50%;
@@ -1079,13 +1074,13 @@ body:has(.women-page) {
     border-radius: 12px;
     padding: 16px 20px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    box-shadow: 0 4px 12px rgba(26, 29, 45, 0.04);
 }
 
 .women-global-pillar:hover {
     border-color: var(--w-blue);
-    box-shadow: 0 10px 24px rgba(56, 189, 248, 0.15);
-    /* blue glow shadow */
+    box-shadow: 0 10px 24px rgba(13, 132, 251, 0.2);
+    /* deep blue glow shadow */
     transform: translateX(6px);
 }
 
@@ -1097,7 +1092,7 @@ body:has(.women-page) {
 
 .women-global-pillar h4 {
     font-size: 0.88rem;
-    font-weight: 700;
+    font-weight: 800;
     margin: 0 0 4px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -1109,7 +1104,7 @@ body:has(.women-page) {
     line-height: 1.6;
     color: var(--w-ink-2);
     margin: 0;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /* ===== ORBIT VISUAL ===== */
@@ -1132,7 +1127,6 @@ body:has(.women-page) {
 .orbit-ring {
     position: absolute;
     border: 2px solid var(--w-border);
-    /* clean thicker borders */
     border-radius: 50%;
     animation: orbitSpin 20s linear infinite;
 }
@@ -1148,18 +1142,18 @@ body:has(.women-page) {
     height: 72%;
     animation-duration: 18s;
     animation-direction: reverse;
-    border-color: rgba(56, 189, 248, 0.3);
+    border-color: rgba(13, 132, 251, 0.4);
 }
 
-/* blue inner ring */
+/* deep blue inner ring */
 .orbit-3 {
     width: 44%;
     height: 44%;
     animation-duration: 12s;
-    border-color: rgba(244, 114, 182, 0.3);
+    border-color: rgba(232, 62, 140, 0.4);
 }
 
-/* pink innermost ring */
+/* deep pink innermost ring */
 
 @keyframes orbitSpin {
     0% {
@@ -1188,14 +1182,14 @@ body:has(.women-page) {
     width: 80px;
     height: 80px;
     justify-content: center;
-    box-shadow: 0 4px 24px rgba(56, 189, 248, 0.25);
+    box-shadow: 0 4px 24px rgba(13, 132, 251, 0.3);
 }
 
 .orbit-center-sub {
     font-size: 0.6rem;
     letter-spacing: 3px;
     color: var(--w-ink-3);
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 4px;
 }
 
@@ -1210,8 +1204,7 @@ body:has(.women-page) {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
-    /* clean deep shadow */
+    box-shadow: 0 6px 16px rgba(26, 29, 45, 0.1);
 }
 
 .node-1 {
@@ -1247,7 +1240,7 @@ body:has(.women-page) {
 /* ===== TESTIMONIALS ===== */
 .women-testimonials {
     background: var(--w-lav-bg);
-    /* light purple bg */
+    /* purple bg */
 }
 
 .women-testimonials-grid {
@@ -1264,14 +1257,13 @@ body:has(.women-page) {
     position: relative;
     overflow: hidden;
     transition: all 0.4s ease;
-    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+    box-shadow: 0 6px 20px rgba(26, 29, 45, 0.05);
 }
 
 .women-testimonial-card:hover {
     border-color: var(--w-purple);
     transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(192, 132, 252, 0.15);
-    /* purple hover shadow */
+    box-shadow: 0 16px 40px rgba(138, 43, 226, 0.2);
 }
 
 .testimonial-quote-mark {
@@ -1288,7 +1280,7 @@ body:has(.women-page) {
     font-size: clamp(0.9rem, 1.2vw, 1rem);
     line-height: 1.8;
     color: var(--w-ink-2);
-    font-weight: 500;
+    font-weight: 600;
     margin: 0 0 28px;
     font-style: italic;
 }
@@ -1306,9 +1298,8 @@ body:has(.women-page) {
     height: 42px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--w-purple), var(--w-pink));
-    /* punchy gradient avatar */
     flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(244, 114, 182, 0.3);
+    box-shadow: 0 4px 12px rgba(232, 62, 140, 0.4);
 }
 
 .testimonial-name {
@@ -1323,7 +1314,7 @@ body:has(.women-page) {
     display: block;
     font-size: 0.72rem;
     color: var(--w-purple);
-    font-weight: 700;
+    font-weight: 800;
     margin-top: 3px;
     letter-spacing: 0.5px;
 }
@@ -1340,9 +1331,9 @@ body:has(.women-page) {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(244, 114, 182, 0.1) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 40% at 20% 30%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(192, 132, 252, 0.1) 0%, transparent 50%);
+        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(232, 62, 140, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 30%, rgba(13, 132, 251, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%);
 }
 
 .women-cta-content {
@@ -1372,7 +1363,7 @@ body:has(.women-page) {
     font-size: clamp(0.95rem, 1.3vw, 1.1rem);
     line-height: 1.8;
     color: var(--w-ink-2);
-    font-weight: 500;
+    font-weight: 600;
     max-width: 600px;
     margin: 0;
 }
@@ -1395,7 +1386,7 @@ body:has(.women-page) {
     color: var(--w-pink);
     text-decoration: none;
     transition: opacity 0.3s ease;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .women-cta-email a:hover {
