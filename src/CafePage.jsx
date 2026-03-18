@@ -78,7 +78,7 @@ const CafePage = () => {
         },
         {
             icon: "✨",
-            title: "Instagram Virality",
+            title: "Aesthetic Continuity",
             desc: "Web designs crafted with the modern foodie in mind—translating your physical ambiance into a highly shareable digital brand."
         }
     ];
@@ -169,7 +169,7 @@ const CafePage = () => {
                                 </div>
                                 <div className="cafe-float-card card-4">
                                     <span className="card-icon">📸</span>
-                                    <span>Instagram Aesthetic</span>
+                                    <span>Stunning Visual Layouts</span>
                                 </div>
                             </div>
                         </div>

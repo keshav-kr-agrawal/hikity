@@ -63,8 +63,8 @@ const MusicPage = () => {
         },
         {
             icon: "🔥",
-            title: "Viral Social Growth",
-            desc: "Web experiences that perfectly tie into your TikTok and Reels strategy, capturing short-form virality into long-term fans."
+            title: "Fan-Engagement Growth",
+            desc: "Web experiences that capture high-intent audiences, converting fleeting digital interactions into long-term, loyal superfans."
         },
         {
             icon: "👕",

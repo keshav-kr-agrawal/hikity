@@ -64,7 +64,7 @@ const BusinessPage = () => {
         {
             icon: "📈",
             title: "High-ROAS Ad Systems",
-            desc: "Integrated tracking and pixel architecture that allows your Meta and TikTok ads to target the highest-intent buyers."
+            desc: "Integrated tracking and pixel architecture that allows your search and display ads to target the highest-intent buyers."
         },
         {
             icon: "🔄",
@@ -78,8 +78,8 @@ const BusinessPage = () => {
         },
         {
             icon: "📱",
-            title: "Social Commerce",
-            desc: "Direct integration with Instagram Shopping and TikTok Shop, turning your social media feeds into instant storefronts."
+            title: "Email & SMS Growth",
+            desc: "Direct integration with automated email and SMS marketing platforms, turning your casual browsers into loyal, repeat storefront buyers."
         }
     ];
 

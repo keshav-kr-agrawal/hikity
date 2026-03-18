@@ -58,8 +58,8 @@ const CraftPage = () => {
         },
         {
             icon: "📌",
-            title: "Pinterest & Social Funnels",
-            desc: "Transform visual platforms like Pinterest and Instagram into automated revenue streams with shoppable aesthetics."
+            title: "Visual Content Funnels",
+            desc: "Transform your brand's unique story into automated revenue streams with beautiful, high-converting digital aesthetics."
         },
         {
             icon: "🎨",

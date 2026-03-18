@@ -50,7 +50,7 @@ const WomenPage = () => {
         { icon: '📚', title: 'Education & Coaching', desc: 'Online tutoring, skill workshops, language classes, career coaching, parenting courses, and upskilling ventures.' },
         { icon: '🍽️', title: 'Food & Home Cooking', desc: 'Tiffin services, homemade food brands, meal prep, regional cuisine delivery, and specialty food products.' },
         { icon: '🏠', title: 'Home Décor & Interior', desc: 'Interior styling, décor brands, furniture upcycling, plant businesses, and lifestyle product lines.' },
-        { icon: '📸', title: 'Photography & Creative', desc: 'Photography studios, content creation, graphic design, social media management, and digital creative services.' },
+        { icon: '📸', title: 'Photography & Creative', desc: 'Photography studios, content creation, graphic design, digital portfolio management, and creative services.' },
         { icon: '👶', title: 'Kids & Parenting', desc: 'Baby products, kids clothing, educational toys, parenting blogs, childcare services, and maternity care brands.' },
         { icon: '💪', title: 'Fitness & Health', desc: 'Yoga studios, personal training, nutrition coaching, dance classes, Zumba, pilates, and wellness retreats.' },
         { icon: '🌐', title: 'Tech & Digital', desc: 'Women-led tech startups, freelancing, virtual assistant services, app development, and digital consulting.' },
@@ -61,13 +61,13 @@ const WomenPage = () => {
             tag: 'PLANNING STAGE',
             title: 'Your Idea Deserves a Digital Home',
             desc: "Even if you haven't launched yet, Hikity helps you establish your brand identity, claim your digital space, and build a waitlist or coming-soon page that creates buzz before day one.",
-            points: ['Brand naming & identity design', 'Coming-soon website & landing page', 'Pre-launch marketing strategy', 'Social media profile setup'],
+            points: ['Brand naming & identity design', 'Coming-soon website & landing page', 'Pre-launch marketing strategy', 'Local business directory setup'],
         },
         {
             tag: 'EARLY STAGE',
             title: 'Turn Your Launch Into a Movement',
-            desc: "You've started. Now let's make sure the world knows about it. We build your full digital presence — website, social media strategy, and the tools to convert visitors into loyal customers.",
-            points: ['Professional website & online store', 'Brand storytelling & content strategy', 'Instagram & social media setup', 'WhatsApp Business integration'],
+            desc: "You've started. Now let's make sure the world knows about it. We build your full digital presence — website, digital footprint, and the tools to convert visitors into loyal customers.",
+            points: ['Professional website & online store', 'Brand storytelling & content strategy', 'Local SEO & Maps setup', 'WhatsApp Business integration'],
         },
         {
             tag: 'GROWING STAGE',
@@ -86,7 +86,7 @@ const WomenPage = () => {
     const hikitySupports = [
         { number: '01', title: 'Digital Identity & Branding', desc: 'A complete brand system — logo, colors, typography, and voice — crafted to make you unforgettable in your market.' },
         { number: '02', title: 'Website & Online Store', desc: 'Beautiful, fast, mobile-first websites and e-commerce stores that sell for you 24/7, even while you sleep.' },
-        { number: '03', title: 'Social Media Presence', desc: 'Consistent, stunning content strategies for Instagram, Facebook, Pinterest, and beyond to grow your community.' },
+        { number: '03', title: 'Email & SMS Marketing', desc: 'Consistent, stunning messaging strategies for your newsletters and direct channels to directly engage your community.' },
         { number: '04', title: 'SEO & Google Visibility', desc: 'Get found by customers actively searching for what you offer. We optimize your digital presence for discoverability.' },
         { number: '05', title: 'Global Market Reach', desc: 'From local success to international recognition — we set up the infrastructure to sell and serve customers worldwide.' },
         { number: '06', title: 'Automation & AI Tools', desc: 'Smart tools that handle routine tasks — order tracking, customer replies, inventory alerts — so you can focus on growth.' },
@@ -95,7 +95,7 @@ const WomenPage = () => {
     ];
 
     const testimonials = [
-        { quote: 'I started my jewellery brand from home. Hikity built me a website and Instagram strategy that got me 3,000 followers in two months. I now ship internationally.', name: 'Priya M.', business: 'Handcrafted Jewellery, Mumbai' },
+        { quote: 'I started my jewellery brand from home. Hikity built me a website and digital strategy that grew my loyal customer base in two months. I now ship internationally.', name: 'Priya M.', business: 'Handcrafted Jewellery, Mumbai' },
         { quote: 'My cloud kitchen was invisible online. Hikity redesigned everything — within 6 weeks, orders doubled and I expanded to 3 new localities.', name: 'Divya R.', business: 'Cloud Kitchen, Bengaluru' },
         { quote: 'Hikity understood my vision for my boutique without me having to explain everything twice. The website they built feels exactly like me.', name: 'Aisha K.', business: 'Fashion Boutique, Delhi' },
     ];
@@ -352,7 +352,7 @@ const WomenPage = () => {
                                 <div className="women-global-pillar">
                                     <div className="pillar-icon">📱</div>
                                     <div>
-                                        <h4>Social Media Globally</h4>
+                                        <h4>Global Digital Footprint</h4>
                                         <p>Strategies that grow your brand across international audiences on every platform.</p>
                                     </div>
                                 </div>
