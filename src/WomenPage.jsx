@@ -8,6 +8,9 @@ const WomenPage = () => {
     const [visibleSections, setVisibleSections] = useState({});
     const sectionsRef = useRef([]);
 
+    // Women's Month Offer Popup State
+    const [showPopup, setShowPopup] = useState(true);
+
     // Navbar scroll tint
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -453,6 +456,33 @@ const WomenPage = () => {
             <div className="women-footer-wrapper">
                 <EnterpriseFooter onNavigate={() => { }} />
             </div>
+
+            {/* ── WOMEN'S MONTH OFFER POPUP ── */}
+            {showPopup && (
+                <div className="w-popup-overlay">
+                    <div className="w-popup-modal">
+                        <button className="w-popup-close" onClick={() => setShowPopup(false)}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                        <div className="w-popup-image">
+                            <img src="/assets/women-march-offer.jpg" alt="Women's Month Offer" />
+                        </div>
+                        <div className="w-popup-body">
+                            <h3>Exclusive Women's Month Offer</h3>
+                            <p>Celebrate Women's Month with us! Claim your special business launch package today.</p>
+                            <div className="w-popup-alert">
+                                <span>⚠️ Valid till 21st March 2026. Contact now, or miss out!</span>
+                            </div>
+                            <a href="/#contact" className="women-btn-primary" onClick={() => setShowPopup(false)}>
+                                Claim Offer Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            )}
 
         </div>
     );
