@@ -1,38 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
 
-/* ===== ROOT & RESET ===== */
-/* Override the global body height set by App.css for the GSAP home page */
-.women-page~* {
-    display: none;
-}
-
+/* ===== LIGHT THEME OVERRIDE (body height fix from GSAP home page) ===== */
 body:has(.women-page) {
     height: auto !important;
     overflow-y: auto !important;
 }
 
+/* ===== ROOT VARIABLES — LIGHT FEMININE PALETTE ===== */
+:root {
+    --w-pink: #f9a8d4;
+    /* soft rose-pink */
+    --w-lavender: #c4b5fd;
+    /* muted lavender */
+    --w-sky: #7dd3fc;
+    /* sky blue */
+    --w-cream: #fef6fb;
+    /* page background */
+    --w-rose-bg: #fdf0f7;
+    /* light rose section bg */
+    --w-lav-bg: #f5f0ff;
+    /* light lavender section bg */
+    --w-sky-bg: #f0f8ff;
+    /* light sky section bg */
+    --w-ink: #2d1b4e;
+    /* primary text (deep plum) */
+    --w-ink-2: rgba(45, 27, 78, 0.65);
+    /* secondary text */
+    --w-ink-3: rgba(45, 27, 78, 0.40);
+    /* tertiary text */
+    --w-border: rgba(196, 181, 253, 0.35);
+    --w-card: rgba(255, 255, 255, 0.85);
+    --w-gutter: clamp(20px, 6vw, 100px);
+}
+
+/* ===== PAGE WRAPPER ===== */
 .women-page {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background: #000;
-    color: #fff;
+    background: var(--w-cream);
+    color: var(--w-ink);
     min-height: 100vh;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-/* ===== VARIABLES ===== */
-:root {
-    --w-peach: #f9a8d4;
-    /* soft pink */
-    --w-rose: #c4b5fd;
-    /* lavender */
-    --w-gold: #7dd3fc;
-    /* sky blue */
-    --w-deep: #0d0d0d;
-    --w-glass: rgba(255, 255, 255, 0.04);
-    --w-border: rgba(249, 168, 212, 0.2);
-    --w-gutter: clamp(20px, 6vw, 100px);
 }
 
 /* ===== NAVIGATION ===== */
@@ -42,18 +51,18 @@ body:has(.women-page) {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: clamp(16px, 2.5vh, 28px) var(--w-gutter);
+    padding: clamp(14px, 2.5vh, 26px) var(--w-gutter);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background 0.4s ease, backdrop-filter 0.4s ease;
+    transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
 }
 
 .women-nav.scrolled {
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(254, 246, 251, 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--w-border);
+    box-shadow: 0 1px 0 rgba(196, 181, 253, 0.3);
 }
 
 .women-nav-logo {
@@ -61,15 +70,15 @@ body:has(.women-page) {
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    color: #fff;
+    color: var(--w-ink);
     font-weight: 800;
-    font-size: clamp(0.85rem, 1.1vw, 1rem);
+    font-size: clamp(0.8rem, 1.1vw, 0.95rem);
     letter-spacing: 5px;
     transition: opacity 0.3s ease;
 }
 
 .women-nav-logo:hover {
-    opacity: 0.8;
+    opacity: 0.75;
 }
 
 .women-nav-logo-circle {
@@ -77,7 +86,8 @@ body:has(.women-page) {
     height: 38px;
     border-radius: 50%;
     overflow: hidden;
-    border: 1px solid rgba(255, 180, 162, 0.3);
+    border: 2px solid rgba(196, 181, 253, 0.5);
+    box-shadow: 0 2px 12px rgba(196, 181, 253, 0.25);
 }
 
 .women-nav-logo-circle img {
@@ -93,7 +103,7 @@ body:has(.women-page) {
 }
 
 .women-nav-link {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--w-ink-2);
     text-decoration: none;
     font-size: 0.78rem;
     font-weight: 600;
@@ -103,29 +113,28 @@ body:has(.women-page) {
 }
 
 .women-nav-link:hover {
-    color: var(--w-peach);
+    color: var(--w-ink);
 }
 
 .women-nav-cta {
-    background: transparent;
+    background: var(--w-ink);
     color: #fff;
     text-decoration: none;
     padding: 10px clamp(18px, 2vw, 26px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 100px;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: all 0.4s ease;
+    box-shadow: 0 4px 16px rgba(45, 27, 78, 0.2);
 }
 
 .women-nav-cta:hover {
-    background: var(--w-peach);
-    color: #000;
-    border-color: var(--w-peach);
-    box-shadow: 0 4px 24px rgba(255, 180, 162, 0.35);
+    background: var(--w-lavender);
+    color: var(--w-ink);
     transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(196, 181, 253, 0.45);
 }
 
 /* ===== HERO ===== */
@@ -138,6 +147,7 @@ body:has(.women-page) {
     padding: 0 var(--w-gutter);
     padding-top: clamp(100px, 14vh, 140px);
     padding-bottom: clamp(60px, 8vh, 100px);
+    background: linear-gradient(145deg, #fff5fb 0%, #f8f0ff 50%, #f0f8ff 100%);
 }
 
 .women-hero-bg {
@@ -150,18 +160,17 @@ body:has(.women-page) {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(196, 181, 253, 0.14) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(249, 168, 212, 0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 50% at 70% 80%, rgba(125, 211, 252, 0.08) 0%, transparent 50%),
-        #000;
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(196, 181, 253, 0.22) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(249, 168, 212, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 50% at 70% 80%, rgba(125, 211, 252, 0.14) 0%, transparent 50%);
 }
 
 .women-hero-dots {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(196, 181, 253, 0.14) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(196, 181, 253, 0.3) 1px, transparent 1px);
     background-size: 48px 48px;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .women-hero-content {
@@ -178,14 +187,14 @@ body:has(.women-page) {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255, 180, 162, 0.1);
-    border: 1px solid rgba(255, 180, 162, 0.3);
+    background: rgba(196, 181, 253, 0.18);
+    border: 1px solid rgba(196, 181, 253, 0.5);
     border-radius: 100px;
     padding: 8px 20px;
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 3px;
-    color: var(--w-peach);
+    color: #7c3aed;
     width: fit-content;
     animation: fadeInUp 0.8s ease both;
 }
@@ -194,8 +203,8 @@ body:has(.women-page) {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--w-peach);
-    box-shadow: 0 0 8px var(--w-peach);
+    background: var(--w-pink);
+    box-shadow: 0 0 8px var(--w-pink);
     animation: pulse 2s ease infinite;
 }
 
@@ -217,11 +226,12 @@ body:has(.women-page) {
     line-height: 1.08;
     letter-spacing: -0.03em;
     margin: 0;
+    color: var(--w-ink);
     animation: fadeInUp 1s ease 0.1s both;
 }
 
 .women-hero-title-accent {
-    background: linear-gradient(135deg, #f9a8d4, #c4b5fd, #7dd3fc);
+    background: linear-gradient(135deg, #ec4899, #8b5cf6, #38bdf8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -230,8 +240,8 @@ body:has(.women-page) {
 .women-hero-subtitle {
     font-size: clamp(0.95rem, 1.4vw, 1.15rem);
     line-height: 1.85;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 300;
+    color: var(--w-ink-2);
+    font-weight: 400;
     max-width: 600px;
     margin: 0;
     animation: fadeInUp 1s ease 0.2s both;
@@ -250,11 +260,11 @@ body:has(.women-page) {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: #fff;
-    color: #000;
+    background: var(--w-ink);
+    color: #fff;
     text-decoration: none;
     padding: 16px 32px;
-    border-radius: 3px;
+    border-radius: 5px;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -264,13 +274,14 @@ body:has(.women-page) {
     overflow: hidden;
     cursor: pointer;
     border: none;
+    box-shadow: 0 6px 24px rgba(45, 27, 78, 0.25);
 }
 
 .women-btn-primary::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--w-peach);
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
@@ -288,7 +299,8 @@ body:has(.women-page) {
 }
 
 .women-btn-primary:hover {
-    box-shadow: 0 8px 36px rgba(255, 180, 162, 0.45);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 36px rgba(139, 92, 246, 0.35);
 }
 
 .women-btn-primary.large {
@@ -297,41 +309,43 @@ body:has(.women-page) {
 }
 
 .women-btn-secondary {
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--w-ink-2);
     text-decoration: none;
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: color 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    border-bottom: 1px solid rgba(45, 27, 78, 0.3);
     padding-bottom: 3px;
 }
 
 .women-btn-secondary:hover {
-    color: var(--w-peach);
-    border-color: var(--w-peach);
+    color: #8b5cf6;
+    border-color: #8b5cf6;
 }
 
 .women-btn-outline {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: #fff;
+    color: var(--w-ink);
     text-decoration: none;
     padding: 16px 32px;
-    border-radius: 3px;
+    border-radius: 5px;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1.5px solid rgba(196, 181, 253, 0.6);
     transition: all 0.4s ease;
+    background: rgba(196, 181, 253, 0.08);
 }
 
 .women-btn-outline:hover {
-    border-color: var(--w-peach);
-    color: var(--w-peach);
+    border-color: #8b5cf6;
+    color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.07);
     transform: translateY(-2px);
 }
 
@@ -356,7 +370,7 @@ body:has(.women-page) {
 .women-stat-number {
     font-size: clamp(1.4rem, 2.5vw, 2rem);
     font-weight: 800;
-    background: linear-gradient(135deg, #f9a8d4, #c4b5fd);
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -365,7 +379,7 @@ body:has(.women-page) {
 
 .women-stat-label {
     font-size: 0.65rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--w-ink-3);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     font-weight: 500;
@@ -374,10 +388,10 @@ body:has(.women-page) {
 .women-stat-divider {
     width: 1px;
     height: 36px;
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(196, 181, 253, 0.5);
 }
 
-/* ===== HERO VISUAL ===== */
+/* ===== HERO VISUAL (floating cards) ===== */
 .women-hero-visual {
     flex: 1;
     display: flex;
@@ -398,20 +412,20 @@ body:has(.women-page) {
 
 .women-float-card {
     position: absolute;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 180, 162, 0.25);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.80);
+    border: 1px solid rgba(196, 181, 253, 0.35);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 18px;
     padding: 18px 22px;
     display: flex;
     align-items: center;
     gap: 12px;
     font-size: 0.85rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--w-ink);
     white-space: nowrap;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.12), 0 2px 8px rgba(249, 168, 212, 0.12);
 }
 
 .card-icon {
@@ -507,7 +521,7 @@ body:has(.women-page) {
 .scroll-line {
     width: 1px;
     height: 44px;
-    background: linear-gradient(to bottom, transparent, var(--w-peach));
+    background: linear-gradient(to bottom, transparent, #8b5cf6);
     animation: scrollPulse 2s ease infinite;
 }
 
@@ -531,19 +545,19 @@ body:has(.women-page) {
 .women-hero-scroll-indicator span {
     font-size: 0.55rem;
     letter-spacing: 4px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--w-ink-3);
     font-weight: 600;
     text-transform: uppercase;
 }
 
-/* ===== MANIFESTO STRIP ===== */
+/* ===== MANIFESTO TICKER ===== */
 .women-manifesto {
     width: 100%;
     overflow: hidden;
-    padding: 20px 0;
-    border-top: 1px solid rgba(255, 180, 162, 0.1);
-    border-bottom: 1px solid rgba(255, 180, 162, 0.1);
-    background: rgba(255, 180, 162, 0.03);
+    padding: 22px 0;
+    border-top: 1px solid rgba(196, 181, 253, 0.25);
+    border-bottom: 1px solid rgba(196, 181, 253, 0.25);
+    background: linear-gradient(90deg, rgba(249, 168, 212, 0.07) 0%, rgba(196, 181, 253, 0.10) 50%, rgba(125, 211, 252, 0.07) 100%);
 }
 
 .women-manifesto-inner {
@@ -557,7 +571,7 @@ body:has(.women-page) {
     font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 4px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--w-ink-2);
     text-transform: uppercase;
     padding: 0 24px;
     white-space: nowrap;
@@ -567,7 +581,7 @@ body:has(.women-page) {
 }
 
 .manifesto-dot {
-    color: var(--w-peach);
+    color: var(--w-pink);
     font-size: 0.55rem;
 }
 
@@ -589,7 +603,7 @@ body:has(.women-page) {
     width: 100%;
 }
 
-/* ===== SECTIONS ===== */
+/* ===== SECTIONS BASE ===== */
 .women-section {
     padding: clamp(80px, 12vh, 140px) 0;
 }
@@ -605,12 +619,12 @@ body:has(.women-page) {
     font-size: 0.62rem;
     font-weight: 800;
     letter-spacing: 4px;
-    color: var(--w-peach);
+    color: #8b5cf6;
     text-transform: uppercase;
     margin-bottom: 18px;
-    background: rgba(255, 180, 162, 0.08);
-    border: 1px solid rgba(255, 180, 162, 0.2);
-    padding: 6px 16px;
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    padding: 6px 18px;
     border-radius: 100px;
 }
 
@@ -620,17 +634,18 @@ body:has(.women-page) {
     line-height: 1.12;
     letter-spacing: -0.03em;
     margin: 0 0 20px;
+    color: var(--w-ink);
 }
 
 .women-section-subtitle {
     font-size: clamp(0.95rem, 1.3vw, 1.1rem);
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.6);
-    font-weight: 300;
+    color: var(--w-ink-2);
+    font-weight: 400;
     margin: 0;
 }
 
-/* Scroll-reveal */
+/* ===== SCROLL-REVEAL ===== */
 .women-section .women-biz-card,
 .women-section .women-stage-card,
 .women-section .women-service-row,
@@ -648,7 +663,7 @@ body:has(.women-page) {
     transform: translateY(0);
 }
 
-/* Stagger delays — nth-child instead of inline JS styles */
+/* nth-child stagger delays */
 .women-section.visible .women-biz-card:nth-child(2) {
     transition-delay: 0.06s;
 }
@@ -741,27 +756,32 @@ body:has(.women-page) {
     transition-delay: 0.28s;
 }
 
-/* ===== BUSINESSES GRID ===== */
+/* ===== BUSINESSES SECTION ===== */
+.women-businesses {
+    background: #fff;
+}
+
 .women-businesses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
-    gap: clamp(14px, 2vw, 24px);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 255px), 1fr));
+    gap: clamp(14px, 2vw, 22px);
 }
 
 .women-biz-card {
-    background: var(--w-glass);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: #fff;
+    border: 1.5px solid rgba(196, 181, 253, 0.25);
     border-radius: 16px;
     padding: clamp(22px, 3vw, 34px);
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     cursor: default;
+    box-shadow: 0 2px 16px rgba(139, 92, 246, 0.05);
 }
 
 .women-biz-card:hover {
-    background: rgba(255, 180, 162, 0.06);
-    border-color: rgba(255, 180, 162, 0.25);
+    border-color: rgba(196, 181, 253, 0.6);
     transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 180, 162, 0.12);
+    box-shadow: 0 12px 40px rgba(139, 92, 246, 0.12);
+    background: linear-gradient(145deg, #fffaff, #f8f0ff);
 }
 
 .women-biz-icon {
@@ -772,38 +792,38 @@ body:has(.women-page) {
 }
 
 .women-biz-title {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     margin: 0 0 10px;
     text-transform: uppercase;
-    color: #fff;
+    color: var(--w-ink);
 }
 
 .women-biz-desc {
     font-size: 0.82rem;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--w-ink-2);
     margin: 0;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .women-businesses-more {
     text-align: center;
     margin-top: clamp(40px, 5vh, 60px);
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 300;
+    color: var(--w-ink-2);
+    font-weight: 400;
 }
 
 .women-businesses-more strong {
-    color: var(--w-peach);
-    font-weight: 600;
+    color: #8b5cf6;
+    font-weight: 700;
 }
 
-/* ===== STAGES ===== */
+/* ===== STAGES SECTION ===== */
 .women-stages-section {
-    background: #040404;
+    background: var(--w-rose-bg);
 }
 
 .women-stages-grid {
@@ -813,13 +833,14 @@ body:has(.women-page) {
 }
 
 .women-stage-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: #fff;
+    border: 1.5px solid rgba(196, 181, 253, 0.3);
     border-radius: 20px;
     padding: clamp(26px, 3.5vw, 42px);
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0 2px 20px rgba(196, 181, 253, 0.10);
 }
 
 .women-stage-card::before {
@@ -829,15 +850,15 @@ body:has(.women-page) {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #c4b5fd, #f9a8d4, #7dd3fc);
+    background: linear-gradient(90deg, #ec4899, #8b5cf6, #38bdf8);
     opacity: 0;
     transition: opacity 0.4s ease;
 }
 
 .women-stage-card:hover {
     transform: translateY(-6px);
-    border-color: rgba(255, 180, 162, 0.2);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+    border-color: rgba(139, 92, 246, 0.35);
+    box-shadow: 0 16px 48px rgba(139, 92, 246, 0.13);
 }
 
 .women-stage-card:hover::before {
@@ -848,7 +869,7 @@ body:has(.women-page) {
     font-size: 4rem;
     font-weight: 800;
     line-height: 1;
-    color: rgba(255, 255, 255, 0.04);
+    color: rgba(196, 181, 253, 0.25);
     margin-bottom: -8px;
 }
 
@@ -856,7 +877,7 @@ body:has(.women-page) {
     font-size: 0.6rem;
     font-weight: 800;
     letter-spacing: 3.5px;
-    color: var(--w-peach);
+    color: #ec4899;
     text-transform: uppercase;
     margin-bottom: 14px;
 }
@@ -867,14 +888,15 @@ body:has(.women-page) {
     margin: 0 0 14px;
     letter-spacing: -0.02em;
     line-height: 1.3;
+    color: var(--w-ink);
 }
 
 .women-stage-desc {
     font-size: 0.85rem;
     line-height: 1.75;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--w-ink-2);
     margin: 0 0 22px;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .women-stage-points {
@@ -891,26 +913,26 @@ body:has(.women-page) {
     align-items: center;
     gap: 10px;
     font-size: 0.78rem;
-    color: rgba(255, 255, 255, 0.65);
+    color: var(--w-ink-2);
     font-weight: 400;
 }
 
 .point-check {
-    color: var(--w-peach);
+    color: #8b5cf6;
     font-weight: 800;
     font-size: 0.75rem;
     flex-shrink: 0;
 }
 
-/* ===== SERVICES LIST ===== */
+/* ===== SERVICES (HOW HIKITY HELPS) ===== */
 .women-services-section {
-    background: #000;
+    background: #fff;
 }
 
 .women-services-list {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: 1.5px solid rgba(196, 181, 253, 0.3);
 }
 
 .women-service-row {
@@ -918,21 +940,22 @@ body:has(.women-page) {
     align-items: center;
     gap: clamp(20px, 3vw, 48px);
     padding: clamp(20px, 2.8vh, 32px) 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(196, 181, 253, 0.2);
     transition: all 0.3s ease;
     cursor: default;
 }
 
 .women-service-row:hover {
-    padding-left: 12px;
-    background: rgba(255, 180, 162, 0.03);
+    padding-left: 14px;
+    background: linear-gradient(90deg, rgba(196, 181, 253, 0.08), transparent);
+    border-radius: 8px;
 }
 
 .women-service-num {
     font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 2px;
-    color: var(--w-peach);
+    color: var(--w-lavender);
     min-width: 38px;
     flex-shrink: 0;
 }
@@ -947,32 +970,33 @@ body:has(.women-page) {
     letter-spacing: 0.5px;
     margin: 0 0 6px;
     text-transform: uppercase;
+    color: var(--w-ink);
 }
 
 .women-service-desc {
     font-size: 0.85rem;
     line-height: 1.65;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--w-ink-2);
     margin: 0;
-    font-weight: 300;
+    font-weight: 400;
     max-width: 680px;
 }
 
 .women-service-arrow {
-    color: rgba(255, 255, 255, 0.15);
+    color: rgba(196, 181, 253, 0.5);
     font-size: 1.3rem;
     flex-shrink: 0;
     transition: all 0.3s ease;
 }
 
 .women-service-row:hover .women-service-arrow {
-    color: var(--w-peach);
+    color: #8b5cf6;
     transform: translateX(6px);
 }
 
-/* ===== GLOBAL SECTION ===== */
+/* ===== GLOBAL REACH SECTION ===== */
 .women-global-section {
-    background: #020202;
+    background: linear-gradient(135deg, #f5f0ff 0%, #fef0f7 50%, #f0f8ff 100%);
     position: relative;
     overflow: hidden;
 }
@@ -985,10 +1009,10 @@ body:has(.women-page) {
 
 .women-global-glow {
     position: absolute;
-    width: 600px;
-    height: 600px;
+    width: 700px;
+    height: 700px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(196, 181, 253, 0.10) 0%, rgba(249, 168, 212, 0.06) 50%, transparent 70%);
+    background: radial-gradient(circle, rgba(196, 181, 253, 0.18) 0%, rgba(249, 168, 212, 0.10) 50%, transparent 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1021,6 +1045,17 @@ body:has(.women-page) {
     display: flex;
     gap: 18px;
     align-items: flex-start;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(196, 181, 253, 0.3);
+    border-radius: 14px;
+    padding: 16px 20px;
+    transition: all 0.3s ease;
+}
+
+.women-global-pillar:hover {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 6px 24px rgba(139, 92, 246, 0.1);
+    transform: translateX(6px);
 }
 
 .pillar-icon {
@@ -1035,15 +1070,15 @@ body:has(.women-page) {
     margin: 0 0 4px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--w-ink);
 }
 
 .women-global-pillar p {
     font-size: 0.8rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--w-ink-2);
     margin: 0;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 /* ===== ORBIT VISUAL ===== */
@@ -1065,7 +1100,7 @@ body:has(.women-page) {
 
 .orbit-ring {
     position: absolute;
-    border: 1px solid rgba(255, 180, 162, 0.12);
+    border: 1.5px solid rgba(196, 181, 253, 0.35);
     border-radius: 50%;
     animation: orbitSpin 20s linear infinite;
 }
@@ -1108,29 +1143,37 @@ body:has(.women-page) {
     font-weight: 800;
     font-size: 1rem;
     letter-spacing: 4px;
-    color: var(--w-peach);
+    color: #8b5cf6;
     text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1.5px solid rgba(196, 181, 253, 0.5);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    box-shadow: 0 4px 24px rgba(139, 92, 246, 0.15);
 }
 
 .orbit-center-sub {
     font-size: 0.6rem;
     letter-spacing: 3px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--w-ink-3);
     font-weight: 500;
     margin-top: 4px;
 }
 
 .orbit-node {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 180, 162, 0.2);
+    background: rgba(255, 255, 255, 0.90);
+    border: 1.5px solid rgba(196, 181, 253, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.1);
     backdrop-filter: blur(8px);
 }
 
@@ -1163,7 +1206,7 @@ body:has(.women-page) {
 
 /* ===== TESTIMONIALS ===== */
 .women-testimonials {
-    background: #040404;
+    background: var(--w-lav-bg);
 }
 
 .women-testimonials-grid {
@@ -1173,26 +1216,27 @@ body:has(.women-page) {
 }
 
 .women-testimonial-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: #fff;
+    border: 1.5px solid rgba(196, 181, 253, 0.28);
     border-radius: 20px;
     padding: clamp(28px, 4vw, 44px);
     position: relative;
     overflow: hidden;
     transition: all 0.4s ease;
+    box-shadow: 0 2px 20px rgba(196, 181, 253, 0.08);
 }
 
 .women-testimonial-card:hover {
-    border-color: rgba(255, 180, 162, 0.2);
+    border-color: rgba(139, 92, 246, 0.35);
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 40px rgba(139, 92, 246, 0.12);
 }
 
 .testimonial-quote-mark {
     font-size: 5rem;
     font-weight: 800;
     line-height: 0.6;
-    color: rgba(255, 180, 162, 0.15);
+    color: rgba(196, 181, 253, 0.4);
     font-family: Georgia, serif;
     margin-bottom: 20px;
 }
@@ -1200,8 +1244,8 @@ body:has(.women-page) {
 .testimonial-text {
     font-size: clamp(0.9rem, 1.2vw, 1rem);
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 300;
+    color: var(--w-ink-2);
+    font-weight: 400;
     margin: 0 0 28px;
     font-style: italic;
 }
@@ -1210,7 +1254,7 @@ body:has(.women-page) {
     display: flex;
     align-items: center;
     gap: 14px;
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: 1px solid rgba(196, 181, 253, 0.25);
     padding-top: 20px;
 }
 
@@ -1220,20 +1264,21 @@ body:has(.women-page) {
     border-radius: 50%;
     background: linear-gradient(135deg, #c4b5fd, #f9a8d4);
     flex-shrink: 0;
+    box-shadow: 0 2px 10px rgba(196, 181, 253, 0.3);
 }
 
 .testimonial-name {
     display: block;
     font-size: 0.88rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--w-ink);
     letter-spacing: 0.5px;
 }
 
 .testimonial-business {
     display: block;
     font-size: 0.72rem;
-    color: var(--w-peach);
+    color: #8b5cf6;
     font-weight: 500;
     margin-top: 3px;
     letter-spacing: 0.5px;
@@ -1244,16 +1289,16 @@ body:has(.women-page) {
     position: relative;
     overflow: hidden;
     text-align: center;
-    background: #000;
+    background: linear-gradient(135deg, #fff5fb 0%, #f5f0ff 50%, #f0f8ff 100%);
 }
 
 .women-cta-bg {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(196, 181, 253, 0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 40% at 20% 30%, rgba(249, 168, 212, 0.09) 0%, transparent 50%),
-        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(125, 211, 252, 0.07) 0%, transparent 50%);
+        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(196, 181, 253, 0.2) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 30%, rgba(249, 168, 212, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(125, 211, 252, 0.12) 0%, transparent 50%);
 }
 
 .women-cta-content {
@@ -1272,7 +1317,7 @@ body:has(.women-page) {
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.03em;
-    background: linear-gradient(135deg, #fff 0%, #f9a8d4 50%, #c4b5fd 100%);
+    background: linear-gradient(135deg, var(--w-ink) 0%, #ec4899 50%, #8b5cf6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1282,8 +1327,8 @@ body:has(.women-page) {
 .women-cta-desc {
     font-size: clamp(0.95rem, 1.3vw, 1.1rem);
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.6);
-    font-weight: 300;
+    color: var(--w-ink-2);
+    font-weight: 400;
     max-width: 600px;
     margin: 0;
 }
@@ -1298,29 +1343,27 @@ body:has(.women-page) {
 
 .women-cta-email {
     font-size: 0.78rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--w-ink-3);
     margin: 0;
 }
 
 .women-cta-email a {
-    color: var(--w-peach);
+    color: #8b5cf6;
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
 
 .women-cta-email a:hover {
-    opacity: 0.7;
+    opacity: 0.75;
 }
 
-/* ===== FOOTER WRAPPER (EnterpriseFooter component) ===== */
+/* ===== FOOTER WRAPPER (EnterpriseFooter — keeps its own dark theme) ===== */
 .women-footer-wrapper {
     position: relative;
-    background: var(--hikity-black, #000);
     overflow-x: hidden;
 }
 
-
-/* ===== ANIMATION ===== */
+/* ===== KEYFRAME ANIMATIONS ===== */
 @keyframes fadeInUp {
     from {
         opacity: 0;

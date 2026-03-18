@@ -325,10 +325,10 @@ const WomenPage = () => {
                     <div className="women-global-content">
                         <div className="women-global-text">
                             <span className="women-tag">THINK GLOBAL</span>
-                            <h2 className="women-section-title" style={{ color: '#fff' }}>
+                            <h2 className="women-section-title">
                                 Your Business<br />Has No Borders
                             </h2>
-                            <p className="women-section-subtitle" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                            <p className="women-section-subtitle">
                                 The women building the future aren't limited to one city or one country. With Hikity, your handmade jewellery can ship to Tokyo, your coaching program can reach clients in Toronto, and your fashion boutique can have customers in Paris.
                             </p>
                             <div className="women-global-pillars">
