@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import TermsAndConditions from './TermsAndConditions';
 import WomenPage from './WomenPage';
 import DentistPage from './DentistPage';
+import SchoolPage from './SchoolPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/t&c" element={<TermsAndConditions />} />
         <Route path="/women" element={<WomenPage />} />
         <Route path="/dentist" element={<DentistPage />} />
+        <Route path="/school" element={<SchoolPage />} />
       </Routes>
     </Router>
   );
