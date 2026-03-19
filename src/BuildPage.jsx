@@ -180,14 +180,14 @@ const BuildPage = () => {
                             <div className="b-model-icon">E</div>
                             <h3 className="b-model-title">The Equity Model</h3>
                             <p className="b-model-desc">
-                                We invest our expertise in exchange for equity via our parent company, <strong><a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Hikat</a></strong>. Ideal for highly scalable, tech-heavy startup concepts. Founders under this model will also be officially featured on the <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Hikat</a> website as premium Collaborators/Partners.
+                                We invest our expertise in exchange for equity via our parent company, <strong><a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Hikat</a></strong>. Ideal for highly scalable, tech-heavy startup concepts. Founders under this model will also be officially featured on the <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Hikat</a> website as premium Collaborators/Partners.
                                 <br /><br />
                                 <Link to="/build/t&c" style={{ color: 'var(--b-accent-champagne)', textDecoration: 'none', fontWeight: '500', fontSize: '0.9rem' }}>Read Partnership Terms & Conditions →</Link>
                             </p>
                             <ul className="b-model-list">
                                 <li>Significantly reduced or zero-cost development</li>
                                 <li>Deep, long-term technical partnership</li>
-                                <li>Access to the extended <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Hikat</a> ecosystem & network</li>
+                                <li>Access to the extended <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Hikat</a> ecosystem & network</li>
                                 <li>Continuous iteration and strategic advisory</li>
                             </ul>
                         </div>
