@@ -10,6 +10,8 @@ import MusicPage from './MusicPage';
 import CraftPage from './CraftPage';
 import WorkPage from './WorkPage';
 import BusinessPage from './BusinessPage';
+import BuildPage from './BuildPage';
+import BuildTnC from './BuildTnC';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/art/craft" element={<CraftPage />} />
         <Route path="/work" element={<WorkPage />} />
         <Route path="/business" element={<BusinessPage />} />
+        <Route path="/build" element={<BuildPage />} />
+        <Route path="/build/t&c" element={<BuildTnC />} />
       </Routes>
     </Router>
   );

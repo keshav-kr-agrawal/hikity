@@ -1,0 +1,105 @@
+/* =========================================================================
+   HIKITY BUILD T&C PAGE
+   Matches the BuildPage.css Light Theme
+========================================================================= */
+
+.build-tnc-page {
+    background-color: #FBFAF8;
+    color: #1C1E21;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Share the nav styles from BuildPage.css */
+
+.b-tnc-content {
+    padding: 180px 5% 120px 5%;
+    max-width: 800px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.b-tnc-header {
+    text-align: center;
+    margin-bottom: 80px;
+    border-bottom: 1px solid rgba(28, 30, 33, 0.1);
+    padding-bottom: 60px;
+}
+
+.b-tnc-tag {
+    color: #B8905E;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.b-tnc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 24px 0;
+}
+
+.b-tnc-subtitle {
+    color: #585A5E;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.b-tnc-body {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #333538;
+}
+
+.b-tnc-section {
+    margin-bottom: 48px;
+}
+
+.b-tnc-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1C1E21;
+    margin: 0 0 20px 0;
+}
+
+.b-tnc-section p {
+    margin: 0 0 16px 0;
+}
+
+.b-tnc-section strong {
+    font-weight: 600;
+    color: #1C1E21;
+}
+
+.b-tnc-contact-prompt {
+    margin-top: 80px;
+    background-color: #F2EFEB;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(28, 30, 33, 0.1);
+}
+
+.b-tnc-contact-prompt p {
+    margin-bottom: 0;
+    color: #585A5E;
+}
+
+.b-tnc-contact-prompt strong {
+    color: #B8905E;
+}
+
+@media (max-width: 768px) {
+    .b-tnc-content {
+        padding-top: 140px;
+    }
+}
