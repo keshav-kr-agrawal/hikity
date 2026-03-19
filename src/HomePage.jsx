@@ -389,7 +389,7 @@ function HomePage() {
                                 </div>
                                 <div className="review-card review-card-3">
                                     <p>"Engineering digital continuity across global ecosystems."</p>
-                                    <span>— HIKAT GLOBAL</span>
+                                    <span>— <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>HIKAT</a> GLOBAL</span>
                                 </div>
                             </div>
                         </div>
@@ -400,10 +400,10 @@ function HomePage() {
                             {/* First scroller - forward direction */}
                             <div className="logo-marquee">
                                 <div className="marquee-track marquee-forward">
-                                    {['SPARSH MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
+                                    {['SPARSH MUKTHI', 'NAVI MEET', <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>HIKAT GROUP</a>, 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                                         <span key={i}> {p}</span>
                                     ))}
-                                    {['SPARSH MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
+                                    {['SPARSH MUKTHI', 'NAVI MEET', <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>HIKAT GROUP</a>, 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                                         <span key={i + 100}> {p}</span>
                                     ))}
                                 </div>
@@ -412,10 +412,10 @@ function HomePage() {
                             {/* Second scroller - reverse direction */}
                             <div className="logo-marquee logo-marquee-reverse">
                                 <div className="marquee-track marquee-reverse">
-                                    {['SPARSH MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
+                                    {['SPARSH MUKTHI', 'NAVI MEET', <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>HIKAT GROUP</a>, 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                                         <span key={i}> {p}</span>
                                     ))}
-                                    {['SPARSH MUKTHI', 'NAVI MEET', 'HIKAT GROUP', 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
+                                    {['SPARSH MUKTHI', 'NAVI MEET', <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>HIKAT GROUP</a>, 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                                         <span key={i + 100}> {p}</span>
                                     ))}
                                 </div>

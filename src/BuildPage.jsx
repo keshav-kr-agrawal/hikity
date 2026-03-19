@@ -166,7 +166,7 @@ const BuildPage = () => {
                             <div className="b-model-icon">C</div>
                             <h3 className="b-model-title">The Capital Model</h3>
                             <p className="b-model-desc">
-                                A straightforward, premium agency engagement. You hire us to architect and build your product. You retain 100% ownership from day one.
+                                A straightforward, premium agency engagement. You hire us to architect and build your product. You retain 100% ownership from day one and remain an exclusive partner of Hikity.
                             </p>
                             <ul className="b-model-list">
                                 <li>Direct fee-for-service arrangement</li>
@@ -180,14 +180,14 @@ const BuildPage = () => {
                             <div className="b-model-icon">E</div>
                             <h3 className="b-model-title">The Equity Model</h3>
                             <p className="b-model-desc">
-                                We invest our expertise in exchange for equity via our parent company, <strong>Hikat</strong>. Ideal for highly scalable, tech-heavy startup concepts.
+                                We invest our expertise in exchange for equity via our parent company, <strong><a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Hikat</a></strong>. Ideal for highly scalable, tech-heavy startup concepts. Founders under this model will also be officially featured on the <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Hikat</a> website as premium Collaborators/Partners.
                                 <br /><br />
                                 <Link to="/build/t&c" style={{ color: 'var(--b-accent-champagne)', textDecoration: 'none', fontWeight: '500', fontSize: '0.9rem' }}>Read Partnership Terms & Conditions →</Link>
                             </p>
                             <ul className="b-model-list">
                                 <li>Significantly reduced or zero-cost development</li>
                                 <li>Deep, long-term technical partnership</li>
-                                <li>Access to the extended Hikat ecosystem & network</li>
+                                <li>Access to the extended <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Hikat</a> ecosystem & network</li>
                                 <li>Continuous iteration and strategic advisory</li>
                             </ul>
                         </div>

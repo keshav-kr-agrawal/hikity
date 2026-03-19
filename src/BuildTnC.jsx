@@ -28,7 +28,7 @@ const BuildTnC = () => {
                     <span className="b-tnc-tag">LEGAL & PARTNERSHIP</span>
                     <h1 className="b-tnc-title">Build Program<br />Terms & Conditions</h1>
                     <p className="b-tnc-subtitle">
-                        Please review the foundational terms governing the Hikity & Hikat development partnerships.
+                        Please review the foundational terms governing the Hikity & <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Hikat</a> development partnerships.
                     </p>
                 </div>
 
@@ -36,14 +36,14 @@ const BuildTnC = () => {
                     <section className="b-tnc-section">
                         <h2>1. Partnership Models Overview</h2>
                         <p>
-                            Hikity offers engineering, design, and growth services specifically tailored for innovators and founders. The formal engagement is structured either as a traditional Capital/Fee-for-Service model or an Equity Partnership model managed through our parent company, <strong>Hikat (hikat.xyz)</strong>.
+                            Hikity offers engineering, design, and growth services specifically tailored for innovators and founders. The formal engagement is structured either as a traditional Capital/Fee-for-Service model or an Equity Partnership model managed through our parent company, <strong><a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Hikat (hikat.xyz)</a></strong>.
                         </p>
                     </section>
 
                     <section className="b-tnc-section">
                         <h2>2. Financial & Equity Determinations</h2>
                         <p>
-                            <strong>All final pricing, equity percentages, and royalty structures are exclusively determined by the Hikat executive team.</strong>
+                            <strong>All final pricing, equity percentages, and royalty structures are exclusively determined by the <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Hikat</a> executive team.</strong>
                         </p>
                         <p>
                             While we offer the Equity Model to reduce the initial capital burden on founders, these valuations and terms are evaluated on a strict, case-by-case basis. Applying for an Equity Partnership does not guarantee acceptance.
@@ -53,7 +53,7 @@ const BuildTnC = () => {
                     <section className="b-tnc-section">
                         <h2>3. The Baseline Fee Provision</h2>
                         <p>
-                            Please note a critical condition of our Equity Partnership: <strong>Even in scenarios where a founder provides equity and royalty stakes to Hikat, a small, baseline development fee will still be charged.</strong>
+                            Please note a critical condition of our Equity Partnership: <strong>Even in scenarios where a founder provides equity and royalty stakes to <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Hikat</a>, a small, baseline development fee will still be charged.</strong>
                         </p>
                         <p>
                             This baseline fee functions as a commitment mechanism and covers the immediate, concrete overheads (servers, third-party infrastructure, and immediate technical resources) required to initialize your product's architecture. Equity exchanges subsidize the vast majority of development labor, but they do not negate the baseline initialization fee.
