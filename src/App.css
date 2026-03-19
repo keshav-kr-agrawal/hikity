@@ -27,7 +27,6 @@ img {
 }
 
 body {
-  height: 1300vh;
   background-color: var(--hikity-black);
   font-family: 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden;
