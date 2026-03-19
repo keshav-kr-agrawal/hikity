@@ -955,6 +955,22 @@ body {
   transform: rotate(180deg);
 }
 
+/* =========================================================================
+   UNIFIED GLOBAL LOGO ROTATION
+   Ensures all industry-specific and footer logos rotate consistently.
+========================================================================= */
+[class*="nav-logo-circle"],
+.footer-logo-container-new,
+.nav-brand-container {
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+
+[class*="nav-logo"]:hover [class*="nav-logo-circle"],
+.footer-brand-header-new:hover .footer-logo-container-new,
+.logo-section:hover .nav-brand-container {
+  transform: scale(1.1) rotate(360deg) !important;
+}
+
 .placeholder {
   color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
