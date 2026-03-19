@@ -113,7 +113,7 @@ const WomenPage = () => {
                 </Link>
                 <div className="women-nav-links">
                     <Link to="/" className="women-nav-link">Home</Link>
-                    <Link to="/" className="women-nav-cta">Contact Us</Link>
+                    <a href="/#contact" className="women-nav-cta">Contact Us</a>
                 </div>
             </nav>
 
@@ -141,7 +141,7 @@ const WomenPage = () => {
                     </p>
 
                     <div className="women-hero-actions">
-                        <a href="mailto:contact@hikity.xyz" className="women-btn-primary">
+                        <a href="/#contact" className="women-btn-primary">
                             <span>Start Your Journey</span>
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                 <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -437,7 +437,7 @@ const WomenPage = () => {
                             Join women entrepreneurs who are building fearlessly, growing rapidly, and reaching globally — with Hikity as their digital backbone. Let's build something extraordinary together.
                         </p>
                         <div className="women-cta-actions">
-                            <a href="mailto:contact@hikity.xyz" className="women-btn-primary large">
+                            <a href="/#contact" className="women-btn-primary large">
                                 <span>Write to Us</span>
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                     <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -476,7 +476,7 @@ const WomenPage = () => {
                             <div className="w-popup-alert">
                                 <span>⚠️ Valid till 21st March 2026. Contact now, or miss out!</span>
                             </div>
-                            <a href="mailto:contact@hikity.xyz" className="women-btn-primary" onClick={() => setShowPopup(false)}>
+                            <a href="/#contact" className="women-btn-primary" onClick={() => setShowPopup(false)}>
                                 Contact Now
                             </a>
                         </div>
