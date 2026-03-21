@@ -474,7 +474,7 @@ const WomenPage = () => {
                             <h3>Exclusive Women's Month Offer</h3>
                             <p>Celebrate Women's Month with us! Claim your special business launch package today.</p>
                             <div className="w-popup-alert">
-                                <span>⚠️ Valid till 24st March 2026. Contact now, or miss out!</span>
+                                <span>⚠️ Valid till 24th March 2026. Contact now, or miss out!</span>
                             </div>
                             <a href="/#contact" className="women-btn-primary" onClick={() => setShowPopup(false)}>
                                 Contact Now
