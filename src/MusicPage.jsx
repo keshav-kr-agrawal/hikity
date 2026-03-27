@@ -339,7 +339,7 @@ const MusicPage = () => {
                             <h3>Exclusive March Artist Offer</h3>
                             <p>Build your tour funnel or artist portal this month and get premium backend amplification included.</p>
                             <div className="m-popup-alert">
-                                <span>🔥 Valid till 21st March 2026. Claim your slot now!</span>
+                                <span>🔥 Valid till 31st March 2026. Claim your slot now!</span>
                             </div>
                             <a href="/#contact" className="m-btn-primary m-popup-btn" onClick={() => setShowPopup(false)}>
                                 <span>Claim Offer Now</span>
