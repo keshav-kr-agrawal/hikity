@@ -68,6 +68,18 @@ const LinksPage = () => {
             title: "Crafters & Artisans",
             desc: "Direct-to-consumer e-commerce systems designed for unique handmade goods.",
             icon: "A"
+        },
+        {
+            path: "/blog",
+            title: "Hikity Blog",
+            desc: "Insights, tutorials, and deep dives into enterprise engineering and AI setup.",
+            icon: "B"
+        },
+        {
+            path: "/t&c",
+            title: "Terms & Conditions",
+            desc: "Our official legal terms, conditions, and privacy policies.",
+            icon: "TC"
         }
     ];
 

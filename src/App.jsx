@@ -13,6 +13,7 @@ import BusinessPage from './BusinessPage';
 import BuildPage from './BuildPage';
 import BuildTnC from './BuildTnC';
 import LinksPage from './LinksPage';
+import BlogPage from './BlogPage';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/build" element={<BuildPage />} />
         <Route path="/build/t&c" element={<BuildTnC />} />
         <Route path="/links" element={<LinksPage />} />
+        <Route path="/blog" element={<BlogPage />} />
       </Routes>
     </Router>
   );
