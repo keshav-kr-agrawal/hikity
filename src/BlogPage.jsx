@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import EnterpriseFooter from './EnterpriseFooter';
+import { blogPosts } from './blogData';
 import './BlogPage.css';
 
 const BlogPage = () => {
@@ -49,9 +50,7 @@ const BlogPage = () => {
         };
     }, []);
 
-    const blogPosts = [
-        // Placeholder for future blog posts
-    ];
+
 
     return (
         <div className="blog-page">
@@ -99,12 +98,25 @@ const BlogPage = () => {
                 ref={addToRefs}
             >
                 <div className="blog-container">
-                    <div className="blog-empty-state">
-                        <div className="empty-icon">✍️</div>
-                        <h2 className="empty-title">Articles Coming Soon</h2>
-                        <p className="empty-desc">
-                            We are currently compiling our best technical insights and case studies. Check back later for in-depth articles.
-                        </p>
+                    <div className="bento-grid">
+                        {blogPosts.map((post) => (
+                            <Link to={`/blog/${post.slug}`} key={post.slug} className="blog-card">
+                                <div className="blog-card-image">
+                                    <img src={post.image} alt={post.title} onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.style.display = 'none'; }} />
+                                </div>
+                                <div className="blog-card-content">
+                                    <div className="blog-card-meta">
+                                        <span className="blog-card-category">{post.category}</span>
+                                        <span className="blog-card-date">{post.date}</span>
+                                    </div>
+                                    <h2 className="blog-card-title">{post.title}</h2>
+                                    <div className="blog-card-footer">
+                                        <span className="blog-card-author">{post.author} &bull; {post.readingTime}</span>
+                                        <span className="blog-card-arrow">→</span>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </section>

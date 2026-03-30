@@ -14,6 +14,7 @@ import BuildPage from './BuildPage';
 import BuildTnC from './BuildTnC';
 import LinksPage from './LinksPage';
 import BlogPage from './BlogPage';
+import BlogPostPage from './BlogPostPage';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/build/t&c" element={<BuildTnC />} />
         <Route path="/links" element={<LinksPage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
       </Routes>
     </Router>
   );
