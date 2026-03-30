@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './DentistPage.css';
 import { Link } from 'react-router-dom';
-import EnterpriseFooter from './EnterpriseFooter';
+import EnterpriseFooter from '../EnterpriseFooter';
 
 const DentistPage = () => {
     // Scroll reveal logic
@@ -109,6 +109,7 @@ const DentistPage = () => {
                 </Link>
                 <div className="dentist-nav-links">
                     <Link to="/" className="dentist-nav-link">Home</Link>
+                    <Link to="/blog" className="dentist-nav-link">Blog</Link>
                     <a href="/#contact" className="dentist-nav-cta">Contact Us (Book)</a>
                 </div>
             </nav>

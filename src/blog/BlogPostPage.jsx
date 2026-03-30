@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { blogPosts } from './blogData';
-import EnterpriseFooter from './EnterpriseFooter';
+import EnterpriseFooter from '../EnterpriseFooter';
 import './BlogPostPage.css';
 
 const BlogPostPage = () => {
@@ -44,6 +44,7 @@ const BlogPostPage = () => {
                 </Link>
                 <div className="blog-nav-links">
                     <Link to="/" className="blog-nav-link">Home</Link>
+                    <Link to="/services" className="blog-nav-link">Services</Link>
                     <Link to="/blog" className="blog-nav-link">Blog</Link>
                     <a href="/#contact" className="blog-nav-cta">Work With Us</a>
                 </div>

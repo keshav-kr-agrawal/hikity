@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import EnterpriseFooter from './EnterpriseFooter';
+import EnterpriseFooter from '../EnterpriseFooter';
 import './WomenPage.css';
 
 const WomenPage = () => {
@@ -113,6 +113,7 @@ const WomenPage = () => {
                 </Link>
                 <div className="women-nav-links">
                     <Link to="/" className="women-nav-link">Home</Link>
+                    <Link to="/blog" className="women-nav-link">Blog</Link>
                     <a href="/#contact" className="women-nav-cta">Contact Us</a>
                 </div>
             </nav>

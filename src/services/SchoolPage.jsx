@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './SchoolPage.css';
 import { Link } from 'react-router-dom';
-import EnterpriseFooter from './EnterpriseFooter';
+import EnterpriseFooter from '../EnterpriseFooter';
 
 const SchoolPage = () => {
     // Scroll reveal logic
@@ -109,6 +109,7 @@ const SchoolPage = () => {
                 </Link>
                 <div className="school-nav-links">
                     <Link to="/" className="school-nav-link">Home</Link>
+                    <Link to="/blog" className="school-nav-link">Blog</Link>
                     <a href="/#contact" className="school-nav-cta">Contact Us</a>
                 </div>
             </nav>

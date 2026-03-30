@@ -171,6 +171,9 @@ const EnterpriseFooter = ({ onNavigate }) => {
           </div>
 
           <div className="footer-legal-new">
+            <Link to="/blog" className="footer-legal-link-new" style={{marginRight: '20px'}}>
+              BLOG
+            </Link>
             <Link to="/t&c" className="footer-legal-link-new">
               TERMS & CONDITIONS
             </Link>

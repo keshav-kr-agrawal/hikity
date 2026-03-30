@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import EnterpriseFooter from './EnterpriseFooter';
+import EnterpriseFooter from '../EnterpriseFooter';
 import './BuildTnC.css';
 
 const BuildTnC = () => {
@@ -19,6 +19,7 @@ const BuildTnC = () => {
                 </Link>
                 <div className="b-nav-links">
                     <Link to="/build" className="b-nav-link">Back to Build</Link>
+                    <Link to="/blog" className="b-nav-link" style={{marginLeft: "20px"}}>Blog</Link>
                     <a href="/#contact" className="b-nav-cta">Pitch Us</a>
                 </div>
             </nav>

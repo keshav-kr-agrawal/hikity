@@ -106,7 +106,11 @@ const TermsAndConditions = () => {
     return (
         <div style={styles.container}>
             <div style={styles.contentWrapper}>
-                <Link to="/" style={styles.backLink}>← Back to Home</Link>
+                <div>
+                    <Link to="/" style={styles.backLink}>← Back to Home</Link>
+                    <span style={{color: '#6b7280', margin: '0 15px'}}>|</span>
+                    <Link to="/blog" style={styles.backLink}>Blog</Link>
+                </div>
 
                 <header style={styles.header}>
                     <h1 style={styles.title}>TERMS OF SERVICE</h1>

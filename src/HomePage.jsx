@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, Fragment } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+import { Link } from 'react-router-dom'
 import EnterpriseFooter from './EnterpriseFooter'
 import './App.css'
 
@@ -359,6 +360,7 @@ function HomePage() {
                         <span className="logo-text">HIKITY</span>
                     </div>
                     <div className="nav-contact-wrapper">
+                        <Link to="/blog" className="nav-contact" style={{marginRight: '15px', background: 'transparent', color: 'inherit'}}>BLOG</Link>
                         <button className="nav-contact" onClick={scrollToContact}>CONTACT</button>
                     </div>
                 </nav>

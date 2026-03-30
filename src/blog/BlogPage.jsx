@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import EnterpriseFooter from './EnterpriseFooter';
+import EnterpriseFooter from '../EnterpriseFooter';
 import { blogPosts } from './blogData';
 import './BlogPage.css';
 
@@ -64,7 +64,7 @@ const BlogPage = () => {
                 </Link>
                 <div className="blog-nav-links">
                     <Link to="/" className="blog-nav-link">Home</Link>
-                    <Link to="/links" className="blog-nav-link">Network</Link>
+                    <Link to="/services" className="blog-nav-link">Services</Link>
                     <a href="/#contact" className="blog-nav-cta">Work With Us</a>
                 </div>
             </nav>
