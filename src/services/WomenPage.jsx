@@ -468,17 +468,15 @@ const WomenPage = () => {
                                 <line x1="6" y1="6" x2="18" y2="18"></line>
                             </svg>
                         </button>
-                        <div className="w-popup-image">
-                            <img src="/assets/women-march-offer.jpg" alt="Women's Month Offer" />
-                        </div>
                         <div className="w-popup-body">
-                            <h3>Exclusive Women's Month Offer</h3>
-                            <p>Celebrate Women's Month with us! Claim your special business launch package today.</p>
+                            <div className="w-popup-badge">✦ FEMALE FOUNDER SPECIAL</div>
+                            <h3>She Who Dares, Wins — But the Clock's Ticking</h3>
+                            <p>An exclusive offer crafted for women building something bold — your moment to step up is almost over.</p>
                             <div className="w-popup-alert">
-                                <span>⚠️ Valid till 31th March 2026. Contact now, or miss out!</span>
+                                <span>🔥 Closing on 7th April 2026. Don't let this one slip away.</span>
                             </div>
                             <a href="/#contact" className="women-btn-primary" onClick={() => setShowPopup(false)}>
-                                Contact Now
+                                Grab It Before It's Gone
                             </a>
                         </div>
                     </div>
