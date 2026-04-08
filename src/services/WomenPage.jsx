@@ -473,7 +473,7 @@ const WomenPage = () => {
                             <h3>She Who Dares, Wins — But the Clock's Ticking</h3>
                             <p>An exclusive offer crafted for women building something bold — your moment to step up is almost over.</p>
                             <div className="w-popup-alert">
-                                <span>🔥 Closing on 7th April 2026. Don't let this one slip away.</span>
+                                <span>🔥 Closing on 9th April 2026. Don't let this one slip away.</span>
                             </div>
                             <a href="/#contact" className="women-btn-primary" onClick={() => setShowPopup(false)}>
                                 Grab It Before It's Gone
