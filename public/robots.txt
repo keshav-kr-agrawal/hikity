@@ -1,43 +1,50 @@
-# HIKITY - Robots.txt Configuration
-# Updated: 2026-02-10
+# HIKITY - Robots.txt
+# Updated: 2026-04-28
+# https://hikity.xyz
 
-# Default Rules for All Bots
+# =============================================
+# Default: Allow all search engines full access
+# =============================================
 User-agent: *
 Allow: /
 Crawl-delay: 1
 
-# Google Bot - Full Access
+# =============================================
+# Google - Priority access, no crawl delay
+# =============================================
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0
 
-# Bing Bot - Full Access
+User-agent: Googlebot-Image
+Allow: /assets/
+
+# =============================================
+# Bing / Microsoft
+# =============================================
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 0
 
-# AI Crawlers - Controlled Access
-# OpenAI GPT Bot
+# =============================================
+# AI Training Crawlers (Allowed)
+# =============================================
 User-agent: GPTBot
 Allow: /
 
-# ChatGPT User Agent
 User-agent: ChatGPT-User
 Allow: /
 
-# Google Bard/Gemini
 User-agent: Google-Extended
 Allow: /
 
-# Anthropic Claude
 User-agent: anthropic-ai
 Allow: /
 
-# Common Crawlers
-User-agent: Slurp
+User-agent: PerplexityBot
 Allow: /
 
-# Social Media Bots
+# =============================================
+# Social Media Link Previewers
+# =============================================
 User-agent: facebookexternalhit
 Allow: /
 
@@ -47,18 +54,10 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-User-agent: Pinterest
+User-agent: WhatsApp
 Allow: /
 
-# Disallow admin/private paths (if any in future)
-# Disallow: /admin/
-# Disallow: /private/
-# Disallow: /.git/
-
-# Sitemap Location
+# =============================================
+# Sitemap Location (CRITICAL for GSC)
+# =============================================
 Sitemap: https://hikity.xyz/sitemap.xml
-
-# Additional Information
-# Host: https://hikity.xyz
-# Contact: contact@hikity.xyz
-

@@ -1,127 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ============================== -->
+  <!--         HOME PAGE - Priority 1.0                -->
+  <!-- ============================== -->
   <url>
     <loc>https://hikity.xyz/</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    
-    <!-- Primary Brand Image -->
     <image:image>
       <image:loc>https://hikity.xyz/assets/hikity.jpeg</image:loc>
-      <image:title>HIKITY Falcon Logo - Digital Architecture &amp; Agentic Systems</image:title>
-      <image:caption>HIKITY Falcon Logo - Professional web solutions, AI agents, and digital transformation services by HIKAT</image:caption>
+      <image:title>HIKITY - Digital Solutions, Web Development and AI Automation India</image:title>
+      <image:caption>HIKITY Falcon Logo - Professional web solutions, AI agents, and digital transformation by HIKAT</image:caption>
     </image:image>
-    
-    <!-- Service Showcase Images -->
     <image:image>
       <image:loc>https://hikity.xyz/assets/mountain.png</image:loc>
-      <image:title>HIKITY Web Development Services</image:title>
+      <image:title>HIKITY Web Development Services - Custom Websites India</image:title>
       <image:caption>Custom website design, responsive web solutions, and enterprise web development by HIKITY</image:caption>
     </image:image>
-    
     <image:image>
       <image:loc>https://hikity.xyz/assets/scene.jpg</image:loc>
-      <image:title>HIKITY Digital Solutions Portfolio</image:title>
+      <image:title>HIKITY Digital Portfolio - AI Agents and 3D Interactive Experiences</image:title>
       <image:caption>AI agents, 3D interactive experiences, smart automation, and innovative digital solutions</image:caption>
     </image:image>
-    
-    <image:image>
-      <image:loc>https://hikity.xyz/assets/cloud.png</image:loc>
-      <image:title>HIKITY Cloud &amp; Enterprise Solutions</image:title>
-      <image:caption>Enterprise web solutions, digital transformation, and scalable cloud-based applications</image:caption>
-    </image:image>
-    
-    <image:image>
-      <image:loc>https://hikity.xyz/assets/road.jpg</image:loc>
-      <image:title>HIKITY Contact &amp; Web Services</image:title>
-      <image:caption>Get in touch for custom web development, free landing page design, and professional digital solutions</image:caption>
-    </image:image>
   </url>
-  
+
+  <!-- ============================== -->
+  <!--      SERVICES - Priority 0.9          -->
+  <!-- ============================== -->
   <url>
     <loc>https://hikity.xyz/services</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://hikity.xyz/business</loc>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://hikity.xyz/women</loc>
+    <loc>https://hikity.xyz/business</loc>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
-  
-  <url>
-    <loc>https://hikity.xyz/dentist</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://hikity.xyz/school</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://hikity.xyz/cafe</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://hikity.xyz/work</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
+
   <url>
     <loc>https://hikity.xyz/build</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ============================== -->
+  <!--   INDUSTRY PAGES - Priority 0.8      -->
+  <!-- ============================== -->
+  <url>
+    <loc>https://hikity.xyz/women</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://hikity.xyz/dentist</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://hikity.xyz/school</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://hikity.xyz/cafe</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://hikity.xyz/work</loc>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://hikity.xyz/blog</loc>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
+  <!-- ============================== -->
+  <!--    ART PAGES - Priority 0.7       -->
+  <!-- ============================== -->
   <url>
     <loc>https://hikity.xyz/art/music</loc>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
   <url>
     <loc>https://hikity.xyz/art/craft</loc>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
+  <!-- ============================== -->
+  <!--   LINKS PAGE - Priority 0.6       -->
+  <!-- ============================== -->
   <url>
     <loc>https://hikity.xyz/links</loc>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hikity.xyz/t&amp;c</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hikity.xyz/build/t&amp;c</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
 
 </urlset>
