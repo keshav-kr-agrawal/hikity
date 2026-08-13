@@ -810,18 +810,19 @@ p {
 
 /* ===== CTA ===== */
 .dentist-cta-section {
-    background: var(--d-text-dark);
-    color: #fff;
+    background: var(--d-bg-light);
+    color: var(--d-text-dark);
     text-align: center;
     padding: 100px 0;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid var(--d-border);
 }
 
 .dentist-cta-bg {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(14, 165, 233, 0.2) 0%, transparent 60%);
+    background: radial-gradient(circle at center, rgba(14, 165, 233, 0.08) 0%, transparent 60%);
 }
 
 .dentist-cta-content {
@@ -838,12 +839,12 @@ p {
 .dentist-cta-title {
     font-size: clamp(2.2rem, 4vw, 3rem);
     font-weight: 800;
-    color: #fff;
+    color: var(--d-text-dark);
 }
 
 .dentist-cta-desc {
     font-size: 1.1rem;
-    color: #cbd5e1;
+    color: var(--d-text-med);
     line-height: 1.7;
 }
 

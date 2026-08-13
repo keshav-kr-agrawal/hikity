@@ -803,18 +803,19 @@ p {
 
 /* ===== CTA ===== */
 .cafe-cta-section {
-    background: var(--c-text-dark);
-    color: var(--c-bg-light);
+    background: var(--c-bg-light);
+    color: var(--c-text-dark);
     text-align: center;
     padding: 100px 0;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid var(--c-border);
 }
 
 .cafe-cta-bg {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(200, 75, 49, 0.25) 0%, transparent 60%);
+    background: radial-gradient(circle at center, rgba(200, 75, 49, 0.08) 0%, transparent 60%);
 }
 
 .cafe-cta-content {
@@ -831,12 +832,12 @@ p {
 .cafe-cta-title {
     font-size: clamp(2.2rem, 4vw, 3rem);
     font-weight: 800;
-    color: #fff;
+    color: var(--c-text-dark);
 }
 
 .cafe-cta-desc {
     font-size: 1.1rem;
-    color: #d4a373;
+    color: var(--c-text-med);
     line-height: 1.7;
 }
 

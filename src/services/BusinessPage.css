@@ -793,19 +793,19 @@ p {
 
 /* ===== CTA ===== */
 .p-cta-section {
-    background: var(--p-primary);
-    color: #fff;
+    background: #f8fafc;
+    color: var(--p-text-dark);
     text-align: center;
     padding: 120px 0;
     position: relative;
     overflow: hidden;
-    border-top: 2px solid var(--p-accent);
+    border-top: 1px solid var(--p-border);
 }
 
 .p-cta-bg {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
 }
 
 .p-cta-content {
@@ -822,25 +822,25 @@ p {
 .p-cta-title {
     font-size: clamp(2.5rem, 4vw, 3.4rem);
     font-weight: 800;
-    color: #ffffff;
+    color: var(--p-text-dark);
     letter-spacing: -0.02em;
 }
 
 .p-cta-desc {
     font-size: 1.15rem;
-    color: #9ca3af;
+    color: var(--p-text-med);
     line-height: 1.7;
 }
 
 .p-cta-actions .p-btn-primary {
-    background: #fff;
-    color: var(--p-primary);
-    border-color: #fff;
+    background: #000000;
+    color: #ffffff;
+    border-color: #000000;
 }
 
 .p-cta-actions .p-btn-primary:hover {
-    background: transparent;
-    color: #fff;
+    background: #1e293b;
+    color: #ffffff;
 }
 
 /* ===== SCROLL REVEAL ===== */

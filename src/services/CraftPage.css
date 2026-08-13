@@ -802,18 +802,19 @@ p {
 
 /* ===== CTA ===== */
 .cr-cta-section {
-    background: var(--cr-text-dark);
-    color: var(--cr-bg-light);
+    background: var(--cr-bg-tint);
+    color: var(--cr-text-dark);
     text-align: center;
     padding: 100px 0;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid var(--cr-border);
 }
 
 .cr-cta-bg {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(155, 106, 108, 0.2) 0%, transparent 60%);
+    background: radial-gradient(circle at center, rgba(155, 106, 108, 0.08) 0%, transparent 60%);
 }
 
 .cr-cta-content {
@@ -830,12 +831,12 @@ p {
 .cr-cta-title {
     font-size: clamp(2.2rem, 4vw, 3rem);
     font-weight: 800;
-    color: #fff;
+    color: var(--cr-text-dark);
 }
 
 .cr-cta-desc {
     font-size: 1.1rem;
-    color: #e5d9d7;
+    color: var(--cr-text-med);
     line-height: 1.7;
 }
 

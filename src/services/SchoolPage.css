@@ -795,18 +795,19 @@ p {
 
 /* ===== CTA ===== */
 .school-cta-section {
-    background: var(--s-text-dark);
-    color: #fff;
+    background: var(--s-bg-light);
+    color: var(--s-text-dark);
     text-align: center;
     padding: 100px 0;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid var(--s-border);
 }
 
 .school-cta-bg {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(30, 64, 175, 0.2) 0%, transparent 60%);
+    background: radial-gradient(circle at center, rgba(30, 64, 175, 0.08) 0%, transparent 60%);
 }
 
 .school-cta-content {
@@ -823,12 +824,12 @@ p {
 .school-cta-title {
     font-size: clamp(2.2rem, 4vw, 3rem);
     font-weight: 800;
-    color: #fff;
+    color: var(--s-text-dark);
 }
 
 .school-cta-desc {
     font-size: 1.1rem;
-    color: #cbd5e1;
+    color: var(--s-text-med);
     line-height: 1.7;
 }
 

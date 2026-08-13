@@ -801,18 +801,19 @@ p {
 
 /* ===== CTA ===== */
 .m-cta-section {
-    background: var(--m-text-dark);
-    color: var(--m-bg-light);
+    background: var(--m-bg-stone);
+    color: var(--m-text-dark);
     text-align: center;
     padding: 120px 0;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid var(--m-border);
 }
 
 .m-cta-bg {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(139, 69, 19, 0.15) 0%, transparent 60%);
+    background: radial-gradient(circle at center, rgba(139, 69, 19, 0.08) 0%, transparent 60%);
 }
 
 .m-cta-content {
@@ -829,15 +830,14 @@ p {
 .m-cta-title {
     font-size: clamp(2.5rem, 4vw, 3.5rem);
     font-weight: 800;
-    color: var(--m-bg-light);
+    color: var(--m-text-dark);
     line-height: 1.1;
 }
 
 .m-cta-desc {
     font-size: 1.15rem;
-    color: var(--m-text-muted);
+    color: var(--m-text-med);
     line-height: 1.7;
-    filter: brightness(1.5);
 }
 
 /* ===== FOOTER OVERRIDE - REVERTED TO GLOBAL ===== */
