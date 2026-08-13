@@ -1,327 +1,158 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './CafePage.css';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import EnterpriseFooter from '../EnterpriseFooter';
+import './CafePage.css';
 
 const CafePage = () => {
-    // Scroll reveal logic
-    const [visibleSections, setVisibleSections] = useState({});
-    const sectionRefs = useRef([]);
-
-    const addToRefs = (el) => {
-        if (el && !sectionRefs.current.includes(el)) {
-            sectionRefs.current.push(el);
-        }
-    };
+    const [scrolled, setScrolled] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+    const [form, setForm] = useState({
+        restaurantName: '',
+        contactPerson: '',
+        phone: '',
+        type: 'Café & Bakery',
+        tables: '10-25 Tables'
+    });
 
     useEffect(() => {
         window.scrollTo(0, 0);
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setVisibleSections(prev => ({ ...prev, [entry.target.id]: true }));
-                    }
-                });
-            },
-            { threshold: 0.15 }
-        );
-
-        sectionRefs.current.forEach((ref) => {
-            if (ref) observer.observe(ref);
-        });
-
-        // Navbar scroll effect
-        const handleScroll = () => {
-            const nav = document.querySelector('.cafe-nav');
-            if (nav) {
-                if (window.scrollY > 50) nav.classList.add('scrolled');
-                else nav.classList.remove('scrolled');
-            }
-        };
+        const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            sectionRefs.current.forEach((ref) => {
-                if (ref) observer.unobserve(ref);
-            });
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const features = [
-        {
-            icon: "📍",
-            title: "Local Search Dominance",
-            desc: "Command the top spot on Google Maps. When locals search for 'best coffee near me' or 'dinner spots', they find you first."
-        },
-        {
-            icon: "🍽️",
-            title: "Reservation Integration",
-            desc: "Seamless synchronization with OpenTable, Resy, or your preferred booking platform to convert visitors into diners instantly."
-        },
-        {
-            icon: "📸",
-            title: "Visual Menu Experiences",
-            desc: "Artisan-level, mouth-watering digital menus that load instantly and look incredible on every mobile device."
-        },
-        {
-            icon: "🛵",
-            title: "Direct Ordering Systems",
-            desc: "Bypass third-party delivery fees with a custom online ordering system integrated seamlessly into your brand's website."
-        },
-        {
-            icon: "⭐",
-            title: "Reputation Engines",
-            desc: "Turn your best customers into vocal advocates. Automated systems to safely gather and highlight 5-star Yelp and Google reviews."
-        },
-        {
-            icon: "✨",
-            title: "Aesthetic Continuity",
-            desc: "Web designs crafted with the modern foodie in mind—translating your physical ambiance into a highly shareable digital brand."
-        }
-    ];
+    const handleChange = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value });
+    };
 
-    const testimonials = [
-        {
-            quote: "Hikity transformed our online presence. Our direct reservations are up by 45%, and we're consistently fully booked on weekends.",
-            author: "Chef Marco Rossi",
-            practice: "Owner, Trattoria Bella",
-            avatar: "👨‍🍳"
-        },
-        {
-            quote: "The brand aesthetic they built for our cafe perfectly captures our vibe. We went from a hidden gem to the neighborhood staple.",
-            author: "Elena Silva",
-            practice: "Founder, Origin Coffee Roasters",
-            avatar: "👩‍🍳"
-        }
-    ];
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setSubmitted(true);
+    };
 
     return (
         <div className="cafe-page">
-            {/* ── NAVIGATION ── */}
-            <nav className="cafe-nav">
-                <Link to="/" className="cafe-nav-logo">
-                    <div className="cafe-nav-logo-circle">
-                        <img src="/assets/hikity.jpeg" alt="Hikity Logo" />
+            {/* LIGHT NAVBAR */}
+            <nav className={`cf-nav ${scrolled ? 'scrolled' : ''}`}>
+                <Link to="/" className="cf-nav-logo">
+                    <div className="cf-nav-logo-circle">
+                        <img src="/hikity_logo.jpeg" alt="Hikity Logo" />
                     </div>
+                    <span>HIKITY CAFÉ & RESTAURANT</span>
                 </Link>
-                <div className="cafe-nav-links">
-                    <Link to="/" className="cafe-nav-link">Home</Link>
-                    <Link to="/blog" className="cafe-nav-link">Blog</Link>
-                    <a href="/#contact" className="cafe-nav-cta">Work With Us</a>
+                <div className="cf-nav-links">
+                    <Link to="/" className="cf-nav-link">Home</Link>
+                    <Link to="/services" className="cf-nav-link">Services</Link>
+                    <Link to="/commerce" className="cf-nav-link">Commerce</Link>
+                    <a href="#cafe-form" className="cf-nav-cta">Get QR Menu Demo</a>
                 </div>
             </nav>
 
-            {/* ── HERO ── */}
-            <header className="cafe-hero">
-                <div className="cafe-hero-bg">
-                    <div className="cafe-hero-gradient" />
-                    <div className="cafe-hero-dots" />
-                </div>
-
-                <div className="cafe-container">
-                    <div className="cafe-hero-content-wrapper">
-                        <div className="cafe-hero-content">
-                            <div className="cafe-hero-badge">
-                                <span className="cafe-hero-badge-dot" />
-                                PREMIUM HOSPITALITY GROWTH
-                            </div>
-                            <h1 className="cafe-hero-title">
-                                Fill Your Tables <br /><span className="cafe-hero-title-accent">Every Single Night.</span>
-                            </h1>
-                            <p className="cafe-hero-subtitle">
-                                The best food deserves the best digital experience. Hikity crafts mouth-watering, high-converting websites and local SEO engines for premium restaurants, cafes, and hospitality brands.
-                            </p>
-
-                            <div className="cafe-hero-actions">
-                                <a href="/#contact" className="cafe-btn-primary large">
-                                    <span>Scale Your Restaurant</span>
-                                </a>
-                            </div>
-
-                            <div className="cafe-hero-stats">
-                                <div className="cafe-stat">
-                                    <span className="cafe-stat-number">45%</span>
-                                    <span className="cafe-stat-label">Avg. Reservation Lift</span>
-                                </div>
-                                <div className="cafe-stat-divider" />
-                                <div className="cafe-stat">
-                                    <span className="cafe-stat-number">#1</span>
-                                    <span className="cafe-stat-label">Foodie Destination</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="cafe-hero-visual">
-                            <div className="cafe-hero-card-stack">
-                                <div className="cafe-float-card card-1">
-                                    <span className="card-icon">🍽️</span>
-                                    <span>Direct Table Bookings</span>
-                                </div>
-                                <div className="cafe-float-card card-2">
-                                    <span className="card-icon">📍</span>
-                                    <span>Map Search Dominance</span>
-                                </div>
-                                <div className="cafe-float-card card-3">
-                                    <span className="card-icon">🥂</span>
-                                    <span>VIP Guest Retention</span>
-                                </div>
-                                <div className="cafe-float-card card-4">
-                                    <span className="card-icon">📸</span>
-                                    <span>Stunning Visual Layouts</span>
-                                </div>
-                            </div>
-                        </div>
+            {/* HERO SECTION */}
+            <header className="cf-hero">
+                <div className="cf-hero-glow"></div>
+                <div className="cf-container">
+                    <div className="cf-hero-badge">
+                        ☕ DIGITAL DINING & QR MENU SYSTEMS
                     </div>
-                </div>
+                    <h1 className="cf-hero-title">
+                        Transform Your Café & Restaurant With <span className="cf-accent-text">Contactless Smart Ordering</span>
+                    </h1>
+                    <p className="cf-hero-subtitle">
+                        Instant QR table code ordering, dynamic digital menu cards, real-time kitchen order alerts, and automated customer loyalty for modern food & beverage businesses.
+                    </p>
 
-                <div className="cafe-hero-scroll-indicator">
-                    <span>EXPLORE</span>
-                    <div className="scroll-line" />
+                    <div className="cf-hero-actions">
+                        <a href="#cafe-form" className="cf-btn-primary">Request Restaurant Setup →</a>
+                        <Link to="/services" className="cf-btn-secondary">View All Solutions</Link>
+                    </div>
                 </div>
             </header>
 
-            {/* ── MANIFESTO STRIP ── */}
-            <div className="cafe-manifesto">
-                <div className="cafe-manifesto-inner">
-                    {[...Array(3)].map((_, j) => (
-                        <React.Fragment key={j}>
-                            <div className="cafe-manifesto-item">MICHELIN QUALITY DESIGN <span className="manifesto-dot">✦</span></div>
-                            <div className="cafe-manifesto-item">LOCAL FOODIE SEO <span className="manifesto-dot">✦</span></div>
-                            <div className="cafe-manifesto-item">DIRECT RESERVATIONS <span className="manifesto-dot">✦</span></div>
-                            <div className="cafe-manifesto-item">VIRAL BRANDING <span className="manifesto-dot">✦</span></div>
-                        </React.Fragment>
-                    ))}
-                </div>
-            </div>
-
-            {/* ── FEATURES SECTION ── */}
-            <section
-                id="features"
-                className={`cafe-section bg-light ${visibleSections['features'] ? 'visible' : ''}`}
-                ref={addToRefs}
-            >
-                <div className="cafe-container">
-                    <div className="cafe-section-header">
-                        <span className="cafe-tag">DIGITAL HOSPITALITY</span>
-                        <h2 className="cafe-section-title">
-                            The Recipe for Growth
-                        </h2>
-                        <p className="cafe-section-subtitle">
-                            We curate digital experiences that perfectly match your culinary vision and compel locals to walk through your doors.
-                        </p>
+            {/* SMART RESTAURANT FEATURES BENTO GRID */}
+            <section className="cf-features-section">
+                <div className="cf-container">
+                    <div className="cf-section-header">
+                        <span className="cf-eyebrow">DIGITAL DINING SOLUTIONS</span>
+                        <h2 className="cf-title">Built For Faster Table Turnover & Higher Sales</h2>
                     </div>
 
-                    <div className="cafe-features-grid">
-                        {features.map((feature, i) => (
-                            <div key={i} className="cafe-feature-card">
-                                <span className="cafe-feature-icon">{feature.icon}</span>
-                                <h3 className="cafe-feature-title">{feature.title}</h3>
-                                <p className="cafe-feature-desc">{feature.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── LOCAL DOMINANCE (Orbit variation) ── */}
-            <section
-                id="local-dominance"
-                className={`cafe-section bg-gradient ${visibleSections['local-dominance'] ? 'visible' : ''}`}
-                ref={addToRefs}
-            >
-                <div className="cafe-container">
-                    <div className="cafe-local-content">
-                        <div className="cafe-local-text">
-                            <span className="cafe-tag">NEIGHBORHOOD STAPLE</span>
-                            <h2 className="cafe-section-title">
-                                Own Your Neighborhood
-                            </h2>
-                            <p className="cafe-section-subtitle">
-                                When locals are hungry, they search their immediate area. We make sure your restaurant is the undisputed first choice for dining in your city.
-                            </p>
-
-                            <ul className="cafe-checklist">
-                                <li><strong>Google Maps Optimization:</strong> Always appear at the top of the local 'hungry pack' search results.</li>
-                                <li><strong>Craving Campaigns:</strong> Targeted local ads placed right before dinner and lunch rushes.</li>
-                                <li><strong>5-Star Consistency:</strong> Systems that filter out bad reviews and amplify your happiest diners.</li>
-                            </ul>
+                    <div className="cf-features-grid">
+                        <div className="cf-feature-card">
+                            <div className="cf-card-icon">📱</div>
+                            <h3>Contactless QR Table Ordering</h3>
+                            <p>Diners scan table QR codes to view high-res photo menus, customize orders, and place requests directly to the kitchen.</p>
                         </div>
-
-                        <div className="cafe-local-visual">
-                            <div className="cafe-orbit">
-                                <div className="c-orbit-ring c-orbit-1" />
-                                <div className="c-orbit-ring c-orbit-2" />
-                                <div className="c-orbit-ring c-orbit-3" />
-                                <div className="c-orbit-center">
-                                    <img src="/assets/hikity.jpeg" alt="Hikity Logo" />
-                                </div>
-                                <div className="c-orbit-node n-1"><span>☕</span></div>
-                                <div className="c-orbit-node n-2"><span>🍷</span></div>
-                                <div className="c-orbit-node n-3"><span>⭐</span></div>
-                                <div className="c-orbit-node n-4"><span>📍</span></div>
-                            </div>
+                        <div className="cf-feature-card">
+                            <div className="cf-card-icon">🍳</div>
+                            <h3>Live Kitchen Display Screen</h3>
+                            <p>Real-time order ticket updates sent straight to the chef with instant status notifications (Preparing, Ready, Served).</p>
+                        </div>
+                        <div className="cf-feature-card">
+                            <div className="cf-card-icon">⚡</div>
+                            <h3>1-Second Menu Price Edits</h3>
+                            <p>Update dish prices, flag out-of-stock items, and add daily specials instantly without re-printing paper menus.</p>
+                        </div>
+                        <div className="cf-feature-card">
+                            <div className="cf-card-icon">💳</div>
+                            <h3>UPI & Table Payment Integration</h3>
+                            <p>Customers settle bills via GPay, PhonePe, Cards, or Cash with automated GST invoice receipts.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* ── TESTIMONIALS ── */}
-            <section
-                id="cafe-testimonials"
-                className={`cafe-section bg-white ${visibleSections['cafe-testimonials'] ? 'visible' : ''}`}
-                ref={addToRefs}
-            >
-                <div className="cafe-container">
-                    <div className="cafe-section-header">
-                        <span className="cafe-tag">CHEF APPROVED</span>
-                        <h2 className="cafe-section-title">
-                            Trusted by Top Restaurateurs
-                        </h2>
-                    </div>
+            {/* CAFE FORM SECTION */}
+            <section className="cf-form-section" id="cafe-form">
+                <div className="cf-container">
+                    <div className="cf-form-card">
+                        <div className="cf-form-header">
+                            <span className="cf-eyebrow">DIGITIZE YOUR RESTAURANT</span>
+                            <h2 className="cf-title">Setup Hikity Dining System</h2>
+                            <p className="cf-subtitle">Get your digital QR menu up and running in less than 48 hours.</p>
+                        </div>
 
-                    <div className="cafe-testimonials-grid">
-                        {testimonials.map((t, i) => (
-                            <div key={i} className="cafe-testimonial-card">
-                                <div className="t-quote-mark">"</div>
-                                <p className="t-text">{t.quote}</p>
-                                <div className="t-author">
-                                    <div className="t-avatar">{t.avatar}</div>
-                                    <div>
-                                        <span className="t-name">{t.author}</span>
-                                        <span className="t-clinic">{t.practice}</span>
+                        {submitted ? (
+                            <div className="cf-success-box">
+                                <h3>Setup Request Submitted!</h3>
+                                <p>Thank you! Our restaurant technology team will contact you to demo the system.</p>
+                            </div>
+                        ) : (
+                            <form className="cf-form" onSubmit={handleSubmit}>
+                                <div className="cf-form-grid">
+                                    <div className="cf-form-group">
+                                        <label>CAFÉ / RESTAURANT NAME</label>
+                                        <input type="text" name="restaurantName" required placeholder="e.g. Mocha Artisanal Cafe" value={form.restaurantName} onChange={handleChange} />
+                                    </div>
+                                    <div className="cf-form-group">
+                                        <label>CONTACT PERSON NAME</label>
+                                        <input type="text" name="contactPerson" required placeholder="e.g. Amit Kapoor" value={form.contactPerson} onChange={handleChange} />
+                                    </div>
+                                    <div className="cf-form-group">
+                                        <label>PHONE / WHATSAPP</label>
+                                        <input type="tel" name="phone" required placeholder="+91 98765 43210" value={form.phone} onChange={handleChange} />
+                                    </div>
+                                    <div className="cf-form-group">
+                                        <label>ESTABLISHMENT TYPE</label>
+                                        <select name="type" value={form.type} onChange={handleChange} className="cf-select">
+                                            <option value="Café & Bakery">Café & Bakery</option>
+                                            <option value="Fine Dining Restaurant">Fine Dining Restaurant</option>
+                                            <option value="Quick Service / Cloud Kitchen">Quick Service / Cloud Kitchen</option>
+                                            <option value="Bar & Bistro">Bar & Bistro</option>
+                                        </select>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                                <div className="cf-form-action">
+                                    <button type="submit" className="cf-btn-submit">Request QR Menu Demo →</button>
+                                    <p className="cf-direct-mail">Or email <a href="mailto:hikityofficial@gmail.com">hikityofficial@gmail.com</a></p>
+                                </div>
+                            </form>
+                        )}
                     </div>
                 </div>
             </section>
 
-            {/* ── CTA ── */}
-            <section className="cafe-cta-section">
-                <div className="cafe-cta-bg" />
-                <div className="cafe-container">
-                    <div className="cafe-cta-content">
-                        <h2 className="cafe-cta-title">Ready for a Packed House?</h2>
-                        <p className="cafe-cta-desc">
-                            Let's build a premium digital brand that reflects your culinary excellence and drives non-stop reservations.
-                        </p>
-                        <div className="cafe-cta-actions">
-                            <a href="/#contact" className="cafe-btn-primary large">
-                                <span>Get a Free Restaurant Audit</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── FOOTER ── */}
-            <div className="cafe-footer-wrapper">
-                <EnterpriseFooter />
-            </div>
+            <EnterpriseFooter />
         </div>
     );
 };

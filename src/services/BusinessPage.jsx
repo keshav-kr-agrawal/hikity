@@ -1,327 +1,189 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './BusinessPage.css';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import EnterpriseFooter from '../EnterpriseFooter';
+import './BusinessPage.css';
 
 const BusinessPage = () => {
-    // Scroll reveal logic
-    const [visibleSections, setVisibleSections] = useState({});
-    const sectionRefs = useRef([]);
-
-    const addToRefs = (el) => {
-        if (el && !sectionRefs.current.includes(el)) {
-            sectionRefs.current.push(el);
-        }
-    };
+    const [scrolled, setScrolled] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+    const [form, setForm] = useState({
+        company: '',
+        name: '',
+        email: '',
+        phone: '',
+        employees: '10-50',
+        requirement: ''
+    });
 
     useEffect(() => {
         window.scrollTo(0, 0);
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setVisibleSections(prev => ({ ...prev, [entry.target.id]: true }));
-                    }
-                });
-            },
-            { threshold: 0.15 }
-        );
-
-        sectionRefs.current.forEach((ref) => {
-            if (ref) observer.observe(ref);
-        });
-
-        // Navbar scroll effect
-        const handleScroll = () => {
-            const nav = document.querySelector('.p-nav');
-            if (nav) {
-                if (window.scrollY > 50) nav.classList.add('scrolled');
-                else nav.classList.remove('scrolled');
-            }
-        };
+        const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            sectionRefs.current.forEach((ref) => {
-                if (ref) observer.unobserve(ref);
-            });
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const features = [
-        {
-            icon: "🛒",
-            title: "Frictionless Checkout",
-            desc: "Hyper-optimized cart flows designed to slash abandonment rates and instantly boost your daily revenue."
-        },
-        {
-            icon: "💎",
-            title: "Premium Brand Positioning",
-            desc: "Visual storytelling that elevates your product. Turn a simple perfume or skincare item into an absolute must-have luxury."
-        },
-        {
-            icon: "📈",
-            title: "High-ROAS Ad Systems",
-            desc: "Integrated tracking and pixel architecture that allows your search and display ads to target the highest-intent buyers."
-        },
-        {
-            icon: "🔄",
-            title: "Upsell & Retention",
-            desc: "Automated post-purchase flows, subscriptions, and email/SMS marketing that maximize the lifetime value of every customer."
-        },
-        {
-            icon: "📦",
-            title: "Global Supply Integrations",
-            desc: "Flawless syncing with 3PLs, inventory management systems, and global shipping networks for automated fulfillment."
-        },
-        {
-            icon: "📱",
-            title: "Email & SMS Growth",
-            desc: "Direct integration with automated email and SMS marketing platforms, turning your casual browsers into loyal, repeat storefront buyers."
-        }
-    ];
+    const handleChange = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value });
+    };
 
-    const testimonials = [
-        {
-            quote: "Hikity transformed our entire e-commerce ecosystem. The site is visually breathtaking, and more importantly, our conversion rate jumped from 1.2% to 3.8% in the first month.",
-            author: "Elena Rossi",
-            practice: "Founder, Maison Rossi Fragrances",
-            avatar: "🧴"
-        },
-        {
-            quote: "We needed a digital experience as premium as our products. They delivered a Masterclass in D2C branding. Our subscription revenue has absolutely exploded.",
-            author: "Marcus Chen",
-            practice: "CMO, Nova Premium Skincare",
-            avatar: "✨"
-        }
-    ];
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setSubmitted(true);
+    };
 
     return (
         <div className="p-page">
-            {/* ── NAVIGATION ── */}
-            <nav className="p-nav">
+            {/* LIGHT NAVBAR */}
+            <nav className={`p-nav ${scrolled ? 'scrolled' : ''}`}>
                 <Link to="/" className="p-nav-logo">
                     <div className="p-nav-logo-circle">
-                        <img src="/assets/hikity.jpeg" alt="Hikity Logo" />
+                        <img src="/hikity_logo.jpeg" alt="Hikity Logo" />
                     </div>
+                    <span>HIKITY ENTERPRISE</span>
                 </Link>
                 <div className="p-nav-links">
                     <Link to="/" className="p-nav-link">Home</Link>
-                    <Link to="/blog" className="p-nav-link">Blog</Link>
-                    <a href="/#contact" className="p-nav-cta">Scale Your Brand</a>
+                    <Link to="/services" className="p-nav-link">Services</Link>
+                    <Link to="/commerce" className="p-nav-link">Commerce</Link>
+                    <a href="#biz-form" className="p-nav-cta">Book Enterprise Demo</a>
                 </div>
             </nav>
 
-            {/* ── HERO ── */}
+            {/* HERO SECTION */}
             <header className="p-hero">
-                <div className="p-hero-bg">
-                    <div className="p-hero-gradient" />
-                    <div className="p-hero-dots" />
-                </div>
-
+                <div className="p-hero-glow"></div>
                 <div className="p-container">
-                    <div className="p-hero-content-wrapper">
-                        <div className="p-hero-content">
-                            <div className="p-hero-badge">
-                                <span className="p-hero-badge-dot" />
-                                DIRECT-TO-CONSUMER EXCELLENCE
-                            </div>
-                            <h1 className="p-hero-title">
-                                Scale Your Brand. <span className="p-hero-title-accent">Dominate D2C.</span>
-                            </h1>
-                            <p className="p-hero-subtitle">
-                                Hikity engineers high-converting, visually stunning e-commerce ecosystems for premium product brands—from luxury perfumes and high-end skincare to bespoke lifestyle goods.
-                            </p>
-
-                            <div className="p-hero-actions">
-                                <a href="/#contact" className="p-btn-primary large">
-                                    <span>Launch Your Store</span>
-                                </a>
-                            </div>
-
-                            <div className="p-hero-stats">
-                                <div className="p-stat">
-                                    <span className="p-stat-number">+210%</span>
-                                    <span className="p-stat-label">Avg. Revenue Growth</span>
-                                </div>
-                                <div className="p-stat-divider" />
-                                <div className="p-stat">
-                                    <span className="p-stat-number">Global</span>
-                                    <span className="p-stat-label">Scaling Infrastructure</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="p-hero-visual">
-                            <div className="p-hero-card-stack">
-                                <div className="p-float-card card-1">
-                                    <span className="card-icon">🛍️</span>
-                                    <span>High-Volume Sales</span>
-                                </div>
-                                <div className="p-float-card card-2">
-                                    <span className="card-icon">✨</span>
-                                    <span>Luxury Aesethics</span>
-                                </div>
-                                <div className="p-float-card card-3">
-                                    <span className="card-icon">📈</span>
-                                    <span>300% ROAS on Ads</span>
-                                </div>
-                                <div className="p-float-card card-4">
-                                    <span className="card-icon">🌍</span>
-                                    <span>Global Shipping Active</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="p-hero-badge">
+                        ENTERPRISE INFRASTRUCTURE & AUTOMATION
                     </div>
-                </div>
+                    <h1 className="p-hero-title">
+                        Corporate Tech Systems Built For <span className="p-accent-text">High-Scale Businesses</span>
+                    </h1>
+                    <p className="p-hero-subtitle">
+                        Streamline multi-branch operations, automated billing, inventory synchronization, custom ERP dashboards, and dedicated cloud servers with 99.99% uptime SLA.
+                    </p>
 
-                <div className="p-hero-scroll-indicator">
-                    <span>EXPLORE THE COLLECTION</span>
-                    <div className="scroll-line" />
+                    <div className="p-hero-actions">
+                        <a href="#biz-form" className="p-btn-primary">Schedule Corporate Consultation →</a>
+                        <Link to="/services" className="p-btn-secondary">Explore All Verticals</Link>
+                    </div>
                 </div>
             </header>
 
-            {/* ── MANIFESTO STRIP ── */}
-            <div className="p-manifesto">
-                <div className="p-manifesto-inner">
-                    {[...Array(3)].map((_, j) => (
-                        <React.Fragment key={j}>
-                            <div className="p-manifesto-item">CONVERSION OPTIMIZED <span className="manifesto-dot">✦</span></div>
-                            <div className="p-manifesto-item">LUXURY POSITIONING <span className="manifesto-dot">✦</span></div>
-                            <div className="p-manifesto-item">GLOBAL FULFILLMENT <span className="manifesto-dot">✦</span></div>
-                            <div className="p-manifesto-item">RETENTION MARKETING <span className="manifesto-dot">✦</span></div>
-                        </React.Fragment>
-                    ))}
-                </div>
-            </div>
-
-            {/* ── FEATURES SECTION ── */}
-            <section
-                id="features"
-                className={`p-section bg-light ${visibleSections['features'] ? 'visible' : ''}`}
-                ref={addToRefs}
-            >
+            {/* ENTERPRISE CORE SUITE BENTO GRID */}
+            <section className="p-suite-section">
                 <div className="p-container">
                     <div className="p-section-header">
-                        <span className="p-tag">THE E-COMMERCE ENGINE</span>
-                        <h2 className="p-section-title">
-                            More Than Just A Storefront
-                        </h2>
-                        <p className="p-section-subtitle">
-                            We don't just build websites; we engineer comprehensive digital sales machines designed to maximize Average Order Value (AOV) and build fierce brand loyalty.
-                        </p>
+                        <span className="p-eyebrow">ENTERPRISE SYSTEM MODULES</span>
+                        <h2 className="p-title">Everything Your Business Needs To Scale</h2>
                     </div>
 
-                    <div className="p-features-grid">
-                        {features.map((feature, i) => (
-                            <div key={i} className="p-feature-card">
-                                <span className="p-feature-icon">{feature.icon}</span>
-                                <h3 className="p-feature-title">{feature.title}</h3>
-                                <p className="p-feature-desc">{feature.desc}</p>
-                            </div>
-                        ))}
+                    <div className="p-suite-grid">
+                        <div className="p-suite-card">
+                            <div className="p-card-icon">⚡</div>
+                            <h3>Custom ERP & CRM Hub</h3>
+                            <p>Centralized business control center for tracking leads, managing staff permissions, and real-time operational analytics.</p>
+                        </div>
+                        <div className="p-suite-card">
+                            <div className="p-card-icon">📄</div>
+                            <h3>Automated Invoicing & GST</h3>
+                            <p>Generate compliant GST tax invoices, automated recurring billing, PDF exports, and instant customer payment links.</p>
+                        </div>
+                        <div className="p-suite-card">
+                            <div className="p-card-icon">🏬</div>
+                            <h3>Multi-Branch Inventory Sync</h3>
+                            <p>Real-time stock management across warehouses and retail branches with automated low-stock reorder triggers.</p>
+                        </div>
+                        <div className="p-suite-card">
+                            <div className="p-card-icon">🔒</div>
+                            <h3>Enterprise Security & Backup</h3>
+                            <p>Bank-grade encryption, automated daily offsite database backups, custom roles, and 24/7 dedicated system monitoring.</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* ── LOCAL DOMINANCE (Orbit variation) ── */}
-            <section
-                id="local-dominance"
-                className={`p-section bg-gradient ${visibleSections['local-dominance'] ? 'visible' : ''}`}
-                ref={addToRefs}
-            >
+            {/* ROI COMPARISON SECTION */}
+            <section className="p-roi-section">
                 <div className="p-container">
-                    <div className="p-local-content">
-                        <div className="p-local-text">
-                            <span className="p-tag">MARKET DOMINANCE</span>
-                            <h2 className="p-section-title">
-                                Built to Scale Globally
-                            </h2>
-                            <p className="p-section-subtitle">
-                                Whether you're dropping a local capsule collection or shipping thousands of units worldwide every day, our architecture handles extreme traffic spikes flawlessly.
-                            </p>
+                    <div className="p-section-header">
+                        <span className="p-eyebrow">HIGH EFFICIENCY COST STRUCTURE</span>
+                        <h2 className="p-title">Traditional IT Retainers vs Hikity Enterprise</h2>
+                    </div>
 
-                            <ul className="p-checklist">
-                                <li><strong>Zero-Downtime Drops:</strong> Infrastructure specifically designed to handle massive influxes of buyers during high-hype product launches.</li>
-                                <li><strong>Multi-Currency Checkout:</strong> Seamless localized pricing and checkout experiences for your international customer base.</li>
-                                <li><strong>Data Ownership:</strong> Move away from marketplace monopolies (like Amazon) and fully own your customer data for infinite retargeting.</li>
+                    <div className="p-roi-box">
+                        <div className="p-roi-col old">
+                            <h3>In-House IT & Legacy Consultants</h3>
+                            <ul>
+                                <li>❌ ₹12L+ annual salary per senior developer</li>
+                                <li>❌ Complex server maintenance and outage risks</li>
+                                <li>❌ Fragmented tools without unified integration</li>
+                                <li>❌ Slow updates and high security vulnerabilities</li>
                             </ul>
                         </div>
-
-                        <div className="p-local-visual">
-                            <div className="p-orbit">
-                                <div className="p-orbit-ring p-orbit-1" />
-                                <div className="p-orbit-ring p-orbit-2" />
-                                <div className="p-orbit-ring p-orbit-3" />
-                                <div className="p-orbit-center">
-                                    <img src="/assets/hikity.jpeg" alt="Hikity Logo" />
-                                </div>
-                                <div className="p-orbit-node n-1"><span>🧴</span></div>
-                                <div className="p-orbit-node n-2"><span>🕶️</span></div>
-                                <div className="p-orbit-node n-3"><span>📦</span></div>
-                                <div className="p-orbit-node n-4"><span>✨</span></div>
-                            </div>
+                        <div className="p-roi-col new">
+                            <h3>Hikity Enterprise Infrastructure</h3>
+                            <ul>
+                                <li><span className="p-check">✓</span> Flat annual managed technology subscription</li>
+                                <li><span className="p-check">✓</span> 99.99% guaranteed server SLA and instant support</li>
+                                <li><span className="p-check">✓</span> Unified custom software tailored to your workflows</li>
+                                <li><span className="p-check">✓</span> Continuous maintenance, patches, and feature updates</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* ── TESTIMONIALS ── */}
-            <section
-                id="p-testimonials"
-                className={`p-section bg-white ${visibleSections['p-testimonials'] ? 'visible' : ''}`}
-                ref={addToRefs}
-            >
+            {/* CORPORATE DEMO FORM */}
+            <section className="p-form-section" id="biz-form">
                 <div className="p-container">
-                    <div className="p-section-header">
-                        <span className="p-tag">INDUSTRY LEADERS</span>
-                        <h2 className="p-section-title">
-                            Trusted By Elite Founders
-                        </h2>
-                    </div>
+                    <div className="p-form-card">
+                        <div className="p-form-header">
+                            <span className="p-eyebrow">SCHEDULE A DEMO</span>
+                            <h2 className="p-title">Request Enterprise Systems Demo</h2>
+                            <p className="p-subtitle">Our solutions architects will contact your team within 12 hours.</p>
+                        </div>
 
-                    <div className="p-testimonials-grid">
-                        {testimonials.map((t, i) => (
-                            <div key={i} className="p-testimonial-card">
-                                <div className="t-quote-mark">"</div>
-                                <p className="t-text">{t.quote}</p>
-                                <div className="t-author">
-                                    <div className="t-avatar">{t.avatar}</div>
-                                    <div>
-                                        <span className="t-name">{t.author}</span>
-                                        <span className="t-clinic">{t.practice}</span>
+                        {submitted ? (
+                            <div className="p-success-box">
+                                <h3>Corporate Inquiry Submitted!</h3>
+                                <p>Thank you! Our technical director will reach out to schedule a live system walkthrough.</p>
+                            </div>
+                        ) : (
+                            <form className="p-form" onSubmit={handleSubmit}>
+                                <div className="p-form-grid">
+                                    <div className="p-form-group">
+                                        <label>COMPANY NAME</label>
+                                        <input type="text" name="company" required placeholder="Acme Logistics Pvt Ltd" value={form.company} onChange={handleChange} />
+                                    </div>
+                                    <div className="p-form-group">
+                                        <label>YOUR NAME & TITLE</label>
+                                        <input type="text" name="name" required placeholder="Vikram Mehta (Director)" value={form.name} onChange={handleChange} />
+                                    </div>
+                                    <div className="p-form-group">
+                                        <label>CORPORATE EMAIL</label>
+                                        <input type="email" name="email" required placeholder="vikram@acme.com" value={form.email} onChange={handleChange} />
+                                    </div>
+                                    <div className="p-form-group">
+                                        <label>PHONE NUMBER</label>
+                                        <input type="tel" name="phone" required placeholder="+91 98765 00000" value={form.phone} onChange={handleChange} />
+                                    </div>
+                                    <div className="p-form-group full">
+                                        <label>SYSTEM REQUIREMENTS & GOALS</label>
+                                        <textarea name="requirement" rows="4" required placeholder="Describe your business operations, software needs, or current bottlenecks..." value={form.requirement} onChange={handleChange}></textarea>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                                <div className="p-form-action">
+                                    <button type="submit" className="p-btn-submit">Submit Enterprise Request →</button>
+                                    <p className="p-direct-mail">Or email <a href="mailto:hikityofficial@gmail.com">hikityofficial@gmail.com</a></p>
+                                </div>
+                            </form>
+                        )}
                     </div>
                 </div>
             </section>
 
-            {/* ── CTA ── */}
-            <section className="p-cta-section">
-                <div className="p-cta-bg" />
-                <div className="p-container">
-                    <div className="p-cta-content">
-                        <h2 className="p-cta-title">Ready for Your Highest Revenue Month?</h2>
-                        <p className="p-cta-desc">
-                            Let’s build an elite direct-to-consumer experience that makes your product irresistible and your scale inevitable.
-                        </p>
-                        <div className="p-cta-actions">
-                            <a href="/#contact" className="p-btn-primary large">
-                                <span>Book a Strategy Call</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── FOOTER ── */}
-            <div className="p-footer-wrapper">
-                <EnterpriseFooter />
-            </div>
+            <EnterpriseFooter />
         </div>
     );
 };
