@@ -264,8 +264,7 @@ const BuildPage = () => {
                         Pitch Us Your Vision
                     </a>
                     <p className="b-cta-email">
-                        Primary Email: <a href="mailto:hikityofficial@gmail.com">hikityofficial@gmail.com</a><br />
-                        Corporate Email: <a href="mailto:contact@hikity.xyz">contact@hikity.xyz</a><br /><br />
+                        Primary Email: <a href="mailto:hikityofficial@gmail.com">hikityofficial@gmail.com</a><br /><br />
                         <Link to="/build/t&c">Review Build Terms & Conditions</Link>
                     </p>
                 </div>

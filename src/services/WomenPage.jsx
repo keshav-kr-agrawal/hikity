@@ -95,6 +95,7 @@ const WomenPage = () => {
     ];
 
     const testimonials = [
+        { quote: 'Earlier I used to manually take photos of every gift item, hamper, and handicraft product and send them individually on WhatsApp to hundreds of customers. It was exhausting. Hikity built me my own e-commerce store! Now customers browse my catalog, check prices, and place orders directly with UPI payments.', name: 'Anita Devi', business: 'Anita Gift House, Bhagalpur' },
         { quote: 'I started my jewellery brand from home. Hikity built me a website and digital strategy that grew my loyal customer base in two months. I now ship internationally.', name: 'Priya M.', business: 'Handcrafted Jewellery, Mumbai' },
         { quote: 'My cloud kitchen was invisible online. Hikity redesigned everything — within 6 weeks, orders doubled and I expanded to 3 new localities.', name: 'Divya R.', business: 'Cloud Kitchen, Bengaluru' },
         { quote: 'Hikity understood my vision for my boutique without me having to explain everything twice. The website they built feels exactly like me.', name: 'Aisha K.', business: 'Fashion Boutique, Delhi' },
@@ -447,7 +448,7 @@ const WomenPage = () => {
                             <Link to="/" className="women-btn-outline large">Back to Home</Link>
                         </div>
                         <p className="women-cta-email">
-                            Or reach us directly: <a href="mailto:contact@hikity.xyz">contact@hikity.xyz</a>
+                            Or reach us directly: <a href="mailto:hikityofficial@gmail.com">hikityofficial@gmail.com</a>
                         </p>
                     </div>
                 </div>

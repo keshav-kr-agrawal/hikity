@@ -196,7 +196,7 @@ const TermsAndConditions = () => {
                 <section style={styles.section}>
                     <h2 style={styles.sectionTitle}>8. CONTACT</h2>
                     <p style={styles.paragraph}>
-                        Legal correspondence must be sent to: contact@hikity.xyz
+                        Legal correspondence must be sent to: hikityofficial@gmail.com
                     </p>
                 </section>
 

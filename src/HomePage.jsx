@@ -360,7 +360,9 @@ function HomePage() {
                         <span className="logo-text">HIKITY</span>
                     </div>
                     <div className="nav-contact-wrapper">
-                        <Link to="/blog" className="nav-contact" style={{marginRight: '15px', background: 'transparent', color: 'inherit'}}>BLOG</Link>
+                        <Link to="/commerce" className="nav-contact" style={{marginRight: '12px', background: 'transparent', color: 'inherit'}}>COMMERCE</Link>
+                        <Link to="/services" className="nav-contact" style={{marginRight: '12px', background: 'transparent', color: 'inherit'}}>SERVICES</Link>
+                        <Link to="/blog" className="nav-contact" style={{marginRight: '12px', background: 'transparent', color: 'inherit'}}>BLOG</Link>
                         <button className="nav-contact" onClick={scrollToContact}>CONTACT</button>
                     </div>
                 </nav>
@@ -386,8 +388,8 @@ function HomePage() {
                                     <span>— SPARSH MUKTHI</span>
                                 </div>
                                 <div className="review-card review-card-2">
-                                    <p>"The kinetic hand-off between phases is a masterclass in UI design."</p>
-                                    <span>— NAVI MEET</span>
+                                    <p>"Earlier I had to manually send photos of products on WhatsApp to every customer. Now with my Hikity E-Commerce store, customers browse our catalog and order directly!"</p>
+                                    <span>— ANITA DEVI (ANITA GIFT HOUSE, BHAGALPUR)</span>
                                 </div>
                                 <div className="review-card review-card-3">
                                     <p>"Engineering digital continuity across global ecosystems."</p>
@@ -402,10 +404,10 @@ function HomePage() {
                             {/* First scroller - forward direction */}
                             <div className="logo-marquee">
                                 <div className="marquee-track marquee-forward">
-                                    {['SPARSH MUKTHI', 'NAVI MEET', <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>HIKAT GROUP</a>, 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
+                                    {['ANITA GIFT HOUSE', 'SPARSH MUKTHI', 'NAVI MEET', <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>HIKAT GROUP</a>, 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                                         <span key={i}> {p}</span>
                                     ))}
-                                    {['SPARSH MUKTHI', 'NAVI MEET', <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>HIKAT GROUP</a>, 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
+                                    {['ANITA GIFT HOUSE', 'SPARSH MUKTHI', 'NAVI MEET', <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>HIKAT GROUP</a>, 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                                         <span key={i + 100}> {p}</span>
                                     ))}
                                 </div>
@@ -414,10 +416,10 @@ function HomePage() {
                             {/* Second scroller - reverse direction */}
                             <div className="logo-marquee logo-marquee-reverse">
                                 <div className="marquee-track marquee-reverse">
-                                    {['SPARSH MUKTHI', 'NAVI MEET', <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>HIKAT GROUP</a>, 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
+                                    {['ANITA GIFT HOUSE', 'SPARSH MUKTHI', 'NAVI MEET', <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>HIKAT GROUP</a>, 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                                         <span key={i}> {p}</span>
                                     ))}
-                                    {['SPARSH MUKTHI', 'NAVI MEET', <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>HIKAT GROUP</a>, 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
+                                    {['ANITA GIFT HOUSE', 'SPARSH MUKTHI', 'NAVI MEET', <a href="https://hikat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>HIKAT GROUP</a>, 'SUKRIT', 'TIZ-GUN'].map((p, i) => (
                                         <span key={i + 100}> {p}</span>
                                     ))}
                                 </div>
@@ -441,7 +443,7 @@ function HomePage() {
                                 <div className="contact-info">
                                     <div className="contact-info-item">
                                         <span className="info-label">EMAIL</span>
-                                        <a href="mailto:contact@hikity.xyz" className="info-value">contact@hikity.xyz</a>
+                                        <a href="mailto:hikityofficial@gmail.com" className="info-value">hikityofficial@gmail.com</a>
                                     </div>
                                     <div className="contact-info-item">
                                         <span className="info-label">RESPONSE TIME</span>
@@ -450,7 +452,7 @@ function HomePage() {
                                 </div>
                             </div>
 
-                            <form action="https://formsubmit.co/contact@hikity.xyz" method="POST" className="glass-form">
+                            <form action="https://formsubmit.co/hikityofficial@gmail.com" method="POST" className="glass-form">
                                 <div className="form-intro">
                                     <h3 className="form-title">VISION INPUT</h3>
                                     <p className="form-subtitle">Define the parameters of your next product.</p>
@@ -493,7 +495,7 @@ function HomePage() {
                                                     </svg>
                                                 </div>
                                                 <div className={`custom-options ${isDropdownOpen ? 'open' : ''}`}>
-                                                    {['Web Design & Development', 'Full Stack Application', 'AI Solutions', '3D Experience', 'Brand Identity System', 'Other / Custom Request'].map((option) => (
+                                                    {['Hikity Commerce Platform', 'Web Design & Development', 'Full Stack Application', 'AI Solutions', '3D Experience', 'Brand Identity System', 'Other / Custom Request'].map((option) => (
                                                         <div
                                                             key={option}
                                                             className="custom-option"
@@ -527,40 +529,57 @@ function HomePage() {
                 <div ref={whiteLayerRef} className="layer white-layer">
                     <div className="editorial-layout">
                         <div className="content-side">
-                            <h2 className="reveal-item section-title">ENGINEERING THE NEXT DIMENSION.</h2>
+                            <div className="positioning-badge">ACCESSIBLE DIGITAL INFRASTRUCTURE</div>
+                            <h2 className="reveal-item section-title">BUILDING FOR THE NEXT GENERATION.</h2>
                             <div className="reveal-item service-stack">
                                 <div className="service-row">
                                     <span className="service-number">01</span>
                                     <div className="service-content">
-                                        <p className="service-title">AI AGENTS</p>
-                                        <p className="service-desc">Custom-trained autonomous intelligence to scale your operations.</p>
+                                        <p className="service-title">MANAGED COMMERCE INFRASTRUCTURE</p>
+                                        <p className="service-desc">Launch your own professional digital storefront without heavy upfront costs or technical complexity.</p>
                                     </div>
                                 </div>
                                 <div className="service-row">
                                     <span className="service-number">02</span>
                                     <div className="service-content">
-                                        <p className="service-title">SMART AUTOMATION</p>
-                                        <p className="service-desc">Engineering seamless, zero-overhead digital workflows.</p>
+                                        <p className="service-title">AI AGENTS & SMART AUTOMATION</p>
+                                        <p className="service-desc">Custom autonomous intelligence and zero-overhead workflows to scale your operations.</p>
                                     </div>
                                 </div>
                                 <div className="service-row">
                                     <span className="service-number">03</span>
                                     <div className="service-content">
-                                        <p className="service-title">3D INTERACTIVE</p>
-                                        <p className="service-desc">Immersive WebGL environments that redefine user engagement.</p>
+                                        <p className="service-title">WEBSITES & APPS</p>
+                                        <p className="service-desc">High-fidelity visual identity and scalable digital architecture designed for growing businesses.</p>
                                     </div>
                                 </div>
-                                <div className="service-row">
-                                    <span className="service-number">04</span>
-                                    <div className="service-content">
-                                        <p className="service-title">BRAND SYSTEMS</p>
-                                        <p className="service-desc">High-fidelity visual identities for the tech-forward era.</p>
-                                    </div>
+                            </div>
+
+                            {/* WOMEN ENTREPRENEUR INITIATIVE BLOCK */}
+                            <div className="reveal-item women-initiative-card">
+                                <div className="women-badge">PROMINENT INITIATIVE</div>
+                                <h3 className="women-card-title">Built for women building businesses.</h3>
+                                <p className="women-card-text">
+                                    Across India, thousands of women are building brands, boutiques, home businesses, gift stores, food businesses, handmade brands and more. But turning a growing business into a professional digital storefront can require a large upfront investment. Hikity is changing that.
+                                </p>
+                                <p className="women-card-subtext">
+                                    With managed commerce infrastructure, businesses can launch their own online store without taking on the complexity of hosting, servers, maintenance and multiple technical services.
+                                </p>
+                                <div className="women-card-actions">
+                                    <Link to="/commerce" className="women-cta-primary">
+                                        Explore Commerce →
+                                    </Link>
+                                    <Link to="/services" className="women-cta-secondary">
+                                        View All Services →
+                                    </Link>
+                                    <button className="women-cta-secondary" onClick={scrollToContact}>
+                                        Talk to Hikity
+                                    </button>
                                 </div>
                             </div>
                         </div>
                         <div ref={parkingZoneRef} className="parking-zone">
-                            <img src="/assets/scene.jpg" alt="HIKITY Digital Solutions - AI Agents, 3D Interactive Design, Smart Automation Services" className="mountain-preview" />
+                            <img src="/assets/scene.jpg" alt="HIKITY Digital Solutions - Managed Commerce, AI Agents, 3D Interactive Design" className="mountain-preview" />
                         </div>
                     </div>
                 </div>

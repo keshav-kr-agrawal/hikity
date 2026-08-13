@@ -16,12 +16,14 @@ import LinksPage from './LinksPage';
 import BlogPage from './blog/BlogPage';
 import BlogPostPage from './blog/BlogPostPage';
 import ServicesPage from './services/ServicesPage';
+import CommercePage from './services/CommercePage';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/commerce" element={<CommercePage />} />
         <Route path="/t&c" element={<TermsAndConditions />} />
         <Route path="/women" element={<WomenPage />} />
         <Route path="/dentist" element={<DentistPage />} />

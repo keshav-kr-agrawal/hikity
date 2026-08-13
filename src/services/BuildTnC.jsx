@@ -69,7 +69,7 @@ const BuildTnC = () => {
                     </section>
 
                     <div className="b-tnc-contact-prompt">
-                        <p>For clarifications on any terms, please reach our architectural board at <strong>hikityofficial@gmail.com</strong> or <strong>contact@hikity.xyz</strong>.</p>
+                        <p>For clarifications on any terms, please reach our architectural board at <strong>hikityofficial@gmail.com</strong>.</p>
                         <Link to="/build" className="b-btn-primary" style={{ marginTop: '24px' }}>Return to Build</Link>
                     </div>
                 </div>

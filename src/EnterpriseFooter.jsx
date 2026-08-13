@@ -97,9 +97,9 @@ const EnterpriseFooter = ({ onNavigate }) => {
           <motion.div variants={itemVars} className="footer-capabilities-section-new">
             <h4 className="footer-section-title-new">Capabilities</h4>
             <ul className="footer-capabilities-list-new">
-              {['Agentic Systems', 'Immersive Engineering', 'Digital Continuity', 'Automations', 'Digital Presence'].map((cap) => (
+              {['Hikity Commerce', 'Agentic Systems', 'Immersive Engineering', 'Digital Infrastructure', 'Automations', 'Digital Presence'].map((cap) => (
                 <li key={cap} className="footer-capability-item-new">
-                  {cap}
+                  {cap === 'Hikity Commerce' ? <Link to="/commerce" style={{color: 'inherit', textDecoration: 'none'}}>Hikity Commerce</Link> : cap}
                 </li>
               ))}
             </ul>
@@ -111,10 +111,10 @@ const EnterpriseFooter = ({ onNavigate }) => {
             <div className="footer-resolution-content-new">
               <motion.a
                 whileHover={{ x: -10 }}
-                href="mailto:contact@hikity.xyz"
+                href="mailto:hikityofficial@gmail.com"
                 className="footer-email-new"
               >
-                contact@hikity.xyz
+                hikityofficial@gmail.com
               </motion.a>
               <div className="footer-email-meta-new">
                 <div className="footer-meta-line-new" />
@@ -171,6 +171,12 @@ const EnterpriseFooter = ({ onNavigate }) => {
           </div>
 
           <div className="footer-legal-new">
+            <Link to="/commerce" className="footer-legal-link-new" style={{marginRight: '20px'}}>
+              COMMERCE
+            </Link>
+            <Link to="/services" className="footer-legal-link-new" style={{marginRight: '20px'}}>
+              SERVICES
+            </Link>
             <Link to="/blog" className="footer-legal-link-new" style={{marginRight: '20px'}}>
               BLOG
             </Link>
