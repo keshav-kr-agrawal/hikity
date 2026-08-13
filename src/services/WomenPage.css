@@ -8,32 +8,24 @@ body:has(.women-page) {
 
 /* ===== ROOT VARIABLES — VIBRANT BEAUTY/FEMININE BRAND PALETTE ===== */
 :root {
-    /* Primary Accents — Deep, vibrant, and extremely catchy (but not neon) */
-    --w-pink: #e83e8c;
-    /* rich vibrant rose pink */
-    --w-blue: #0d84fb;
-    /* deep vibrant sky blue */
-    --w-purple: #8a2be2;
-    /* deep vibrant purple */
+    /* Primary Accents — Elegant Rose Gold & Soft Terracotta Rose */
+    --w-pink: #c87d8d;
+    --w-blue: #3b82f6;
+    --w-purple: #9333ea;
 
-    /* Backgrounds — Tinted, decidedly female-oriented rather than plain white */
-    --w-cream: #fff0f5;
-    /* soft lavender blush */
-    --w-rose-bg: #ffe6eb;
-    /* warm misty rose */
-    --w-sky-bg: #e6f2ff;
-    /* soft azure tint */
-    --w-lav-bg: #f3e8ff;
-    /* soft lilac tint */
+    /* Backgrounds — Soft boutique pearl rose & gallery cream */
+    --w-cream: #faf7f8;
+    --w-rose-bg: #fff0f3;
+    --w-sky-bg: #f0f7ff;
+    --w-lav-bg: #f8f0fc;
 
-    /* Typography — Deep navy-slate for powerful, professional contrast */
-    --w-ink: #1a1d2d;
-    --w-ink-2: #4a5568;
-    --w-ink-3: #718096;
+    /* Typography — Deep plum-slate for rich contrast */
+    --w-ink: #1e1b24;
+    --w-ink-2: #4a4552;
+    --w-ink-3: #716b7a;
 
     /* Layout */
-    --w-border: rgba(232, 62, 140, 0.2);
-    /* soft pink border */
+    --w-border: rgba(200, 125, 141, 0.2);
     --w-gutter: clamp(20px, 6vw, 100px);
 }
 

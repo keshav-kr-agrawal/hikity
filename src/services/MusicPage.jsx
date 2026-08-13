@@ -1,192 +1,354 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import './MusicPage.css';
 import { Link } from 'react-router-dom';
 import EnterpriseFooter from '../EnterpriseFooter';
-import './MusicPage.css';
 
 const MusicPage = () => {
-    const [scrolled, setScrolled] = useState(false);
-    const [submitted, setSubmitted] = useState(false);
+    // Scroll reveal logic
+    const [visibleSections, setVisibleSections] = useState({});
+    const sectionRefs = useRef([]);
+
+    const addToRefs = (el) => {
+        if (el && !sectionRefs.current.includes(el)) {
+            sectionRefs.current.push(el);
+        }
+    };
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        const handleScroll = () => setScrolled(window.scrollY > 50);
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setVisibleSections(prev => ({ ...prev, [entry.target.id]: true }));
+                    }
+                });
+            },
+            { threshold: 0.15 }
+        );
+
+        sectionRefs.current.forEach((ref) => {
+            if (ref) observer.observe(ref);
+        });
+
+        // Navbar scroll effect
+        const handleScroll = () => {
+            const nav = document.querySelector('.m-nav');
+            if (nav) {
+                if (window.scrollY > 50) nav.classList.add('scrolled');
+                else nav.classList.remove('scrolled');
+            }
+        };
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+
+        return () => {
+            sectionRefs.current.forEach((ref) => {
+                if (ref) observer.unobserve(ref);
+            });
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setSubmitted(true);
-    };
+    const features = [
+        {
+            icon: "🎫",
+            title: "Tour & Ticketing Funnels",
+            desc: "Direct-to-fan ticketing systems that minimize platform fees and ensure your shows are sold out months in advance."
+        },
+        {
+            icon: "🎧",
+            title: "Streaming Amplification",
+            desc: "Smart-link routing and pre-save campaigns designed to trigger Spotify and Apple Music algorithmic playlists."
+        },
+        {
+            icon: "🔥",
+            title: "Fan-Engagement Growth",
+            desc: "Web experiences that capture high-intent audiences, converting fleeting digital interactions into long-term, loyal superfans."
+        },
+        {
+            icon: "👕",
+            title: "D2C Merch Empires",
+            desc: "Premium e-commerce integrations for your merchandise, driving extreme high-margin revenue directly to your band."
+        },
+        {
+            icon: "🌟",
+            title: "EPK & Press Authority",
+            desc: "Industry-standard Electronic Press Kits built-in to secure festival slots, label attention, and major publications."
+        },
+        {
+            icon: "💃",
+            title: "Choreography Showcases",
+            desc: "High-performance video hosting that displays your dance reels and visual art without any buffering or quality loss."
+        }
+    ];
+
+    const testimonials = [
+        {
+            quote: "Hikity took our aesthetic and built an absolute machine. Our latest tour sold out 3x faster because the ticketing funnel was flawless.",
+            author: "The Midnight Echo",
+            practice: "Indie Synth-Pop Band",
+            avatar: "🎸"
+        },
+        {
+            quote: "As a contemporary dance company, our visuals are everything. They created a digital stage that perfectly represents our art.",
+            author: "Aria Moves",
+            practice: "Performing Arts Troupe",
+            avatar: "🩰"
+        }
+    ];
+
+    // March Offer Popup State
+    const [showPopup, setShowPopup] = useState(true);
 
     return (
         <div className="m-page">
-            {/* NAVIGATION */}
-            <nav className={`m-nav ${scrolled ? 'scrolled' : ''}`}>
+            {/* ── NAVIGATION ── */}
+            <nav className="m-nav">
                 <Link to="/" className="m-nav-logo">
                     <div className="m-nav-logo-circle">
-                        <img src="/hikity-logo.jpeg" alt="Hikity Logo" />
+                        <img src="/assets/hikity.jpeg" alt="Hikity Logo" />
                     </div>
-                    <span>HIKITY MUSICTECH</span>
                 </Link>
                 <div className="m-nav-links">
                     <Link to="/" className="m-nav-link">Home</Link>
-                    <Link to="/services" className="m-nav-link">Services Hub</Link>
-                    <Link to="/commerce" className="m-nav-link">Commerce</Link>
-                    <a href="#onboard" className="m-nav-cta">Launch Band Portal</a>
+                    <Link to="/blog" className="m-nav-link">Blog</Link>
+                    <a href="/#contact" className="m-nav-cta">Book Our Agency</a>
                 </div>
             </nav>
 
-            {/* HERO */}
+            {/* ── HERO ── */}
             <header className="m-hero">
+                <div className="m-hero-bg">
+                    <div className="m-hero-gradient" />
+                    <div className="m-hero-dots" />
+                </div>
+
                 <div className="m-container">
-                    <div className="m-hero-badge">
-                        🎸 Independent Artists, Bands & Record Labels
+                    <div className="m-hero-content-wrapper">
+                        <div className="m-hero-content">
+                            <div className="m-hero-badge">
+                                <span className="m-hero-badge-dot" />
+                                CREATIVE MASTERCLASS
+                            </div>
+                            <h1 className="m-hero-title">
+                                Amplify Your Art. <br /><span className="m-hero-title-accent">Pack Your Shows.</span>
+                            </h1>
+                            <p className="m-hero-subtitle">
+                                Hikity engineers explosive digital brands, tour promotion systems, and fan-monetization platforms for elite bands, dancers, and visionary performing artists.
+                            </p>
+
+                            <div className="m-hero-actions">
+                                <a href="/#contact" className="m-btn-primary large">
+                                    <span>Launch Your Era</span>
+                                </a>
+                            </div>
+
+                            <div className="m-hero-stats">
+                                <div className="m-stat">
+                                    <span className="m-stat-number">300%</span>
+                                    <span className="m-stat-label">Avg. Streaming Lift</span>
+                                </div>
+                                <div className="m-stat-divider" />
+                                <div className="m-stat">
+                                    <span className="m-stat-number">Global</span>
+                                    <span className="m-stat-label">Fan Reach</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="m-hero-visual">
+                            <div className="m-hero-card-stack">
+                                <div className="m-float-card card-1">
+                                    <span className="card-icon">🎤</span>
+                                    <span>Sold Out Venues</span>
+                                </div>
+                                <div className="m-float-card card-2">
+                                    <span className="card-icon">⚡</span>
+                                    <span>Global Streaming</span>
+                                </div>
+                                <div className="m-float-card card-3">
+                                    <span className="card-icon">🖤</span>
+                                    <span>Cult Fanbase</span>
+                                </div>
+                                <div className="m-float-card card-4">
+                                    <span className="card-icon">💿</span>
+                                    <span>Vinyl & Merch Sales</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h1 className="m-hero-title">
-                        Own Your Fanbase — Sell Merch & Tickets <span className="copper-accent">100% Direct.</span>
-                    </h1>
-                    <p className="m-hero-subtitle">
-                        Direct-to-fan official merch store, tour date ticket reservation engine, streaming platform aggregator embeds, and electronic press kit (EPK) hub designed for independent musicians.
-                    </p>
-                    <div className="m-hero-stats">
-                        <div className="m-stat">
-                            <span className="m-stat-num">0%</span>
-                            <span className="m-stat-label">Merch Cut Kept</span>
-                        </div>
-                        <div className="m-stat-divider"></div>
-                        <div className="m-stat">
-                            <span className="m-stat-num">EPK + Store</span>
-                            <span className="m-stat-label">Unified Platform</span>
-                        </div>
-                        <div className="m-stat-divider"></div>
-                        <div className="m-stat">
-                            <span className="m-stat-num">₹30k/yr</span>
-                            <span className="m-stat-label">Flat Managed Pricing</span>
-                        </div>
-                    </div>
+                </div>
+
+                <div className="m-hero-scroll-indicator">
+                    <span>STAGE DIVE</span>
+                    <div className="scroll-line" />
                 </div>
             </header>
 
-            {/* SOLUTIONS BENTO */}
-            <section className="m-solutions-section">
+            {/* ── MANIFESTO STRIP ── */}
+            <div className="m-manifesto">
+                <div className="m-manifesto-inner">
+                    {[...Array(3)].map((_, j) => (
+                        <React.Fragment key={j}>
+                            <div className="m-manifesto-item">OWN YOUR MASTERS <span className="manifesto-dot">✖</span></div>
+                            <div className="m-manifesto-item">DIRECT TO FAN <span className="manifesto-dot">✖</span></div>
+                            <div className="m-manifesto-item">STREAMING DOMINANCE <span className="manifesto-dot">✖</span></div>
+                            <div className="m-manifesto-item">VIRAL MOMENTUM <span className="manifesto-dot">✖</span></div>
+                        </React.Fragment>
+                    ))}
+                </div>
+            </div>
+
+            {/* ── FEATURES SECTION ── */}
+            <section
+                id="features"
+                className={`m-section bg-dark ${visibleSections['features'] ? 'visible' : ''}`}
+                ref={addToRefs}
+            >
                 <div className="m-container">
                     <div className="m-section-header">
-                        <span className="m-eyebrow">Artist Growth Core</span>
-                        <h2 className="m-title-large">Direct-to-Fan Ecosystem Built for Touring Artists</h2>
+                        <span className="m-tag">THE ARTIST TOOLKIT</span>
+                        <h2 className="m-section-title">
+                            Everything To Break Through
+                        </h2>
+                        <p className="m-section-subtitle">
+                            Stop relying purely on the algorithms. Build an owned digital ecosystem where you control the tickets, the merch, and the fan data.
+                        </p>
                     </div>
-                    <div className="m-bento-grid">
-                        <div className="m-bento-card">
-                            <span className="m-card-icon">👕</span>
-                            <h3 className="m-bento-title">Direct Fan Merch Store</h3>
-                            <p className="m-bento-desc">Sell t-shirts, vinyl records, posters, and digital downloads directly to your fans with instant UPI checkout and no third-party platform cuts.</p>
-                        </div>
-                        <div className="m-bento-card">
-                            <span className="m-card-icon">🎟️</span>
-                            <h3 className="m-bento-title">Tour Dates & Ticket RSVP</h3>
-                            <p className="m-bento-desc">Manage upcoming gig dates, venue maps, ticket links, and automated WhatsApp show reminder notifications for fans.</p>
-                        </div>
-                        <div className="m-bento-card">
-                            <span className="m-card-icon">🎙️</span>
-                            <h3 className="m-bento-title">Electronic Press Kit (EPK)</h3>
-                            <p className="m-bento-desc">Professional press kit for festival promoters, event organizers, and record labels featuring high-res press photos, stage plots, and bio links.</p>
-                        </div>
-                        <div className="m-bento-card">
-                            <span className="m-card-icon">🎧</span>
-                            <h3 className="m-bento-title">Streaming Aggregator Hub</h3>
-                            <p className="m-bento-desc">Embed Spotify, Apple Music, YouTube, and Soundcloud audio players seamlessly so fans listen to new releases directly on your domain.</p>
-                        </div>
+
+                    <div className="m-features-grid">
+                        {features.map((feature, i) => (
+                            <div key={i} className="m-feature-card">
+                                <span className="m-feature-icon">{feature.icon}</span>
+                                <h3 className="m-feature-title">{feature.title}</h3>
+                                <p className="m-feature-desc">{feature.desc}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* EPK & TOUR DATES DEMO */}
-            <section className="m-epk-section">
+            {/* ── GLOBAL DOMINANCE (Orbit variation) ── */}
+            <section
+                id="local-dominance"
+                className={`m-section bg-gradient ${visibleSections['local-dominance'] ? 'visible' : ''}`}
+                ref={addToRefs}
+            >
                 <div className="m-container">
-                    <div className="m-epk-card">
-                        <div className="m-section-header">
-                            <span className="m-eyebrow">Live Demonstration</span>
-                            <h2 className="m-title-large">Tour Dates & EPK Ticket Hub</h2>
+                    <div className="m-local-content">
+                        <div className="m-local-text">
+                            <span className="m-tag">CULT CREATION</span>
+                            <h2 className="m-section-title">
+                                From Local Act to Global Phenomenon
+                            </h2>
+                            <p className="m-section-subtitle">
+                                We turn casual listeners into lifelong superfans by creating immersive digital worlds around your music and choreography.
+                            </p>
+
+                            <ul className="m-checklist">
+                                <li><strong>Pre-Save Architectures:</strong> Funnel all viral web traffic into massive Day-1 streaming numbers.</li>
+                                <li><strong>VIP Fan Portals:</strong> Exclusive behind-the-scenes content that monetizes your most dedicated followers.</li>
+                                <li><strong>Tour Geo-Targeting:</strong> Blast targeted ads to specific cities precisely when your tour dates drop.</li>
+                            </ul>
                         </div>
-                        <div className="epk-preview-box">
-                            <div className="epk-artist-header">
-                                <div className="epk-artist-name">
-                                    <h4>The Indie Project (Band)</h4>
-                                    <p>Alternative Rock / Fusion Live</p>
+
+                        <div className="m-local-visual">
+                            <div className="m-orbit">
+                                <div className="a-orbit-ring a-orbit-1" />
+                                <div className="a-orbit-ring a-orbit-2" />
+                                <div className="a-orbit-ring a-orbit-3" />
+                                <div className="a-orbit-center">
+                                    <img src="/assets/hikity.jpeg" alt="Hikity Logo" />
                                 </div>
-                                <span style={{ fontSize: '0.75rem', fontWeight: '800', color: '#059669', background: '#ecfdf5', padding: '4px 10px', borderRadius: '100px' }}>● 2026 Tour Live</span>
-                            </div>
-                            <div className="tour-dates-list">
-                                <div className="tour-row">
-                                    <span className="tour-date">AUG 28</span>
-                                    <span className="tour-venue">Hard Rock Cafe, Bengaluru</span>
-                                    <button className="tour-tix-btn" onClick={() => alert('Redirecting to direct ticket checkout!')}>Get Tickets →</button>
-                                </div>
-                                <div className="tour-row">
-                                    <span className="tour-date">SEP 12</span>
-                                    <span className="tour-venue">NCPA Studio, Mumbai</span>
-                                    <button className="tour-tix-btn" onClick={() => alert('Redirecting to direct ticket checkout!')}>Get Tickets →</button>
-                                </div>
-                                <div className="tour-row">
-                                    <span className="tour-date">OCT 05</span>
-                                    <span className="tour-venue">JL Stadium, New Delhi</span>
-                                    <button className="tour-tix-btn" onClick={() => alert('Redirecting to direct ticket checkout!')}>Get Tickets →</button>
-                                </div>
+                                <div className="a-orbit-node n-1"><span>🎵</span></div>
+                                <div className="a-orbit-node n-2"><span>🎸</span></div>
+                                <div className="a-orbit-node n-3"><span>💃</span></div>
+                                <div className="a-orbit-node n-4"><span>🎧</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* ARTIST ONBOARDING FORM */}
-            <section className="m-onboard-section" id="onboard">
+            {/* ── TESTIMONIALS ── */}
+            <section
+                id="m-testimonials"
+                className={`m-section bg-darker ${visibleSections['m-testimonials'] ? 'visible' : ''}`}
+                ref={addToRefs}
+            >
                 <div className="m-container">
-                    <div className="m-form-card">
-                        <div className="m-section-header">
-                            <span className="m-eyebrow">Artist Registration</span>
-                            <h2 className="m-title-large">Launch Your Hikity Music Store & EPK</h2>
-                        </div>
-                        {submitted ? (
-                            <div style={{ textAlign: 'center', padding: '40px' }}>
-                                <h3 style={{ fontSize: '1.8rem', color: '#121212', marginBottom: '12px' }}>Registration Received!</h3>
-                                <p style={{ color: '#4a4a4a' }}>Our MusicTech team will reach out to build your band portal within 24 hours.</p>
+                    <div className="m-section-header">
+                        <span className="m-tag">INDUSTRY CO-SIGNS</span>
+                        <h2 className="m-section-title">
+                            Trusted by Touring Artists
+                        </h2>
+                    </div>
+
+                    <div className="m-testimonials-grid">
+                        {testimonials.map((t, i) => (
+                            <div key={i} className="m-testimonial-card">
+                                <div className="t-quote-mark">"</div>
+                                <p className="t-text">{t.quote}</p>
+                                <div className="t-author">
+                                    <div className="t-avatar">{t.avatar}</div>
+                                    <div>
+                                        <span className="t-name">{t.author}</span>
+                                        <span className="t-clinic">{t.practice}</span>
+                                    </div>
+                                </div>
                             </div>
-                        ) : (
-                            <form className="m-form" action="https://formspree.io/f/xvgokrjw" method="POST" onSubmit={handleSubmit}>
-                                <input type="hidden" name="_replyto" value="hikityofficial@gmail.com" />
-                                <input type="hidden" name="subject" value="Hikity MusicTech Band Portal Inquiry" />
-                                <div className="m-form-grid">
-                                    <div className="m-form-group">
-                                        <label>ARTIST / BAND NAME</label>
-                                        <input type="text" name="name" placeholder="e.g. The Indie Collective" required />
-                                    </div>
-                                    <div className="m-form-group">
-                                        <label>CONTACT EMAIL</label>
-                                        <input type="email" name="email" placeholder="management@band.com" required />
-                                    </div>
-                                    <div className="m-form-group">
-                                        <label>GENRE / STYLE</label>
-                                        <input type="text" name="genre" placeholder="e.g. Indie Rock / Electronic / Classical" required />
-                                    </div>
-                                    <div className="m-form-group">
-                                        <label>SPOTIFY / INSTAGRAM LINK</label>
-                                        <input type="text" name="link" placeholder="https://open.spotify.com/artist/..." required />
-                                    </div>
-                                    <div className="m-form-group full">
-                                        <label>REQUIREMENTS & UPCOMING RELEASES</label>
-                                        <textarea name="brief" rows="4" placeholder="Tell us about your upcoming album launch, tour plans, merch inventory, or EPK requirements..." required></textarea>
-                                    </div>
-                                </div>
-                                <div style={{ textAlign: 'center' }}>
-                                    <button type="submit" className="m-submit-btn">Launch Band Platform →</button>
-                                </div>
-                            </form>
-                        )}
+                        ))}
                     </div>
                 </div>
             </section>
 
-            <EnterpriseFooter />
+            {/* ── CTA ── */}
+            <section className="m-cta-section">
+                <div className="m-cta-bg" />
+                <div className="m-container">
+                    <div className="m-cta-content">
+                        <h2 className="m-cta-title">Ready To Hit The Main Stage?</h2>
+                        <p className="m-cta-desc">
+                            Let's build a digital presence so powerful, the label executives will be chasing you.
+                        </p>
+                        <div className="m-cta-actions">
+                            <a href="/#contact" className="m-btn-primary large">
+                                <span>Book A Strategy Session</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── FOOTER ── */}
+            <div className="m-footer-wrapper">
+                <EnterpriseFooter />
+            </div>
+
+            {/* ── MARCH OFFER POPUP (NO IMAGE) ── */}
+            {showPopup && (
+                <div className="m-popup-overlay">
+                    <div className="m-popup-modal">
+                        <button className="m-popup-close" onClick={() => setShowPopup(false)}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                        <div className="m-popup-body">
+                            <h3>Exclusive March Artist Offer</h3>
+                            <p>Build your tour funnel or artist portal this month and get premium backend amplification included.</p>
+                            <div className="m-popup-alert">
+                                <span>🔥 Valid till 31st March 2026. Claim your slot now!</span>
+                            </div>
+                            <a href="/#contact" className="m-btn-primary m-popup-btn" onClick={() => setShowPopup(false)}>
+                                <span>Claim Offer Now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
