@@ -1,327 +1,183 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './WorkPage.css';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import EnterpriseFooter from '../EnterpriseFooter';
+import './WorkPage.css';
 
 const WorkPage = () => {
-    // Scroll reveal logic
-    const [visibleSections, setVisibleSections] = useState({});
-    const sectionRefs = useRef([]);
-
-    const addToRefs = (el) => {
-        if (el && !sectionRefs.current.includes(el)) {
-            sectionRefs.current.push(el);
-        }
-    };
+    const [scrolled, setScrolled] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
 
     useEffect(() => {
         window.scrollTo(0, 0);
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setVisibleSections(prev => ({ ...prev, [entry.target.id]: true }));
-                    }
-                });
-            },
-            { threshold: 0.15 }
-        );
-
-        sectionRefs.current.forEach((ref) => {
-            if (ref) observer.observe(ref);
-        });
-
-        // Navbar scroll effect
-        const handleScroll = () => {
-            const nav = document.querySelector('.w-nav');
-            if (nav) {
-                if (window.scrollY > 50) nav.classList.add('scrolled');
-                else nav.classList.remove('scrolled');
-            }
-        };
+        const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            sectionRefs.current.forEach((ref) => {
-                if (ref) observer.unobserve(ref);
-            });
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const features = [
-        {
-            icon: "⚖️",
-            title: "Unshakable Authority",
-            desc: "Web architecture designed to instantly communicate trust, expertise, and prestige to high-value clients and patients."
-        },
-        {
-            icon: "📅",
-            title: "Automated Consultations",
-            desc: "Seamless integration with secure booking systems (Calendly, case-intakes, patient portals) to streamline your workflow."
-        },
-        {
-            icon: "📈",
-            title: "Client Acquisition SEO",
-            desc: "Dominate search results when locals search for top-rated lawyers, chartered accountants (CAs), or specialized private clinics."
-        },
-        {
-            icon: "🛡️",
-            title: "Compliance & Security",
-            desc: "Built with enterprise-grade privacy standards essential for handling sensitive legal, financial, and medical inquiries."
-        },
-        {
-            icon: "⭐",
-            title: "Reputation Management",
-            desc: "Automated funnels to ethically gather and highlight positive client testimonials and 5-star Google reviews."
-        },
-        {
-            icon: "✒️",
-            title: "Thought Leadership",
-            desc: "Integrated content hubs for publishing whitepapers, legal insights, financial updates, and medical research effortlessly."
-        }
-    ];
-
-    const testimonials = [
-        {
-            quote: "Hikity overhauled our firm's digital presence. We've seen a 40% increase in high-net-worth inquiries purely driven by the new website's authority and our improved local SEO.",
-            author: "Jonathan Hayes, Esq.",
-            practice: "Managing Partner, Hayes Corporate Law",
-            avatar: "👨‍⚖️"
-        },
-        {
-            quote: "As a CA firm, trust is our currency. The custom platform they built for us not only looks incredibly professional but streamlined our entire secure document intake process.",
-            author: "Priya Sharma, FCA",
-            practice: "Founder, Sharma Financial Advisory",
-            avatar: "👩‍💼"
-        }
-    ];
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setSubmitted(true);
+    };
 
     return (
         <div className="w-page">
-            {/* ── NAVIGATION ── */}
-            <nav className="w-nav">
+            {/* NAVIGATION */}
+            <nav className={`w-nav ${scrolled ? 'scrolled' : ''}`}>
                 <Link to="/" className="w-nav-logo">
                     <div className="w-nav-logo-circle">
-                        <img src="/assets/hikity.jpeg" alt="Hikity Logo" />
+                        <img src="/hikity-logo.jpeg" alt="Hikity Logo" />
                     </div>
+                    <span>HIKITY PORTFOLIOS</span>
                 </Link>
                 <div className="w-nav-links">
                     <Link to="/" className="w-nav-link">Home</Link>
-                    <Link to="/blog" className="w-nav-link">Blog</Link>
-                    <a href="/#contact" className="w-nav-cta">Retain Our Services</a>
+                    <Link to="/services" className="w-nav-link">Services Hub</Link>
+                    <Link to="/commerce" className="w-nav-link">Commerce</Link>
+                    <a href="#onboard" className="w-nav-cta">Build Executive Portfolio</a>
                 </div>
             </nav>
 
-            {/* ── HERO ── */}
+            {/* HERO */}
             <header className="w-hero">
-                <div className="w-hero-bg">
-                    <div className="w-hero-gradient" />
-                    <div className="w-hero-dots" />
-                </div>
-
                 <div className="w-container">
-                    <div className="w-hero-content-wrapper">
-                        <div className="w-hero-content">
-                            <div className="w-hero-badge">
-                                <span className="w-hero-badge-dot" />
-                                EXECUTIVE DIGITAL PRACTICES
-                            </div>
-                            <h1 className="w-hero-title">
-                                The Digital Foundation For <span className="w-hero-title-accent">Elite Professionals.</span>
-                            </h1>
-                            <p className="w-hero-subtitle">
-                                Command respect and attract high-value clients. Hikity builds authoritative, secure, and conversion-optimized digital practices for Lawyers, Chartered Accountants, Private Clinics, and Consultants.
-                            </p>
-
-                            <div className="w-hero-actions">
-                                <a href="/#contact" className="w-btn-primary large">
-                                    <span>Modernize Your Practice</span>
-                                </a>
-                            </div>
-
-                            <div className="w-hero-stats">
-                                <div className="w-stat">
-                                    <span className="w-stat-number">40%</span>
-                                    <span className="w-stat-label">Lift in Qualified Leads</span>
-                                </div>
-                                <div className="w-stat-divider" />
-                                <div className="w-stat">
-                                    <span className="w-stat-number">Secure</span>
-                                    <span className="w-stat-label">Enterprise Infrastructure</span>
-                                </div>
-                            </div>
+                    <div className="w-hero-badge">
+                        💼 Executive & Agency Portfolios
+                    </div>
+                    <h1 className="w-hero-title">
+                        Command High-Ticket Clients with a <span className="blue-accent">World-Class Portfolio.</span>
+                    </h1>
+                    <p className="w-hero-subtitle">
+                        Custom executive portfolio websites, agency case study showcases, interactive resume portals, and direct Calendly/WhatsApp appointment booking for consultants, founders, and creators.
+                    </p>
+                    <div className="w-hero-stats">
+                        <div className="w-stat">
+                            <span className="w-stat-num">3.5x</span>
+                            <span className="w-stat-label">Client Conversion Boost</span>
                         </div>
-
-                        <div className="w-hero-visual">
-                            <div className="w-hero-card-stack">
-                                <div className="w-float-card card-1">
-                                    <span className="card-icon">🏛️</span>
-                                    <span>Premium Brand Trust</span>
-                                </div>
-                                <div className="w-float-card card-2">
-                                    <span className="card-icon">🔐</span>
-                                    <span>Secure Client Portals</span>
-                                </div>
-                                <div className="w-float-card card-3">
-                                    <span className="card-icon">📊</span>
-                                    <span>Lead Generation SEO</span>
-                                </div>
-                                <div className="w-float-card card-4">
-                                    <span className="card-icon">📅</span>
-                                    <span>Automated Intakes</span>
-                                </div>
-                            </div>
+                        <div className="w-stat-divider"></div>
+                        <div className="w-stat">
+                            <span className="w-stat-num">&lt;100ms</span>
+                            <span className="w-stat-label">Ultra-Fast Load Times</span>
+                        </div>
+                        <div className="w-stat-divider"></div>
+                        <div className="w-stat">
+                            <span className="w-stat-num">₹30k/yr</span>
+                            <span className="w-stat-label">Flat Managed Pricing</span>
                         </div>
                     </div>
-                </div>
-
-                <div className="w-hero-scroll-indicator">
-                    <span>REVIEW OUR CAPABILITIES</span>
-                    <div className="scroll-line" />
                 </div>
             </header>
 
-            {/* ── MANIFESTO STRIP ── */}
-            <div className="w-manifesto">
-                <div className="w-manifesto-inner">
-                    {[...Array(3)].map((_, j) => (
-                        <React.Fragment key={j}>
-                            <div className="w-manifesto-item">UNCOMPROMISING SECRECY <span className="manifesto-dot">/</span></div>
-                            <div className="w-manifesto-item">EXECUTIVE AUTHORITY <span className="manifesto-dot">/</span></div>
-                            <div className="w-manifesto-item">QUALIFIED ACQUISITION <span className="manifesto-dot">/</span></div>
-                            <div className="w-manifesto-item">CLIENT TRUST <span className="manifesto-dot">/</span></div>
-                        </React.Fragment>
-                    ))}
-                </div>
-            </div>
-
-            {/* ── FEATURES SECTION ── */}
-            <section
-                id="features"
-                className={`w-section bg-light ${visibleSections['features'] ? 'visible' : ''}`}
-                ref={addToRefs}
-            >
+            {/* SOLUTIONS BENTO */}
+            <section className="w-solutions-section">
                 <div className="w-container">
                     <div className="w-section-header">
-                        <span className="w-tag">PRACTICE ACCELERATOR</span>
-                        <h2 className="w-section-title">
-                            Built For The Demands of Your Profession
-                        </h2>
-                        <p className="w-section-subtitle">
-                            Independent practitioners face unique challenges. We solve the friction of client acquisition, secure onboarding, and brand positioning through elite digital engineering.
-                        </p>
+                        <span className="w-eyebrow">Portfolio Core</span>
+                        <h2 className="w-title-large">High-Impact Features for Industry Leaders</h2>
                     </div>
-
-                    <div className="w-features-grid">
-                        {features.map((feature, i) => (
-                            <div key={i} className="w-feature-card">
-                                <span className="w-feature-icon">{feature.icon}</span>
-                                <h3 className="w-feature-title">{feature.title}</h3>
-                                <p className="w-feature-desc">{feature.desc}</p>
-                            </div>
-                        ))}
+                    <div className="w-bento-grid">
+                        <div className="w-bento-card">
+                            <span className="w-card-icon">🚀</span>
+                            <h3 className="w-bento-title">Interactive Case Study Layouts</h3>
+                            <p className="w-bento-desc">Showcase client challenges, strategic solutions, and measurable revenue ROI with interactive before/after metric charts.</p>
+                        </div>
+                        <div className="w-bento-card">
+                            <span className="w-card-icon">📅</span>
+                            <h3 className="w-bento-title">Direct Meeting Scheduling</h3>
+                            <p className="w-bento-desc">Integrate Calendly, SavvyCal, or WhatsApp booking directly into your portfolio so high-intent prospects schedule calls instantly.</p>
+                        </div>
+                        <div className="w-bento-card">
+                            <span className="w-card-icon">⭐</span>
+                            <h3 className="w-bento-title">Social Proof & Client Testimonials</h3>
+                            <p className="w-bento-desc">Display verified client reviews, video testimonials, press badges, and featured publication logos to establish immediate authority.</p>
+                        </div>
+                        <div className="w-bento-card">
+                            <span className="w-card-icon">📱</span>
+                            <h3 className="w-bento-title">Digital Executive Business Card</h3>
+                            <p className="w-bento-desc">Frictionless mobile PWA experience with instant contact saving (vCard download) and one-tap social link aggregation.</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* ── LOCAL DOMINANCE (Orbit variation) ── */}
-            <section
-                id="local-dominance"
-                className={`w-section bg-gradient ${visibleSections['local-dominance'] ? 'visible' : ''}`}
-                ref={addToRefs}
-            >
+            {/* CASE STUDY METRICS BENTO */}
+            <section className="w-cases-section">
                 <div className="w-container">
-                    <div className="w-local-content">
-                        <div className="w-local-text">
-                            <span className="w-tag">PREMIER POSITIONING</span>
-                            <h2 className="w-section-title">
-                                The Undisputed First Choice
-                            </h2>
-                            <p className="w-section-subtitle">
-                                When a corporation needs a CA, a family needs an attorney, or a patient seeks a specialist—they research online. We guarantee your practice is positioned as the most authoritative option.
-                            </p>
-
-                            <ul className="w-checklist">
-                                <li><strong>Prestige Local SEO:</strong> Dominate the search landscape for high-intent keywords in your exact geographical service area.</li>
-                                <li><strong>Case/Patient Funnels:</strong> Custom forms that pre-qualify leads, saving your associates hours of manual vetting.</li>
-                                <li><strong>Multi-Disciplinary Scale:</strong> Architecture designed to seamlessly grow as you add new partners or open new clinic branches.</li>
-                            </ul>
+                    <div className="w-cases-card">
+                        <div className="w-section-header">
+                            <span className="w-eyebrow">Proven Results</span>
+                            <h2 className="w-title-large">Real Impact for Executive Portfolios</h2>
                         </div>
-
-                        <div className="w-local-visual">
-                            <div className="w-orbit">
-                                <div className="w-orbit-ring w-orbit-1" />
-                                <div className="w-orbit-ring w-orbit-2" />
-                                <div className="w-orbit-ring w-orbit-3" />
-                                <div className="w-orbit-center">
-                                    <img src="/assets/hikity.jpeg" alt="Hikity Logo" />
-                                </div>
-                                <div className="w-orbit-node n-1"><span>⚖️</span></div>
-                                <div className="w-orbit-node n-2"><span>📈</span></div>
-                                <div className="w-orbit-node n-3"><span>🏥</span></div>
-                                <div className="w-orbit-node n-4"><span>🤝</span></div>
+                        <div className="cases-grid">
+                            <div className="case-item">
+                                <span className="case-stat-badge">+$120K</span>
+                                <h4>Consulting Revenue Generated</h4>
+                                <p>Fractional CTO portfolio platform resulting in 4 new retainer contracts within 30 days of launch.</p>
+                            </div>
+                            <div className="case-item">
+                                <span className="case-stat-badge">4.8/5</span>
+                                <h4>Client Inbound Quality Rate</h4>
+                                <p>Replaced unqualified lead form inquiries with pre-qualified high-budget calendar bookings.</p>
+                            </div>
+                            <div className="case-item">
+                                <span className="case-stat-badge">100%</span>
+                                <h4>Search Ranking Visibility</h4>
+                                <p>Ranked #1 for personal founder name and niche agency consultancy keywords on Google.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* ── TESTIMONIALS ── */}
-            <section
-                id="w-testimonials"
-                className={`w-section bg-white ${visibleSections['w-testimonials'] ? 'visible' : ''}`}
-                ref={addToRefs}
-            >
+            {/* CONSULTATION FORM */}
+            <section className="w-onboard-section" id="onboard">
                 <div className="w-container">
-                    <div className="w-section-header">
-                        <span className="w-tag">ENDORSEMENTS</span>
-                        <h2 className="w-section-title">
-                            Retained By Industry Leaders
-                        </h2>
-                    </div>
-
-                    <div className="w-testimonials-grid">
-                        {testimonials.map((t, i) => (
-                            <div key={i} className="w-testimonial-card">
-                                <div className="t-quote-mark">"</div>
-                                <p className="t-text">{t.quote}</p>
-                                <div className="t-author">
-                                    <div className="t-avatar">{t.avatar}</div>
-                                    <div>
-                                        <span className="t-name">{t.author}</span>
-                                        <span className="t-clinic">{t.practice}</span>
+                    <div className="w-form-card">
+                        <div className="w-section-header">
+                            <span className="w-eyebrow">Portfolio Brief</span>
+                            <h2 className="w-title-large">Build Your Executive Portfolio Today</h2>
+                        </div>
+                        {submitted ? (
+                            <div style={{ textAlign: 'center', padding: '40px' }}>
+                                <h3 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '12px' }}>Inquiry Received!</h3>
+                                <p style={{ color: '#475569' }}>Our portfolio design director will contact you for a discovery session within 24 hours.</p>
+                            </div>
+                        ) : (
+                            <form className="w-form" action="https://formspree.io/f/xvgokrjw" method="POST" onSubmit={handleSubmit}>
+                                <input type="hidden" name="_replyto" value="hikityofficial@gmail.com" />
+                                <input type="hidden" name="subject" value="Hikity Executive Portfolio Inquiry" />
+                                <div className="w-form-grid">
+                                    <div className="w-form-group">
+                                        <label>FULL NAME</label>
+                                        <input type="text" name="name" placeholder="e.g. Siddharth Verma" required />
+                                    </div>
+                                    <div className="w-form-group">
+                                        <label>EMAIL ADDRESS</label>
+                                        <input type="email" name="email" placeholder="siddharth@exec.com" required />
+                                    </div>
+                                    <div className="w-form-group">
+                                        <label>PROFESSION / TITLE</label>
+                                        <input type="text" name="title" placeholder="e.g. Fractional CMO / Founder / Architect" required />
+                                    </div>
+                                    <div className="w-form-group">
+                                        <label>LINKEDIN / CURRENT WEBSITE</label>
+                                        <input type="text" name="linkedin" placeholder="https://linkedin.com/in/..." required />
+                                    </div>
+                                    <div className="w-form-group full">
+                                        <label>PORTFOLIO GOALS & CASE STUDIES</label>
+                                        <textarea name="brief" rows="4" placeholder="Tell us about the key projects you want to feature, target client profiles, and desired call-to-action..." required></textarea>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                                <div style={{ textAlign: 'center' }}>
+                                    <button type="submit" className="w-submit-btn">Request Portfolio Design →</button>
+                                </div>
+                            </form>
+                        )}
                     </div>
                 </div>
             </section>
 
-            {/* ── CTA ── */}
-            <section className="w-cta-section">
-                <div className="w-cta-bg" />
-                <div className="w-container">
-                    <div className="w-cta-content">
-                        <h2 className="w-cta-title">Ready To Dominate Your Market?</h2>
-                        <p className="w-cta-desc">
-                            Schedule a confidential consultation to discuss how we can engineer the ultimate digital foundation for your professional practice.
-                        </p>
-                        <div className="w-cta-actions">
-                            <a href="/#contact" className="w-btn-primary large">
-                                <span>Schedule a Consultation</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── FOOTER ── */}
-            <div className="w-footer-wrapper">
-                <EnterpriseFooter />
-            </div>
+            <EnterpriseFooter />
         </div>
     );
 };

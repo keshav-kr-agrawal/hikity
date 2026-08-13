@@ -1,327 +1,191 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './SchoolPage.css';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import EnterpriseFooter from '../EnterpriseFooter';
+import './SchoolPage.css';
 
 const SchoolPage = () => {
-    // Scroll reveal logic
-    const [visibleSections, setVisibleSections] = useState({});
-    const sectionRefs = useRef([]);
-
-    const addToRefs = (el) => {
-        if (el && !sectionRefs.current.includes(el)) {
-            sectionRefs.current.push(el);
-        }
-    };
+    const [scrolled, setScrolled] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
 
     useEffect(() => {
         window.scrollTo(0, 0);
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setVisibleSections(prev => ({ ...prev, [entry.target.id]: true }));
-                    }
-                });
-            },
-            { threshold: 0.15 }
-        );
-
-        sectionRefs.current.forEach((ref) => {
-            if (ref) observer.observe(ref);
-        });
-
-        // Navbar scroll effect
-        const handleScroll = () => {
-            const nav = document.querySelector('.school-nav');
-            if (nav) {
-                if (window.scrollY > 50) nav.classList.add('scrolled');
-                else nav.classList.remove('scrolled');
-            }
-        };
+        const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            sectionRefs.current.forEach((ref) => {
-                if (ref) observer.unobserve(ref);
-            });
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const features = [
-        {
-            icon: "🎓",
-            title: "Enrollment Generation",
-            desc: "Targeted digital campaigns that actively reach prospective parents and safely guide them to enrollment."
-        },
-        {
-            icon: "🏛️",
-            title: "Institutional Authority",
-            desc: "A premium website architecture that conveys the rich history, academic excellence, and values of your school."
-        },
-        {
-            icon: "📱",
-            title: "Parent Portal Integration",
-            desc: "Seamless integration with your existing admission gateways, fee mechanisms, and student information systems."
-        },
-        {
-            icon: "⭐",
-            title: "Reputation Excellence",
-            desc: "Automated systems to capture positive alumni reviews and glowing testimonials from current parents."
-        },
-        {
-            icon: "🚀",
-            title: "Lightning Fast Mobile",
-            desc: "Most parents research schools on mobile. We ensure instant load times and perfect accessibility guidelines."
-        },
-        {
-            icon: "🛡️",
-            title: "Secure & Compliant",
-            desc: "Built with the highest privacy and data-protection protocols, essential for modern educational institutions."
-        }
-    ];
-
-    const testimonials = [
-        {
-            quote: "Since Hikity revamped our digital presence, our annual admission inquiries increased by 35%. The website truly reflects our academic standards.",
-            author: "Dr. Eleanor Vance",
-            practice: "Principal, Oakridge International",
-            avatar: "👩‍🏫"
-        },
-        {
-            quote: "A perfect blend of modern functionality and traditional institutional trust. Parents constantly compliment our new portal.",
-            author: "Mr. Robert Sterling",
-            practice: "Director of Admissions",
-            avatar: "👨‍🏫"
-        }
-    ];
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setSubmitted(true);
+    };
 
     return (
         <div className="school-page">
-            {/* ── NAVIGATION ── */}
-            <nav className="school-nav">
-                <Link to="/" className="school-nav-logo">
-                    <div className="school-nav-logo-circle">
-                        <img src="/assets/hikity.jpeg" alt="Hikity Logo" />
+            {/* NAVIGATION */}
+            <nav className={`s-nav ${scrolled ? 'scrolled' : ''}`}>
+                <Link to="/" className="s-nav-logo">
+                    <div className="s-nav-logo-circle">
+                        <img src="/hikity-logo.jpeg" alt="Hikity Logo" />
                     </div>
+                    <span>HIKITY EDUTECH</span>
                 </Link>
-                <div className="school-nav-links">
-                    <Link to="/" className="school-nav-link">Home</Link>
-                    <Link to="/blog" className="school-nav-link">Blog</Link>
-                    <a href="/#contact" className="school-nav-cta">Contact Us</a>
+                <div className="s-nav-links">
+                    <Link to="/" className="s-nav-link">Home</Link>
+                    <Link to="/services" className="s-nav-link">Services Hub</Link>
+                    <Link to="/commerce" className="s-nav-link">Commerce</Link>
+                    <a href="#onboard" className="s-nav-cta">Digitize Your School</a>
                 </div>
             </nav>
 
-            {/* ── HERO ── */}
+            {/* HERO */}
             <header className="school-hero">
-                <div className="school-hero-bg">
-                    <div className="school-hero-gradient" />
-                    <div className="school-hero-dots" />
-                </div>
-
                 <div className="school-container">
-                    <div className="school-hero-content-wrapper">
-                        <div className="school-hero-content">
-                            <div className="school-hero-badge">
-                                <span className="school-hero-badge-dot" />
-                                DIGITAL EXCELLENCE FOR SCHOOLS
-                            </div>
-                            <h1 className="school-hero-title">
-                                Inspire Trust. <br /><span className="school-hero-title-accent">Increase Enrollments.</span>
-                            </h1>
-                            <p className="school-hero-subtitle">
-                                Hikity builds authoritative, high-converting digital platforms specifically engineered for premium educational institutions. Modernize your school's legacy today.
-                            </p>
-
-                            <div className="school-hero-actions">
-                                <a href="/#contact" className="school-btn-primary large">
-                                    <span>Upgrade Your Institution</span>
-                                </a>
-                            </div>
-
-                            <div className="school-hero-stats">
-                                <div className="school-stat">
-                                    <span className="school-stat-number">35%</span>
-                                    <span className="school-stat-label">Avg. Admission Lift</span>
-                                </div>
-                                <div className="school-stat-divider" />
-                                <div className="school-stat">
-                                    <span className="school-stat-number">Top</span>
-                                    <span className="school-stat-label">Local School Ranking</span>
-                                </div>
-                            </div>
+                    <div className="school-hero-badge">
+                        🏫 Schools, Institutes & Universities
+                    </div>
+                    <h1 className="school-hero-title">
+                        Transform Your School into a <span className="navy-accent">Tech-First Institution.</span>
+                    </h1>
+                    <p className="school-hero-subtitle">
+                        Digital online admission portals, automated fee payment collection, digital prospectus virtual tours, parent WhatsApp notification bots, and student performance management systems.
+                    </p>
+                    <div className="school-hero-stats">
+                        <div className="s-stat">
+                            <span className="s-stat-num">100%</span>
+                            <span className="s-stat-label">Paperless Admissions</span>
                         </div>
-
-                        <div className="school-hero-visual">
-                            <div className="school-hero-card-stack">
-                                <div className="school-float-card card-1">
-                                    <span className="card-icon">🏛️</span>
-                                    <span>Premium Brand Identity</span>
-                                </div>
-                                <div className="school-float-card card-2">
-                                    <span className="card-icon">📈</span>
-                                    <span>Targeted Admissions</span>
-                                </div>
-                                <div className="school-float-card card-3">
-                                    <span className="card-icon">🤝</span>
-                                    <span>Parent Engagement</span>
-                                </div>
-                                <div className="school-float-card card-4">
-                                    <span className="card-icon">🏆</span>
-                                    <span>Academic Excellence</span>
-                                </div>
-                            </div>
+                        <div className="s-stat-divider"></div>
+                        <div className="s-stat">
+                            <span className="s-stat-num">0%</span>
+                            <span className="s-stat-label">Fee Delay Penalties</span>
+                        </div>
+                        <div className="s-stat-divider"></div>
+                        <div className="s-stat">
+                            <span className="s-stat-num">₹30k/yr</span>
+                            <span className="s-stat-label">Flat Managed Plan</span>
                         </div>
                     </div>
-                </div>
-
-                <div className="school-hero-scroll-indicator">
-                    <span>EXPLORE</span>
-                    <div className="scroll-line" />
                 </div>
             </header>
 
-            {/* ── MANIFESTO STRIP ── */}
-            <div className="school-manifesto">
-                <div className="school-manifesto-inner">
-                    {[...Array(3)].map((_, j) => (
-                        <React.Fragment key={j}>
-                            <div className="school-manifesto-item">PARENT TRUST <span className="manifesto-dot">✦</span></div>
-                            <div className="school-manifesto-item">ACADEMIC STANDARDS <span className="manifesto-dot">✦</span></div>
-                            <div className="school-manifesto-item">ADMISSION GROWTH <span className="manifesto-dot">✦</span></div>
-                            <div className="school-manifesto-item">COMMUNITY LEGACY <span className="manifesto-dot">✦</span></div>
-                        </React.Fragment>
-                    ))}
-                </div>
-            </div>
-
-            {/* ── FEATURES SECTION ── */}
-            <section
-                id="features"
-                className={`school-section bg-light ${visibleSections['features'] ? 'visible' : ''}`}
-                ref={addToRefs}
-            >
+            {/* SOLUTIONS BENTO */}
+            <section className="school-solutions-section">
                 <div className="school-container">
                     <div className="school-section-header">
-                        <span className="school-tag">INSTITUTIONAL GROWTH</span>
-                        <h2 className="school-section-title">
-                            Everything A Leading School Needs
-                        </h2>
-                        <p className="school-section-subtitle">
-                            We don't just build websites; we build comprehensive digital enrollment engines tailored for modern education.
-                        </p>
+                        <span className="school-eyebrow">Academic Infrastructure</span>
+                        <h2 className="school-title-large">Next-Generation School Management Technology</h2>
                     </div>
-
-                    <div className="school-features-grid">
-                        {features.map((feature, i) => (
-                            <div key={i} className="school-feature-card">
-                                <span className="school-feature-icon">{feature.icon}</span>
-                                <h3 className="school-feature-title">{feature.title}</h3>
-                                <p className="school-feature-desc">{feature.desc}</p>
-                            </div>
-                        ))}
+                    <div className="school-bento-grid">
+                        <div className="school-bento-card">
+                            <span className="s-card-icon">📝</span>
+                            <h3 className="school-bento-title">Online Admission & Fee Portal</h3>
+                            <p className="school-bento-desc">Parents apply online, upload student documents, and pay admission fees securely via UPI or NetBanking with instant receipt generation.</p>
+                        </div>
+                        <div className="school-bento-card">
+                            <span className="s-card-icon">📖</span>
+                            <h3 className="school-bento-title">Digital Prospectus & Campus Tour</h3>
+                            <p className="school-bento-desc">Interactive virtual campus tours, infrastructure highlights, curriculum breakdowns, and faculty profiles available 24/7 online.</p>
+                        </div>
+                        <div className="school-bento-card">
+                            <span className="s-card-icon">💬</span>
+                            <h3 className="school-bento-title">Parent WhatsApp Announcement Bot</h3>
+                            <p className="school-bento-desc">Broadcast exam dates, fee due dates, holiday announcements, and emergency notices directly to parents' WhatsApp numbers.</p>
+                        </div>
+                        <div className="school-bento-card">
+                            <span className="s-card-icon">🎓</span>
+                            <h3 className="school-bento-title">Student Performance Portal</h3>
+                            <p className="school-bento-desc">Secure portal for parents to view report cards, attendance records, exam schedules, and teacher feedback digitally.</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* ── LOCAL DOMINANCE (Orbit variation) ── */}
-            <section
-                id="local-dominance"
-                className={`school-section bg-gradient ${visibleSections['local-dominance'] ? 'visible' : ''}`}
-                ref={addToRefs}
-            >
+            {/* ADMISSION FLOW DIAGRAM */}
+            <section className="school-flow-section">
                 <div className="school-container">
-                    <div className="school-local-content">
-                        <div className="school-local-text">
-                            <span className="school-tag">COMMUNITY LEADERSHIP</span>
-                            <h2 className="school-section-title">
-                                The School of Choice
-                            </h2>
-                            <p className="school-section-subtitle">
-                                When parents research the best education for their children, they rely on digital authority. We ensure your institution sits undisputed at the top.
-                            </p>
-
-                            <ul className="school-checklist">
-                                <li><strong>Prestige Local SEO:</strong> Ensure your school is the first result families see when moving to the area.</li>
-                                <li><strong>Enrollment Campaigns:</strong> Execute high-conversion campaigns during peak admission seasons.</li>
-                                <li><strong>Alumni Showcases:</strong> Highlight success stories to build generational trust and community backing.</li>
-                            </ul>
+                    <div className="school-flow-card">
+                        <div className="school-section-header">
+                            <span className="school-eyebrow">Digital Admission Flow</span>
+                            <h2 className="school-title-large">Streamlined Student Enrollment Pipeline</h2>
                         </div>
-
-                        <div className="school-local-visual">
-                            <div className="school-orbit">
-                                <div className="s-orbit-ring s-orbit-1" />
-                                <div className="s-orbit-ring s-orbit-2" />
-                                <div className="s-orbit-ring s-orbit-3" />
-                                <div className="s-orbit-center">
-                                    <img src="/assets/hikity.jpeg" alt="Hikity Logo" />
-                                </div>
-                                <div className="s-orbit-node n-1"><span>🎓</span></div>
-                                <div className="s-orbit-node n-2"><span>🏫</span></div>
-                                <div className="s-orbit-node n-3"><span>🏆</span></div>
-                                <div className="s-orbit-node n-4"><span>🚌</span></div>
+                        <div className="s-flow-grid">
+                            <div className="s-flow-step">
+                                <h4>1. Online Form</h4>
+                                <p>Parents fill digital application</p>
+                            </div>
+                            <span className="s-flow-arrow">→</span>
+                            <div className="s-flow-step">
+                                <h4>2. Doc Verification</h4>
+                                <p>Automated cloud upload audit</p>
+                            </div>
+                            <span className="s-flow-arrow">→</span>
+                            <div className="s-flow-step">
+                                <h4>3. Online Fee Payment</h4>
+                                <p>Instant UPI/Bank payment</p>
+                            </div>
+                            <span className="s-flow-arrow">→</span>
+                            <div className="s-flow-step">
+                                <h4>4. Student ID Issuance</h4>
+                                <p>Automated WhatsApp confirmation</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* ── TESTIMONIALS ── */}
-            <section
-                id="school-testimonials"
-                className={`school-section bg-white ${visibleSections['school-testimonials'] ? 'visible' : ''}`}
-                ref={addToRefs}
-            >
+            {/* SCHOOL FORM */}
+            <section className="school-onboard-section" id="onboard">
                 <div className="school-container">
-                    <div className="school-section-header">
-                        <span className="school-tag">PROVEN EXCELLENCE</span>
-                        <h2 className="school-section-title">
-                            Trusted by Leading Academies
-                        </h2>
-                    </div>
-
-                    <div className="school-testimonials-grid">
-                        {testimonials.map((t, i) => (
-                            <div key={i} className="school-testimonial-card">
-                                <div className="t-quote-mark">"</div>
-                                <p className="t-text">{t.quote}</p>
-                                <div className="t-author">
-                                    <div className="t-avatar">{t.avatar}</div>
-                                    <div>
-                                        <span className="t-name">{t.author}</span>
-                                        <span className="t-clinic">{t.practice}</span>
+                    <div className="school-form-card">
+                        <div className="school-section-header">
+                            <span className="school-eyebrow">Institutional Consultation</span>
+                            <h2 className="school-title-large">Request a School Digitization Brief</h2>
+                        </div>
+                        {submitted ? (
+                            <div style={{ textAlign: 'center', padding: '40px' }}>
+                                <h3 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '12px' }}>Request Submitted!</h3>
+                                <p style={{ color: '#334155' }}>Our academic technology director will contact your school management within 24 hours.</p>
+                            </div>
+                        ) : (
+                            <form className="school-form" action="https://formspree.io/f/xvgokrjw" method="POST" onSubmit={handleSubmit}>
+                                <input type="hidden" name="_replyto" value="hikityofficial@gmail.com" />
+                                <input type="hidden" name="subject" value="Hikity EduTech School Inquiry" />
+                                <div className="s-form-grid">
+                                    <div className="s-form-group">
+                                        <label>SCHOOL / INSTITUTION NAME</label>
+                                        <input type="text" name="name" placeholder="e.g. St. Xavier's International School" required />
+                                    </div>
+                                    <div className="s-form-group">
+                                        <label>OFFICIAL EMAIL</label>
+                                        <input type="email" name="email" placeholder="principal@school.edu.in" required />
+                                    </div>
+                                    <div className="s-form-group">
+                                        <label>PHONE NUMBER</label>
+                                        <input type="text" name="phone" placeholder="+91 98765 43210" required />
+                                    </div>
+                                    <div className="s-form-group">
+                                        <label>TOTAL STUDENT STRENGTH</label>
+                                        <select name="strength" className="s-select" required>
+                                            <option value="Under 500 Students">Under 500 Students</option>
+                                            <option value="500 - 2,000 Students">500 - 2,000 Students</option>
+                                            <option value="2,000+ Students">2,000+ Students</option>
+                                        </select>
+                                    </div>
+                                    <div className="s-form-group full">
+                                        <label>REQUIREMENTS BRIEF</label>
+                                        <textarea name="brief" rows="4" placeholder="Tell us about your current admission process, fee collection methods, and desired digital features..." required></textarea>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                                <div style={{ textAlign: 'center' }}>
+                                    <button type="submit" className="s-submit-btn">Request School Tech Demo →</button>
+                                </div>
+                            </form>
+                        )}
                     </div>
                 </div>
             </section>
 
-            {/* ── CTA ── */}
-            <section className="school-cta-section">
-                <div className="school-cta-bg" />
-                <div className="school-container">
-                    <div className="school-cta-content">
-                        <h2 className="school-cta-title">Ready To Elevate Your School's Legacy?</h2>
-                        <p className="school-cta-desc">
-                            Partner with us to build a digital presence that truly reflects your academic prestige and fills your classrooms.
-                        </p>
-                        <div className="school-cta-actions">
-                            <a href="/#contact" className="school-btn-primary large">
-                                <span>Get a Free Digital Audit</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── FOOTER ── */}
-            <div className="school-footer-wrapper">
-                <EnterpriseFooter />
-            </div>
+            <EnterpriseFooter />
         </div>
     );
 };
