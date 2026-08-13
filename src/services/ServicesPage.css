@@ -7,15 +7,16 @@ body:has(.services-page) {
 }
 
 :root {
-    --s-bg-dark: #07080a;
-    --s-card-bg: #0d1017;
+    --s-bg-dark: #08090c;
+    --s-card-bg: #0e1118;
     --s-border: rgba(255, 255, 255, 0.08);
     --s-text-main: #ffffff;
     --s-text-sub: #94a3b8;
     --s-text-muted: #64748b;
-    --s-peach: #ffb4a2;
-    --s-rose: #e83e8c;
     --s-gold: #d4af37;
+    --s-gold-soft: #e2c275;
+    --s-emerald: #10b981;
+    --s-terracotta: #c87d8d;
     --s-gutter: clamp(20px, 6vw, 100px);
 }
 
@@ -52,7 +53,7 @@ body:has(.services-page) {
 }
 
 .services-nav.scrolled {
-    background: rgba(7, 8, 10, 0.92);
+    background: rgba(8, 9, 12, 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--s-border);
@@ -127,7 +128,7 @@ body:has(.services-page) {
     padding-top: clamp(120px, 18vh, 180px);
     padding-bottom: clamp(60px, 10vh, 90px);
     overflow: hidden;
-    background: linear-gradient(180deg, #000000 0%, #080a0e 100%);
+    background: linear-gradient(180deg, #050608 0%, #0c0f16 100%);
     text-align: center;
 }
 
@@ -147,7 +148,7 @@ body:has(.services-page) {
     transform: translateX(-50%);
     width: 60vw;
     height: 35vw;
-    background: radial-gradient(circle, rgba(255, 180, 162, 0.12) 0%, rgba(138, 43, 226, 0.06) 60%, transparent 70%);
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(200, 125, 141, 0.04) 60%, transparent 70%);
     filter: blur(90px);
 }
 
@@ -164,9 +165,9 @@ body:has(.services-page) {
     font-weight: 800;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--s-peach);
-    background: rgba(255, 180, 162, 0.06);
-    border: 1px solid rgba(255, 180, 162, 0.2);
+    color: var(--s-gold-soft);
+    background: rgba(212, 175, 55, 0.06);
+    border: 1px solid rgba(212, 175, 55, 0.2);
     padding: 6px 18px;
     border-radius: 100px;
     margin-bottom: 24px;
@@ -176,8 +177,8 @@ body:has(.services-page) {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--s-peach);
-    box-shadow: 0 0 10px var(--s-peach);
+    background: var(--s-gold-soft);
+    box-shadow: 0 0 10px var(--s-gold-soft);
 }
 
 .services-hero-title {
@@ -189,7 +190,7 @@ body:has(.services-page) {
 }
 
 .services-hero-title-accent {
-    background: linear-gradient(135deg, #ffffff 30%, var(--s-peach) 100%);
+    background: linear-gradient(135deg, #ffffff 30%, var(--s-gold-soft) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -207,7 +208,7 @@ body:has(.services-page) {
     align-items: center;
     justify-content: center;
     gap: clamp(20px, 4vw, 40px);
-    background: rgba(13, 16, 23, 0.8);
+    background: rgba(14, 17, 24, 0.8);
     border: 1px solid var(--s-border);
     border-radius: 100px;
     padding: 16px 36px;
@@ -255,7 +256,7 @@ body:has(.services-page) {
     font-weight: 800;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--s-peach);
+    color: var(--s-gold-soft);
     display: block;
     margin-bottom: 12px;
 }
@@ -277,7 +278,7 @@ body:has(.services-page) {
 /* FLAGSHIP SECTION */
 .flagship-section {
     padding: clamp(60px, 10vh, 100px) 0;
-    background: #090b10;
+    background: #06070a;
 }
 
 .flagship-grid {
@@ -287,7 +288,7 @@ body:has(.services-page) {
 }
 
 .flagship-card {
-    background: #0e121a;
+    background: #0d1017;
     border: 1px solid var(--s-border);
     border-radius: 24px;
     padding: clamp(24px, 3vw, 36px);
@@ -299,7 +300,7 @@ body:has(.services-page) {
 }
 
 .flagship-card:hover {
-    border-color: rgba(255, 180, 162, 0.3);
+    border-color: rgba(212, 175, 55, 0.3);
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
 }
@@ -317,18 +318,18 @@ body:has(.services-page) {
     font-size: 0.6rem;
     font-weight: 800;
     letter-spacing: 2px;
-    color: var(--s-peach);
-    background: rgba(255, 180, 162, 0.1);
+    color: var(--s-gold-soft);
+    background: rgba(212, 175, 55, 0.08);
     padding: 4px 12px;
     border-radius: 100px;
-    border: 1px solid rgba(255, 180, 162, 0.25);
+    border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .flagship-price-pill {
     font-size: 0.7rem;
     font-weight: 800;
-    color: #4ade80;
-    background: rgba(74, 222, 128, 0.1);
+    color: var(--s-emerald);
+    background: rgba(16, 185, 129, 0.1);
     padding: 4px 12px;
     border-radius: 100px;
 }
@@ -377,7 +378,7 @@ body:has(.services-page) {
 }
 
 .h-check {
-    color: #4ade80;
+    color: var(--s-emerald);
     font-weight: 800;
     font-size: 0.8rem;
     flex-shrink: 0;
@@ -392,7 +393,7 @@ body:has(.services-page) {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.05);
     color: #fff;
     border: 1px solid var(--s-border);
     padding: 12px;
@@ -425,7 +426,7 @@ body:has(.services-page) {
 }
 
 .vertical-bento-card {
-    background: #0d1017;
+    background: #0e1118;
     border: 1px solid var(--s-border);
     border-radius: 20px;
     padding: 28px;
@@ -437,9 +438,9 @@ body:has(.services-page) {
 }
 
 .vertical-bento-card:hover {
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(212, 175, 55, 0.25);
     transform: translateY(-4px);
-    background: #111520;
+    background: #121622;
 }
 
 .vertical-card-top {
@@ -476,11 +477,11 @@ body:has(.services-page) {
 .v-tag {
     font-size: 0.65rem;
     font-weight: 700;
-    color: var(--s-peach);
-    background: rgba(255, 180, 162, 0.06);
+    color: var(--s-gold-soft);
+    background: rgba(212, 175, 55, 0.06);
     padding: 4px 10px;
     border-radius: 100px;
-    border: 1px solid rgba(255, 180, 162, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .vertical-card-footer {
@@ -501,7 +502,7 @@ body:has(.services-page) {
 }
 
 .arrow-icon {
-    color: var(--s-peach);
+    color: var(--s-gold-soft);
     font-weight: 800;
     transition: transform 0.3s ease;
 }
@@ -513,12 +514,12 @@ body:has(.services-page) {
 /* TECH ARCHITECTURE SECTION */
 .tech-architecture-section {
     padding: clamp(60px, 10vh, 100px) 0;
-    background: #090b10;
+    background: #06070a;
 }
 
 .tech-card-wrapper {
-    background: linear-gradient(135deg, #111520 0%, #0a0d14 100%);
-    border: 1px solid rgba(255, 180, 162, 0.2);
+    background: linear-gradient(135deg, #121622 0%, #0a0d14 100%);
+    border: 1px solid rgba(212, 175, 55, 0.2);
     border-radius: 28px;
     padding: clamp(30px, 5vw, 60px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
@@ -560,7 +561,7 @@ body:has(.services-page) {
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 2px;
-    color: var(--s-peach);
+    color: var(--s-gold-soft);
     margin-bottom: 10px;
     display: block;
 }
@@ -585,7 +586,7 @@ body:has(.services-page) {
 }
 
 .consultation-card {
-    background: #0c0f16;
+    background: #0d1017;
     border: 1px solid var(--s-border);
     border-radius: 28px;
     padding: clamp(30px, 5vw, 60px);
@@ -661,7 +662,7 @@ body:has(.services-page) {
 .s-form-group input:focus,
 .s-form-group textarea:focus,
 .s-select:focus {
-    border-color: var(--s-peach);
+    border-color: var(--s-gold-soft);
 }
 
 .s-form-action {
@@ -695,7 +696,7 @@ body:has(.services-page) {
 }
 
 .s-direct-mail a {
-    color: var(--s-peach);
+    color: var(--s-gold-soft);
     text-decoration: none;
 }
 
