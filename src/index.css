@@ -66,3 +66,219 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* =========================================================================
+   GLOBAL UNIFIED RESPONSIVE NAVBAR & 3-LINE HAMBURGER MENU ACROSS ALL PAGES
+   ========================================================================= */
+
+/* Mobile menu toggle button default hidden on desktop */
+.home-menu-btn,
+.services-menu-btn,
+.commerce-menu-btn,
+.cs-menu-btn,
+.blog-menu-btn,
+.p-menu-btn,
+.sc-menu-btn,
+.b-menu-btn,
+.dt-menu-btn,
+.cr-menu-btn,
+.wk-menu-btn,
+.cf-menu-btn,
+.w-menu-btn,
+.mc-menu-btn,
+[class*="-menu-btn"] {
+  display: none;
+  background: transparent !important;
+  border: none !important;
+  color: #ffffff !important;
+  font-size: 1.8rem !important;
+  cursor: pointer !important;
+  z-index: 100002 !important;
+  padding: 6px 12px !important;
+  line-height: 1 !important;
+}
+
+/* Mobile drawer container */
+.home-mobile-drawer,
+.services-mobile-drawer,
+.commerce-mobile-drawer,
+.cs-mobile-drawer,
+.blog-mobile-drawer,
+.p-mobile-drawer,
+.sc-mobile-drawer,
+.b-mobile-drawer,
+.dt-mobile-drawer,
+.cr-mobile-drawer,
+.wk-mobile-drawer,
+.cf-mobile-drawer,
+.w-mobile-drawer,
+.mc-mobile-drawer,
+[class*="-mobile-drawer"] {
+  position: fixed !important;
+  top: 0 !important;
+  right: -100% !important;
+  width: 85% !important;
+  max-width: 320px !important;
+  height: 100vh !important;
+  background: rgba(10, 10, 15, 0.98) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  z-index: 100000 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 90px 28px 40px !important;
+  gap: 20px !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.12) !important;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-sizing: border-box !important;
+}
+
+.home-mobile-drawer.open,
+.services-mobile-drawer.open,
+.commerce-mobile-drawer.open,
+.cs-mobile-drawer.open,
+.blog-mobile-drawer.open,
+.p-mobile-drawer.open,
+.sc-mobile-drawer.open,
+.b-mobile-drawer.open,
+.dt-mobile-drawer.open,
+.cr-mobile-drawer.open,
+.wk-mobile-drawer.open,
+.cf-mobile-drawer.open,
+.w-mobile-drawer.open,
+.mc-mobile-drawer.open,
+[class*="-mobile-drawer"].open {
+  right: 0 !important;
+}
+
+/* Mobile backdrop */
+.home-mobile-backdrop,
+.services-mobile-backdrop,
+.commerce-mobile-backdrop,
+.cs-mobile-backdrop,
+.blog-mobile-backdrop,
+.p-mobile-backdrop,
+.sc-mobile-backdrop,
+.b-mobile-backdrop,
+.dt-mobile-backdrop,
+.cr-mobile-backdrop,
+.wk-mobile-backdrop,
+.cf-mobile-backdrop,
+.w-mobile-backdrop,
+.mc-mobile-backdrop,
+[class*="-mobile-backdrop"] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+  z-index: 99999 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.home-mobile-backdrop.open,
+.services-mobile-backdrop.open,
+.commerce-mobile-backdrop.open,
+.cs-mobile-backdrop.open,
+.blog-mobile-backdrop.open,
+.p-mobile-backdrop.open,
+.sc-mobile-backdrop.open,
+.b-mobile-backdrop.open,
+.dt-mobile-backdrop.open,
+.cr-mobile-backdrop.open,
+.wk-mobile-backdrop.open,
+.cf-mobile-backdrop.open,
+.w-mobile-backdrop.open,
+.mc-mobile-backdrop.open,
+[class*="-mobile-backdrop"].open {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Mobile drawer links styling */
+[class*="-mobile-drawer"] a,
+.home-drawer-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-decoration: none !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.5px !important;
+  padding: 12px 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  transition: color 0.3s ease !important;
+  display: block !important;
+}
+
+[class*="-mobile-drawer"] a:hover,
+.home-drawer-link:hover {
+  color: #38bdf8 !important;
+}
+
+/* MEDIA QUERIES FOR PHONES & TABLETS (<= 768px) */
+@media (max-width: 768px) {
+  /* Hide horizontal desktop nav links */
+  .nav-contact-wrapper,
+  .services-nav-links,
+  .commerce-nav-links,
+  .blog-nav-links,
+  .p-nav-links,
+  .sc-nav-links,
+  .b-nav-links,
+  .dt-nav-links,
+  .cr-nav-links,
+  .wk-nav-links,
+  .cf-nav-links,
+  .w-nav-links,
+  .mc-nav-links,
+  .cs-nav-links,
+  [class*="-nav-links"] {
+    display: none !important;
+  }
+
+  /* Show 3-line hamburger menu button */
+  .home-menu-btn,
+  .services-menu-btn,
+  .commerce-menu-btn,
+  .cs-menu-btn,
+  .blog-menu-btn,
+  .p-menu-btn,
+  .sc-menu-btn,
+  .b-menu-btn,
+  .dt-menu-btn,
+  .cr-menu-btn,
+  .wk-menu-btn,
+  .cf-menu-btn,
+  .w-menu-btn,
+  .mc-menu-btn,
+  [class*="-menu-btn"] {
+    display: block !important;
+  }
+
+  /* Ensure main navbar container lays out logo on left, 3-line button on right */
+  .navbar,
+  .services-nav,
+  .commerce-nav,
+  .blog-nav,
+  .p-nav,
+  .sc-nav,
+  .b-nav,
+  .dt-nav,
+  .cr-nav,
+  .wk-nav,
+  .cf-nav,
+  .w-nav,
+  .mc-nav,
+  .cs-nav,
+  [class*="-nav"] {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}

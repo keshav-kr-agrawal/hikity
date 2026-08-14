@@ -584,15 +584,6 @@ function HomePage() {
                                     </div>
                                 </div>
                             </div>
-
-                            <div className="reveal-item service-actions" style={{ marginTop: '28px', display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-                                <Link to="/services" style={{ padding: '12px 24px', borderRadius: '30px', background: '#111827', color: '#ffffff', textDecoration: 'none', fontWeight: '700', fontSize: '0.85rem', letterSpacing: '1px' }}>
-                                    EXPLORE ALL SERVICES →
-                                </Link>
-                                <Link to="/case-studies" style={{ padding: '12px 24px', borderRadius: '30px', border: '1px solid rgba(0, 0, 0, 0.2)', color: '#111827', textDecoration: 'none', fontWeight: '700', fontSize: '0.85rem', letterSpacing: '1px' }}>
-                                    VIEW BHAGALPUR CASE STUDIES →
-                                </Link>
-                            </div>
                         </div>
                         <div ref={parkingZoneRef} className="parking-zone">
                             <img src="/assets/scene.jpg" alt="HIKITY Digital Solutions - Managed Commerce, AI Agents, 3D Interactive Design" className="mountain-preview" />
