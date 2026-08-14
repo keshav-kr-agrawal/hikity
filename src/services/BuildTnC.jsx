@@ -13,7 +13,7 @@ const BuildTnC = () => {
             <nav className="b-nav scrolled">
                 <Link to="/" className="b-nav-logo">
                     <div className="b-nav-logo-circle">
-                        <img src="/assets/hikity.jpeg" alt="Hikity Logo" />
+                        <img src="/hikity_logo.jpeg" alt="Hikity Logo" />
                     </div>
                     <span>HIKITY</span>
                 </Link>

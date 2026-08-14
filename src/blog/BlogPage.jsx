@@ -58,7 +58,7 @@ const BlogPage = () => {
             <nav className="blog-nav">
                 <Link to="/" className="blog-nav-logo">
                     <div className="blog-nav-logo-circle">
-                        <img src="/assets/hikity.jpeg" alt="Hikity Logo" />
+                        <img src="/hikity_logo.jpeg" alt="Hikity Logo" />
                     </div>
                     <span>HIKITY</span>
                 </Link>

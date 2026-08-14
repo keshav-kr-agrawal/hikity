@@ -137,7 +137,7 @@ const ServicesPage = () => {
             <nav className={`services-nav ${scrolled ? 'scrolled' : ''}`}>
                 <Link to="/" className="services-nav-logo">
                     <div className="services-nav-logo-circle">
-                        <img src="/assets/hikity.jpeg" alt="Hikity Logo" />
+                        <img src="/hikity_logo.jpeg" alt="Hikity Logo" />
                     </div>
                     <span>HIKITY SERVICES</span>
                 </Link>

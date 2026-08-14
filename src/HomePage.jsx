@@ -355,7 +355,7 @@ function HomePage() {
                 <nav className="navbar">
                     <div ref={logoRef} className="logo-section" onClick={scrollToTop}>
                         <div className="nav-brand-container">
-                            <img src="/assets/hikity.jpeg" alt="HIKITY - Professional Web Solutions, Digital Agency, Custom Website Design" className="nav-logo-img" />
+                            <img src="/hikity_logo.jpeg" alt="HIKITY - Professional Web Solutions, Digital Agency, Custom Website Design" className="nav-logo-img" />
                         </div>
                         <span className="logo-text">HIKITY</span>
                     </div>

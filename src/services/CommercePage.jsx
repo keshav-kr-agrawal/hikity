@@ -197,7 +197,7 @@ const CommercePage = () => {
             <nav className={`commerce-nav ${scrolled ? 'scrolled' : ''}`}>
                 <Link to="/" className="commerce-nav-logo">
                     <div className="commerce-nav-logo-circle">
-                        <img src="/assets/hikity.jpeg" alt="Hikity Logo" />
+                        <img src="/hikity_logo.jpeg" alt="Hikity Logo" />
                     </div>
                     <span>HIKITY COMMERCE</span>
                 </Link>
