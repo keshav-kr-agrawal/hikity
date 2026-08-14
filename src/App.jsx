@@ -17,6 +17,7 @@ import BlogPage from './blog/BlogPage';
 import BlogPostPage from './blog/BlogPostPage';
 import ServicesPage from './services/ServicesPage';
 import CommercePage from './services/CommercePage';
+import CaseStudyPage from './CaseStudyPage';
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/commerce" element={<CommercePage />} />
+        <Route path="/case-studies" element={<CaseStudyPage />} />
+        <Route path="/case-study" element={<CaseStudyPage />} />
         <Route path="/t&c" element={<TermsAndConditions />} />
         <Route path="/women" element={<WomenPage />} />
         <Route path="/dentist" element={<DentistPage />} />

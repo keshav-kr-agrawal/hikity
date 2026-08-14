@@ -144,11 +144,26 @@ const ServicesPage = () => {
                 <div className="services-nav-links">
                     <Link to="/" className="services-nav-link">Home</Link>
                     <Link to="/commerce" className="services-nav-link">Commerce</Link>
+                    <Link to="/case-studies" className="services-nav-link">Case Studies</Link>
                     <Link to="/women" className="services-nav-link">Women Initiative</Link>
                     <Link to="/blog" className="services-nav-link">Blog</Link>
                     <a href="#consultation" onClick={(e) => { e.preventDefault(); scrollToSection('consultation'); }} className="services-nav-cta">Consult Hikity</a>
                 </div>
+                <button className="services-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle navigation">
+                    {mobileMenuOpen ? '✕' : '☰'}
+                </button>
             </nav>
+
+            {/* MOBILE NAVIGATION DRAWER */}
+            <div className={`services-mobile-backdrop ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)}></div>
+            <div className={`services-mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+                <Link to="/" className="services-nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                <Link to="/commerce" className="services-nav-link" onClick={() => setMobileMenuOpen(false)}>Commerce</Link>
+                <Link to="/case-studies" className="services-nav-link" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+                <Link to="/women" className="services-nav-link" onClick={() => setMobileMenuOpen(false)}>Women Initiative</Link>
+                <Link to="/blog" className="services-nav-link" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
+                <a href="#consultation" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); scrollToSection('consultation'); }} className="services-nav-cta" style={{ textAlign: 'center', marginTop: '10px' }}>Consult Hikity</a>
+            </div>
 
             {/* HERO SECTION */}
             <header className="services-hero">
@@ -304,6 +319,20 @@ const ServicesPage = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* CASE STUDY HIGHLIGHT BANNER */}
+            <section className="services-casestudy-banner" style={{ background: 'rgba(15, 23, 42, 0.7)', borderTop: '1px solid rgba(255, 255, 255, 0.08)', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', padding: '60px 0' }}>
+                <div className="services-container" style={{ textAlign: 'center' }}>
+                    <span className="services-eyebrow" style={{ color: '#38bdf8' }}>REAL SUCCESS STORIES FROM BHAGALPUR</span>
+                    <h2 style={{ fontSize: '2.2rem', color: '#fff', margin: '12px 0 16px', fontWeight: 800 }}>See How We Transformed Bhagalpur Businesses</h2>
+                    <p style={{ color: '#cbd5e1', maxWidth: '700px', margin: '0 auto 28px', lineHeight: '1.6', fontSize: '1rem' }}>
+                        Discover how <strong>Anita Gift House</strong> automated stock management & profit tracking, and how <strong>KLATAX</strong> built a streamlined office scheduling platform.
+                    </p>
+                    <Link to="/case-studies" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #0284c7, #2563eb)', color: '#fff', padding: '14px 32px', borderRadius: '30px', fontWeight: '700', textDecoration: 'none', boxShadow: '0 4px 15px rgba(2, 132, 199, 0.4)' }}>
+                        Read Bhagalpur Case Studies →
+                    </Link>
                 </div>
             </section>
 

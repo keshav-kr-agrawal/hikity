@@ -4,6 +4,8 @@ import EnterpriseFooter from './EnterpriseFooter';
 import './LinksPage.css';
 
 const LinksPage = () => {
+    const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -93,9 +95,26 @@ const LinksPage = () => {
                     <span>HIKITY</span>
                 </Link>
                 <div className="b-nav-links">
-                    <a href="/#contact" className="b-nav-cta">Pitch Us</a>
+                    <Link to="/" className="b-nav-link">Home</Link>
+                    <Link to="/services" className="b-nav-link">Services</Link>
+                    <Link to="/commerce" className="b-nav-link">Commerce</Link>
+                    <Link to="/case-studies" className="b-nav-link">Case Studies</Link>
+                    <Link to="/blog" className="b-nav-link">Blog</Link>
                 </div>
+                <button className="b-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle navigation">
+                    {mobileMenuOpen ? '✕' : '☰'}
+                </button>
             </nav>
+
+            {/* MOBILE NAVIGATION DRAWER */}
+            <div className={`b-mobile-backdrop ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)}></div>
+            <div className={`b-mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+                <Link to="/" className="b-nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                <Link to="/services" className="b-nav-link" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+                <Link to="/commerce" className="b-nav-link" onClick={() => setMobileMenuOpen(false)}>Commerce</Link>
+                <Link to="/case-studies" className="b-nav-link" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+                <Link to="/blog" className="b-nav-link" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
+            </div>
 
             <main className="links-content">
                 <div className="links-header">

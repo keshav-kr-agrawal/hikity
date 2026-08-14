@@ -6,6 +6,7 @@ import './WorkPage.css';
 const WorkPage = () => {
     const [scrolled, setScrolled] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [form, setForm] = useState({
         name: '',
         title: '',
@@ -44,9 +45,23 @@ const WorkPage = () => {
                     <Link to="/" className="wk-nav-link">Home</Link>
                     <Link to="/services" className="wk-nav-link">Services</Link>
                     <Link to="/commerce" className="wk-nav-link">Commerce</Link>
+                    <Link to="/case-studies" className="wk-nav-link">Case Studies</Link>
                     <a href="#work-form" className="wk-nav-cta">Build Portfolio Site</a>
                 </div>
+                <button className="wk-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle navigation">
+                    {mobileMenuOpen ? '✕' : '☰'}
+                </button>
             </nav>
+
+            {/* MOBILE NAVIGATION DRAWER */}
+            <div className={`wk-mobile-backdrop ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)}></div>
+            <div className={`wk-mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+                <Link to="/" className="wk-nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                <Link to="/services" className="wk-nav-link" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+                <Link to="/commerce" className="wk-nav-link" onClick={() => setMobileMenuOpen(false)}>Commerce</Link>
+                <Link to="/case-studies" className="wk-nav-link" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+                <a href="#work-form" className="wk-nav-cta" style={{ textAlign: 'center', marginTop: '10px' }} onClick={() => setMobileMenuOpen(false)}>Build Portfolio Site</a>
+            </div>
 
             {/* HERO SECTION */}
             <header className="wk-hero">

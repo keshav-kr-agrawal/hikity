@@ -5,6 +5,7 @@ import './BuildPage.css';
 
 const BuildPage = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -45,9 +46,23 @@ const BuildPage = () => {
                     <Link to="/" className="b-nav-link">Home</Link>
                     <Link to="/services" className="b-nav-link">Services</Link>
                     <Link to="/commerce" className="b-nav-link">Commerce</Link>
+                    <Link to="/case-studies" className="b-nav-link">Case Studies</Link>
                     <a href="#pitch-form" className="b-nav-cta">Apply For Build</a>
                 </div>
+                <button className="b-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle navigation">
+                    {mobileMenuOpen ? '✕' : '☰'}
+                </button>
             </nav>
+
+            {/* MOBILE NAVIGATION DRAWER */}
+            <div className={`b-mobile-backdrop ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)}></div>
+            <div className={`b-mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+                <Link to="/" className="b-nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                <Link to="/services" className="b-nav-link" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+                <Link to="/commerce" className="b-nav-link" onClick={() => setMobileMenuOpen(false)}>Commerce</Link>
+                <Link to="/case-studies" className="b-nav-link" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+                <a href="#pitch-form" className="b-nav-cta" style={{ textAlign: 'center', marginTop: '10px' }} onClick={() => setMobileMenuOpen(false)}>Apply For Build</a>
+            </div>
 
             {/* HERO SECTION */}
             <header className="b-hero">

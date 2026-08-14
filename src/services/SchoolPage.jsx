@@ -6,6 +6,7 @@ import './SchoolPage.css';
 const SchoolPage = () => {
     const [scrolled, setScrolled] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [form, setForm] = useState({
         institutionName: '',
         contactPerson: '',
@@ -44,9 +45,23 @@ const SchoolPage = () => {
                     <Link to="/" className="sc-nav-link">Home</Link>
                     <Link to="/services" className="sc-nav-link">Services</Link>
                     <Link to="/commerce" className="sc-nav-link">Commerce</Link>
+                    <Link to="/case-studies" className="sc-nav-link">Case Studies</Link>
                     <a href="#school-form" className="sc-nav-cta">Build School Portal</a>
                 </div>
+                <button className="sc-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle navigation">
+                    {mobileMenuOpen ? '✕' : '☰'}
+                </button>
             </nav>
+
+            {/* MOBILE NAVIGATION DRAWER */}
+            <div className={`sc-mobile-backdrop ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)}></div>
+            <div className={`sc-mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+                <Link to="/" className="sc-nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                <Link to="/services" className="sc-nav-link" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+                <Link to="/commerce" className="sc-nav-link" onClick={() => setMobileMenuOpen(false)}>Commerce</Link>
+                <Link to="/case-studies" className="sc-nav-link" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+                <a href="#school-form" className="sc-nav-cta" style={{ textAlign: 'center', marginTop: '10px' }} onClick={() => setMobileMenuOpen(false)}>Build School Portal</a>
+            </div>
 
             {/* HERO SECTION */}
             <header className="sc-hero">

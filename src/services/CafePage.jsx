@@ -6,6 +6,7 @@ import './CafePage.css';
 const CafePage = () => {
     const [scrolled, setScrolled] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [form, setForm] = useState({
         restaurantName: '',
         contactPerson: '',
@@ -44,9 +45,23 @@ const CafePage = () => {
                     <Link to="/" className="cf-nav-link">Home</Link>
                     <Link to="/services" className="cf-nav-link">Services</Link>
                     <Link to="/commerce" className="cf-nav-link">Commerce</Link>
+                    <Link to="/case-studies" className="cf-nav-link">Case Studies</Link>
                     <a href="#cafe-form" className="cf-nav-cta">Get QR Menu Demo</a>
                 </div>
+                <button className="cf-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle navigation">
+                    {mobileMenuOpen ? '✕' : '☰'}
+                </button>
             </nav>
+
+            {/* MOBILE NAVIGATION DRAWER */}
+            <div className={`cf-mobile-backdrop ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)}></div>
+            <div className={`cf-mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+                <Link to="/" className="cf-nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                <Link to="/services" className="cf-nav-link" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+                <Link to="/commerce" className="cf-nav-link" onClick={() => setMobileMenuOpen(false)}>Commerce</Link>
+                <Link to="/case-studies" className="cf-nav-link" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+                <a href="#cafe-form" className="cf-nav-cta" style={{ textAlign: 'center', marginTop: '10px' }} onClick={() => setMobileMenuOpen(false)}>Get QR Menu Demo</a>
+            </div>
 
             {/* HERO SECTION */}
             <header className="cf-hero">

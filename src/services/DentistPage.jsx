@@ -6,6 +6,7 @@ import './DentistPage.css';
 const DentistPage = () => {
     const [scrolled, setScrolled] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [form, setForm] = useState({
         clinicName: '',
         doctorName: '',
@@ -44,9 +45,23 @@ const DentistPage = () => {
                     <Link to="/" className="dt-nav-link">Home</Link>
                     <Link to="/services" className="dt-nav-link">Services</Link>
                     <Link to="/commerce" className="dt-nav-link">Commerce</Link>
+                    <Link to="/case-studies" className="dt-nav-link">Case Studies</Link>
                     <a href="#dentist-form" className="dt-nav-cta">Get Clinic Website</a>
                 </div>
+                <button className="dt-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle navigation">
+                    {mobileMenuOpen ? '✕' : '☰'}
+                </button>
             </nav>
+
+            {/* MOBILE NAVIGATION DRAWER */}
+            <div className={`dt-mobile-backdrop ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)}></div>
+            <div className={`dt-mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+                <Link to="/" className="dt-nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                <Link to="/services" className="dt-nav-link" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+                <Link to="/commerce" className="dt-nav-link" onClick={() => setMobileMenuOpen(false)}>Commerce</Link>
+                <Link to="/case-studies" className="dt-nav-link" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+                <a href="#dentist-form" className="dt-nav-cta" style={{ textAlign: 'center', marginTop: '10px' }} onClick={() => setMobileMenuOpen(false)}>Get Clinic Website</a>
+            </div>
 
             {/* HERO SECTION */}
             <header className="dt-hero">

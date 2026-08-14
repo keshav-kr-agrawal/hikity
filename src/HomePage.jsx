@@ -33,6 +33,7 @@ function HomePage() {
     const tlRef = useRef(null);
 
     // Custom Dropdown State
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [selectedProject, setSelectedProject] = useState('');
 
@@ -362,10 +363,25 @@ function HomePage() {
                     <div className="nav-contact-wrapper">
                         <Link to="/commerce" className="nav-contact" style={{marginRight: '12px', background: 'transparent', color: 'inherit'}}>COMMERCE</Link>
                         <Link to="/services" className="nav-contact" style={{marginRight: '12px', background: 'transparent', color: 'inherit'}}>SERVICES</Link>
+                        <Link to="/case-studies" className="nav-contact" style={{marginRight: '12px', background: 'transparent', color: 'inherit'}}>CASE STUDIES</Link>
                         <Link to="/blog" className="nav-contact" style={{marginRight: '12px', background: 'transparent', color: 'inherit'}}>BLOG</Link>
                         <button className="nav-contact" onClick={scrollToContact}>CONTACT</button>
                     </div>
+                    <button className="home-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle navigation">
+                        {mobileMenuOpen ? '✕' : '☰'}
+                    </button>
                 </nav>
+
+                {/* MOBILE NAVIGATION DRAWER */}
+                <div className={`home-mobile-backdrop ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)}></div>
+                <div className={`home-mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+                    <Link to="/" className="home-drawer-link" onClick={() => setMobileMenuOpen(false)}>HOME</Link>
+                    <Link to="/commerce" className="home-drawer-link" onClick={() => setMobileMenuOpen(false)}>COMMERCE</Link>
+                    <Link to="/services" className="home-drawer-link" onClick={() => setMobileMenuOpen(false)}>SERVICES</Link>
+                    <Link to="/case-studies" className="home-drawer-link" onClick={() => setMobileMenuOpen(false)}>CASE STUDIES</Link>
+                    <Link to="/blog" className="home-drawer-link" onClick={() => setMobileMenuOpen(false)}>BLOG</Link>
+                    <button className="nav-contact" style={{ marginTop: '10px', width: '100%', justifyContent: 'center' }} onClick={() => { setMobileMenuOpen(false); scrollToContact(); }}>CONTACT</button>
+                </div>
 
                 {/* 2. TRANSITIONAL OVERLAYS */}
                 <img ref={cloudRef} src="/assets/cloud.png" className="parallax-cloud" alt="HIKITY Cloud Solutions - Enterprise Web Development and Digital Transformation" />
@@ -535,47 +551,47 @@ function HomePage() {
                                 <div className="service-row">
                                     <span className="service-number">01</span>
                                     <div className="service-content">
-                                        <p className="service-title">MANAGED COMMERCE INFRASTRUCTURE</p>
-                                        <p className="service-desc">Launch your own professional digital storefront without heavy upfront costs or technical complexity.</p>
+                                        <p className="service-title">MANAGED E-COMMERCE PLATFORMS</p>
+                                        <p className="service-desc">Complete digital storefronts with automated cataloging, live inventory management, and profit analytics.</p>
                                     </div>
                                 </div>
                                 <div className="service-row">
                                     <span className="service-number">02</span>
                                     <div className="service-content">
-                                        <p className="service-title">AI AGENTS & SMART AUTOMATION</p>
-                                        <p className="service-desc">Custom autonomous intelligence and zero-overhead workflows to scale your operations.</p>
+                                        <p className="service-title">OFFICE & WORKFLOW AUTOMATION</p>
+                                        <p className="service-desc">Custom scheduling portals, client document submission systems, and automated status updates for service firms.</p>
                                     </div>
                                 </div>
                                 <div className="service-row">
                                     <span className="service-number">03</span>
                                     <div className="service-content">
-                                        <p className="service-title">WEBSITES & APPS</p>
-                                        <p className="service-desc">High-fidelity visual identity and scalable digital architecture designed for growing businesses.</p>
+                                        <p className="service-title">WOMEN ENTREPRENEUR LAUNCHPAD</p>
+                                        <p className="service-desc">Zero-upfront complexity e-commerce packages empowering women business owners to build nationwide brands.</p>
+                                    </div>
+                                </div>
+                                <div className="service-row">
+                                    <span className="service-number">04</span>
+                                    <div className="service-content">
+                                        <p className="service-title">CUSTOM WEBSITES & WEB APPS</p>
+                                        <p className="service-desc">High-performance, modern glassmorphic web platforms designed for speed, SEO, and brand growth.</p>
+                                    </div>
+                                </div>
+                                <div className="service-row">
+                                    <span className="service-number">05</span>
+                                    <div className="service-content">
+                                        <p className="service-title">AI & SMART AUTOMATIONS</p>
+                                        <p className="service-desc">Autonomous lead routing, instant pricing tools, and real-time business intelligence dashboards.</p>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* WOMEN ENTREPRENEUR INITIATIVE BLOCK */}
-                            <div className="reveal-item women-initiative-card">
-                                <div className="women-badge">PROMINENT INITIATIVE</div>
-                                <h3 className="women-card-title">Built for women building businesses.</h3>
-                                <p className="women-card-text">
-                                    Across India, thousands of women are building brands, boutiques, home businesses, gift stores, food businesses, handmade brands and more. But turning a growing business into a professional digital storefront can require a large upfront investment. Hikity is changing that.
-                                </p>
-                                <p className="women-card-subtext">
-                                    With managed commerce infrastructure, businesses can launch their own online store without taking on the complexity of hosting, servers, maintenance and multiple technical services.
-                                </p>
-                                <div className="women-card-actions">
-                                    <Link to="/commerce" className="women-cta-primary">
-                                        Explore Commerce →
-                                    </Link>
-                                    <Link to="/services" className="women-cta-secondary">
-                                        View All Services →
-                                    </Link>
-                                    <button className="women-cta-secondary" onClick={scrollToContact}>
-                                        Talk to Hikity
-                                    </button>
-                                </div>
+                            <div className="reveal-item service-actions" style={{ marginTop: '28px', display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+                                <Link to="/services" style={{ padding: '12px 24px', borderRadius: '30px', background: '#111827', color: '#ffffff', textDecoration: 'none', fontWeight: '700', fontSize: '0.85rem', letterSpacing: '1px' }}>
+                                    EXPLORE ALL SERVICES →
+                                </Link>
+                                <Link to="/case-studies" style={{ padding: '12px 24px', borderRadius: '30px', border: '1px solid rgba(0, 0, 0, 0.2)', color: '#111827', textDecoration: 'none', fontWeight: '700', fontSize: '0.85rem', letterSpacing: '1px' }}>
+                                    VIEW BHAGALPUR CASE STUDIES →
+                                </Link>
                             </div>
                         </div>
                         <div ref={parkingZoneRef} className="parking-zone">

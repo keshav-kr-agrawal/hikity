@@ -6,6 +6,7 @@ import './MusicPage.css';
 const MusicPage = () => {
     const [scrolled, setScrolled] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [form, setForm] = useState({
         artistName: '',
         genre: 'Indie & Alternative',
@@ -43,9 +44,23 @@ const MusicPage = () => {
                     <Link to="/" className="mc-nav-link">Home</Link>
                     <Link to="/services" className="mc-nav-link">Services</Link>
                     <Link to="/commerce" className="mc-nav-link">Commerce</Link>
+                    <Link to="/case-studies" className="mc-nav-link">Case Studies</Link>
                     <a href="#music-form" className="mc-nav-cta">Build Artist Site</a>
                 </div>
+                <button className="mc-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle navigation">
+                    {mobileMenuOpen ? '✕' : '☰'}
+                </button>
             </nav>
+
+            {/* MOBILE NAVIGATION DRAWER */}
+            <div className={`mc-mobile-backdrop ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)}></div>
+            <div className={`mc-mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+                <Link to="/" className="mc-nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                <Link to="/services" className="mc-nav-link" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+                <Link to="/commerce" className="mc-nav-link" onClick={() => setMobileMenuOpen(false)}>Commerce</Link>
+                <Link to="/case-studies" className="mc-nav-link" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+                <a href="#music-form" className="mc-nav-cta" style={{ textAlign: 'center', marginTop: '10px' }} onClick={() => setMobileMenuOpen(false)}>Build Artist Site</a>
+            </div>
 
             {/* HERO SECTION */}
             <header className="mc-hero">

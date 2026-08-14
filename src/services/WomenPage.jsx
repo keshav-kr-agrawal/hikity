@@ -6,6 +6,7 @@ import './WomenPage.css';
 const WomenPage = () => {
     const [scrolled, setScrolled] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [form, setForm] = useState({
         name: '',
         city: '',
@@ -44,9 +45,23 @@ const WomenPage = () => {
                     <Link to="/" className="w-nav-link">Home</Link>
                     <Link to="/services" className="w-nav-link">Services</Link>
                     <Link to="/commerce" className="w-nav-link">Commerce</Link>
+                    <Link to="/case-studies" className="w-nav-link">Case Studies</Link>
                     <a href="#women-form" className="w-nav-cta">Launch Store Free</a>
                 </div>
+                <button className="w-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle navigation">
+                    {mobileMenuOpen ? '✕' : '☰'}
+                </button>
             </nav>
+
+            {/* MOBILE NAVIGATION DRAWER */}
+            <div className={`w-mobile-backdrop ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)}></div>
+            <div className={`w-mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+                <Link to="/" className="w-nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                <Link to="/services" className="w-nav-link" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+                <Link to="/commerce" className="w-nav-link" onClick={() => setMobileMenuOpen(false)}>Commerce</Link>
+                <Link to="/case-studies" className="w-nav-link" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+                <a href="#women-form" className="w-nav-cta" style={{ textAlign: 'center', marginTop: '10px' }} onClick={() => setMobileMenuOpen(false)}>Launch Store Free</a>
+            </div>
 
             {/* HERO SECTION */}
             <header className="w-hero">

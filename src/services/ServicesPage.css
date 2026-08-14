@@ -109,6 +109,68 @@ body:has(.services-page) {
     transition: color 0.3s ease;
 }
 
+.services-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 4px;
+}
+
+.services-mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: rgba(12, 12, 18, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    padding: 90px 30px 40px;
+    gap: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+.services-mobile-drawer.open {
+    right: 0;
+}
+
+.services-mobile-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.services-mobile-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+    .services-nav-links {
+        display: none;
+    }
+    .services-menu-btn {
+        display: block;
+    }
+}
+
 .services-nav-link:hover {
     color: var(--sl-text-main);
 }

@@ -97,9 +97,9 @@ const EnterpriseFooter = ({ onNavigate }) => {
           <motion.div variants={itemVars} className="footer-capabilities-section-new">
             <h4 className="footer-section-title-new">Capabilities</h4>
             <ul className="footer-capabilities-list-new">
-              {['Hikity Commerce', 'Agentic Systems', 'Immersive Engineering', 'Digital Infrastructure', 'Automations', 'Digital Presence'].map((cap) => (
+              {['Hikity Commerce', 'Bhagalpur Case Studies', 'Agentic Systems', 'Immersive Engineering', 'Digital Infrastructure', 'Automations'].map((cap) => (
                 <li key={cap} className="footer-capability-item-new">
-                  {cap === 'Hikity Commerce' ? <Link to="/commerce" style={{color: 'inherit', textDecoration: 'none'}}>Hikity Commerce</Link> : cap}
+                  {cap === 'Hikity Commerce' ? <Link to="/commerce" style={{color: 'inherit', textDecoration: 'none'}}>Hikity Commerce</Link> : cap === 'Bhagalpur Case Studies' ? <Link to="/case-studies" style={{color: 'inherit', textDecoration: 'none'}}>Bhagalpur Case Studies</Link> : cap}
                 </li>
               ))}
             </ul>

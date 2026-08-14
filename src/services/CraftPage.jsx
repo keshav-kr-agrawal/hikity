@@ -6,6 +6,7 @@ import './CraftPage.css';
 const CraftPage = () => {
     const [scrolled, setScrolled] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [form, setForm] = useState({
         studioName: '',
         artisanName: '',
@@ -43,9 +44,23 @@ const CraftPage = () => {
                     <Link to="/" className="cr-nav-link">Home</Link>
                     <Link to="/services" className="cr-nav-link">Services</Link>
                     <Link to="/commerce" className="cr-nav-link">Commerce</Link>
+                    <Link to="/case-studies" className="cr-nav-link">Case Studies</Link>
                     <a href="#craft-form" className="cr-nav-cta">Launch Studio Store</a>
                 </div>
+                <button className="cr-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle navigation">
+                    {mobileMenuOpen ? '✕' : '☰'}
+                </button>
             </nav>
+
+            {/* MOBILE NAVIGATION DRAWER */}
+            <div className={`cr-mobile-backdrop ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)}></div>
+            <div className={`cr-mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+                <Link to="/" className="cr-nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                <Link to="/services" className="cr-nav-link" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+                <Link to="/commerce" className="cr-nav-link" onClick={() => setMobileMenuOpen(false)}>Commerce</Link>
+                <Link to="/case-studies" className="cr-nav-link" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+                <a href="#craft-form" className="cr-nav-cta" style={{ textAlign: 'center', marginTop: '10px' }} onClick={() => setMobileMenuOpen(false)}>Launch Studio Store</a>
+            </div>
 
             {/* HERO SECTION */}
             <header className="cr-hero">

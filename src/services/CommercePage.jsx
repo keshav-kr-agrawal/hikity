@@ -5,6 +5,7 @@ import './CommercePage.css';
 
 const CommercePage = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -204,11 +205,26 @@ const CommercePage = () => {
                 <div className="commerce-nav-links">
                     <Link to="/" className="commerce-nav-link">Home</Link>
                     <Link to="/services" className="commerce-nav-link">Services</Link>
+                    <Link to="/case-studies" className="commerce-nav-link">Case Studies</Link>
                     <a href="#pricing" onClick={(e) => { e.preventDefault(); scrollToSection('pricing'); }} className="commerce-nav-link">Pricing</a>
                     <a href="#features" onClick={(e) => { e.preventDefault(); scrollToSection('features'); }} className="commerce-nav-link">Features</a>
                     <a href="#contact-form" onClick={(e) => { e.preventDefault(); scrollToSection('contact-form'); }} className="commerce-nav-cta">Build My Store</a>
                 </div>
+                <button className="commerce-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle navigation">
+                    {mobileMenuOpen ? '✕' : '☰'}
+                </button>
             </nav>
+
+            {/* MOBILE NAVIGATION DRAWER */}
+            <div className={`commerce-mobile-backdrop ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)}></div>
+            <div className={`commerce-mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+                <Link to="/" className="commerce-nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                <Link to="/services" className="commerce-nav-link" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+                <Link to="/case-studies" className="commerce-nav-link" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+                <a href="#pricing" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); scrollToSection('pricing'); }} className="commerce-nav-link">Pricing</a>
+                <a href="#features" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); scrollToSection('features'); }} className="commerce-nav-link">Features</a>
+                <a href="#contact-form" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); scrollToSection('contact-form'); }} className="commerce-nav-cta" style={{ textAlign: 'center', marginTop: '10px' }}>Build My Store</a>
+            </div>
 
             {/* HERO SECTION */}
             <section className="commerce-hero">

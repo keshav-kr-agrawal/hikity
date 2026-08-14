@@ -7,6 +7,7 @@ import './BlogPage.css';
 const BlogPage = () => {
     // Scroll reveal logic
     const [visibleSections, setVisibleSections] = useState({});
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const sectionRefs = useRef([]);
 
     const addToRefs = (el) => {
@@ -65,9 +66,24 @@ const BlogPage = () => {
                 <div className="blog-nav-links">
                     <Link to="/" className="blog-nav-link">Home</Link>
                     <Link to="/services" className="blog-nav-link">Services</Link>
-                    <a href="/#contact" className="blog-nav-cta">Work With Us</a>
+                    <Link to="/commerce" className="blog-nav-link">Commerce</Link>
+                    <Link to="/case-studies" className="blog-nav-link">Case Studies</Link>
+                    <Link to="/blog" className="blog-nav-link active">Blog</Link>
                 </div>
+                <button className="blog-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle navigation">
+                    {mobileMenuOpen ? '✕' : '☰'}
+                </button>
             </nav>
+
+            {/* MOBILE NAVIGATION DRAWER */}
+            <div className={`blog-mobile-backdrop ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)}></div>
+            <div className={`blog-mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+                <Link to="/" className="blog-nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                <Link to="/services" className="blog-nav-link" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+                <Link to="/commerce" className="blog-nav-link" onClick={() => setMobileMenuOpen(false)}>Commerce</Link>
+                <Link to="/case-studies" className="blog-nav-link" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+                <Link to="/blog" className="blog-nav-link active" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
+            </div>
 
             {/* Hero Section */}
             <header className="blog-hero">
