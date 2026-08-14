@@ -33,8 +33,8 @@ body:has(.commerce-page) {
 
 .commerce-page {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background: var(--cl-bg);
-    color: var(--cl-text-main);
+    background-color: #fbfbfd !important;
+    color: #0f172a !important;
     min-height: 100vh;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;

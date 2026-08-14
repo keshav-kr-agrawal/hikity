@@ -11,12 +11,21 @@ const CommercePage = () => {
         window.scrollTo(0, 0);
         document.title = "Hikity Commerce | Launch Your Online Store";
 
+        const originalBg = document.body.style.backgroundColor;
+        const originalColor = document.body.style.color;
+        document.body.style.backgroundColor = '#fbfbfd';
+        document.body.style.color = '#0f172a';
+
         const handleScroll = () => {
             if (window.scrollY > 60) setScrolled(true);
             else setScrolled(false);
         };
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            document.body.style.backgroundColor = originalBg;
+            document.body.style.color = originalColor;
+        };
     }, []);
 
     const scrollToSection = (id) => {

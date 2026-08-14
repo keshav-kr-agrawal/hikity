@@ -30,8 +30,8 @@ body:has(.services-page) {
 
 .services-page {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background: var(--sl-bg);
-    color: var(--sl-text-main);
+    background-color: #fbfbfd !important;
+    color: #0f172a !important;
     min-height: 100vh;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;

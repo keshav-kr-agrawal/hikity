@@ -11,12 +11,21 @@ const ServicesPage = () => {
         window.scrollTo(0, 0);
         document.title = "Hikity Services | Accessible Digital Infrastructure & Industry Solutions";
 
+        const originalBg = document.body.style.backgroundColor;
+        const originalColor = document.body.style.color;
+        document.body.style.backgroundColor = '#fbfbfd';
+        document.body.style.color = '#0f172a';
+
         const handleScroll = () => {
             if (window.scrollY > 50) setScrolled(true);
             else setScrolled(false);
         };
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            document.body.style.backgroundColor = originalBg;
+            document.body.style.color = originalColor;
+        };
     }, []);
 
     const scrollToSection = (id) => {
