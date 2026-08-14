@@ -546,7 +546,7 @@ function HomePage() {
                     <div className="editorial-layout">
                         <div className="content-side">
                             <div className="positioning-badge">ACCESSIBLE DIGITAL INFRASTRUCTURE</div>
-                            <h2 className="reveal-item section-title">BUILDING FOR THE NEXT GENERATION.</h2>
+                            <h2 className="reveal-item section-title next-gen-title">BUILDING FOR THE NEXT GENERATION.</h2>
                             <div className="reveal-item service-stack">
                                 <div className="service-row">
                                     <span className="service-number">01</span>
