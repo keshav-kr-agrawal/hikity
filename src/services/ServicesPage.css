@@ -111,11 +111,11 @@ body:has(.services-page) {
 
 .services-menu-btn {
     display: none;
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 1.6rem;
-    cursor: pointer;
+    background: transparent !important;
+    border: none !important;
+    color: #000000 !important;
+    font-size: 1.8rem !important;
+    cursor: pointer !important;
     z-index: 1001;
     padding: 4px;
 }
@@ -167,7 +167,8 @@ body:has(.services-page) {
         display: none;
     }
     .services-menu-btn {
-        display: block;
+        display: block !important;
+        color: #000000 !important;
     }
 }
 
