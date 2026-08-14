@@ -196,9 +196,9 @@ const CaseStudyPage = () => {
             </div>
 
             {/* ENTERPRISE FOOTER */}
-            <div style={{ marginTop: '80px' }}>
+            <footer className="cs-footer-wrapper">
                 <EnterpriseFooter />
-            </div>
+            </footer>
         </div>
     );
 };
