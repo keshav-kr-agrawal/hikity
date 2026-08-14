@@ -576,13 +576,6 @@ function HomePage() {
                                         <p className="service-desc">High-performance, modern glassmorphic web platforms designed for speed, SEO, and brand growth.</p>
                                     </div>
                                 </div>
-                                <div className="service-row">
-                                    <span className="service-number">05</span>
-                                    <div className="service-content">
-                                        <p className="service-title">AI & SMART AUTOMATIONS</p>
-                                        <p className="service-desc">Autonomous lead routing, instant pricing tools, and real-time business intelligence dashboards.</p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div ref={parkingZoneRef} className="parking-zone">
