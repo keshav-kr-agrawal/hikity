@@ -1,0 +1,39 @@
+# Hikity
+
+> Accessible Digital Infrastructure, Managed E-Commerce, Office Automation & Web Engineering in India.
+
+Hikity (by HIKAT) is an Indian digital technology and software engineering firm. Hikity builds managed e-commerce platforms, office workflow automation, and custom web applications for businesses across India, including Tier-1, Tier-2, and Tier-3 cities like Bhagalpur, Bihar.
+
+## Core Offerings
+
+- [Hikity Commerce Platform](https://hikity.xyz/commerce): Complete managed e-commerce storefronts starting from ₹30,000/year. Includes mobile camera catalog uploads, UPI QR payments, gross & net profit tracking, customer account management, and instant WhatsApp product sharing.
+- [Services Hub](https://hikity.xyz/services): Specialized digital solutions across healthcare, education, hospitality, crafts, personal portfolios, and enterprise automation.
+- [Bhagalpur Case Studies](https://hikity.xyz/case-studies): Real-world business transformations:
+  - **Anita Gift House (Bhagalpur)**: Retail gift store shifted from 14-hour daily manual WhatsApp photo-sending and status updates to an automated online store with live inventory and real-time profit tracking.
+  - **KLATAX (Bhagalpur)**: Office platform for tax advisory firm, automating client appointments, secure tax document uploads, and automated SMS/WhatsApp status tracking.
+- [Women Entrepreneur Initiative](https://hikity.xyz/women): Turnkey digital storefront packages empowering women business owners to build nationwide brands with low upfront financial barriers.
+- [Enterprise Systems](https://hikity.xyz/business): High-performance web applications, custom CRM integrations, and AI agent automation.
+- [Hikity Build Program](https://hikity.xyz/build): Equity or capital co-founding technical partnership acting as fractional CTO for high-growth startups.
+
+## Complete Page Navigation
+
+- [Home Page](https://hikity.xyz/): Core platform, base protocol, and accessible digital infrastructure points.
+- [Case Studies](https://hikity.xyz/case-studies): Detailed Anita Gift House and KLATAX transformation reports.
+- [Services Hub](https://hikity.xyz/services): Complete listing of Hikity's 10+ industry verticals.
+- [Commerce Platform](https://hikity.xyz/commerce): E-commerce features, pricing calculator, and platform specs.
+- [Blog](https://hikity.xyz/blog): Technical and business insights on e-commerce, women empowerment, and web architecture.
+- [Dental Clinics Solution](https://hikity.xyz/dentist): Patient acquisition, clinic appointment scheduling, and Google Maps SEO.
+- [Educational Institutions](https://hikity.xyz/school): Digital enrollment portals, notice board tickers, and student inquiry systems.
+- [Cafés & Bakeries](https://hikity.xyz/cafe): Digital QR code menus, direct ordering systems, and table reservations.
+- [Crafters & Artisans](https://hikity.xyz/art/craft): D2C story galleries and custom order workflows.
+- [Musicians & Bands](https://hikity.xyz/art/music): Tour schedules, album showcases, and merch storefronts.
+- [Executive Portfolios](https://hikity.xyz/work): Personal authority platforms, case study showcases, and lead capture.
+- [Links Directory](https://hikity.xyz/links): Global navigational ecosystem directory.
+
+## Technology Stack
+
+- Cloud Hosting: Vercel Cloud
+- Database & Auth: Supabase Real-Time Engine
+- Asset CDN: Cloudinary Global Image CDN
+- Frontend Framework: React, Vite, Glassmorphic UI Architecture
+- Contact Email: contact@hikity.xyz

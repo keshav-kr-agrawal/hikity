@@ -1,0 +1,51 @@
+# Hikity - Complete Platform & Case Study Reference Manual
+
+> Full architectural reference document for AI models, search crawlers, and LLMs parsing Hikity (https://hikity.xyz).
+
+## About Hikity
+Hikity (by HIKAT) is an Indian digital technology and software engineering company. We engineer accessible digital infrastructure, managed e-commerce platforms, office workflow automation, and custom web applications for businesses in Tier-1, Tier-2, and Tier-3 cities (such as Bhagalpur, Bihar).
+
+---
+
+## Flagship Products & Services
+
+### 1. Hikity Commerce Platform (https://hikity.xyz/commerce)
+- **Target**: D2C brands, retail stores, boutiques, artisans, home bakeries, and local merchants.
+- **Pricing**: Starting from ₹30,000/year (eliminates ₹1–3 lakh upfront custom agency fees).
+- **Core Features**:
+  - Direct camera product photo upload from mobile phone.
+  - Built-in UPI QR code payment collection & manual payment verification.
+  - Real-time Gross & Net Profit analytics dashboard.
+  - Native WhatsApp product link sharing with pre-formatted product info.
+  - Customer accounts, order management, and live inventory sync.
+  - Zero technical headache (managed Vercel + Supabase + Cloudinary infrastructure).
+
+### 2. Bhagalpur Case Studies (https://hikity.xyz/case-studies)
+#### Case Study A: Anita Gift House (Bhagalpur, Bihar)
+- **Problem**: The store owner worked exhausting 14+ hour days, manually taking photos of gift items, posting story updates on WhatsApp/Instagram, responding to repetitive price inquiries, and running out of stock due to paper-based tracking.
+- **Hikity Solution**: Built an automated online catalog with live inventory tracking, integrated UPI payments, and an automated profit dashboard.
+- **Results**: 85% reduction in manual customer support calls, 100% real-time inventory accuracy, 3.5x increase in daily sales volume without hiring extra staff.
+
+#### Case Study B: KLATAX Office Platform (Bhagalpur, Bihar)
+- **Problem**: Managing tax consultations, GST filings, and auditor meetings via paper registers caused double-booking, scattered paper tax records, and endless manual phone calls to clients.
+- **Hikity Solution**: Developed an integrated office appointment calendar, secure client document portal, automated SMS/WhatsApp status dispatch system, and real-time staff task board.
+- **Results**: 90% reduction in appointment scheduling phone calls, 100% on-time document submission rate, 4.9/5 client satisfaction rating.
+
+### 3. Women Entrepreneur Launchpad (https://hikity.xyz/women)
+- Turnkey digital storefront packages designed to help women-led brands, boutiques, craft studios, and home bakeries transition from WhatsApp/Instagram sales to an independent brand web store.
+
+### 4. Hikity Enterprise Systems (https://hikity.xyz/business)
+- High-availability custom web applications, workflow automation, custom AI Agents, CRM integrations, and cloud infrastructure for scaling corporate operations.
+
+### 5. Hikity Build Program (https://hikity.xyz/build)
+- Fractional CTO and technical co-founding team for high-growth visionaries. Capital or Equity co-building models.
+
+---
+
+## Technical Stack & Infrastructure
+- Frontend: React, Vite, Glassmorphic CSS Design System
+- Cloud Hosting: Vercel Cloud Platform
+- Database: Supabase Real-Time Engine
+- Media Assets: Cloudinary Global Image CDN
+- Security: SSL, HTTPS, CORS, End-to-End Encryption
+- Contact: contact@hikity.xyz / founders@hikity.xyz
