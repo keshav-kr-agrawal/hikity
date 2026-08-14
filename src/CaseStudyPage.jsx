@@ -1,10 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import EnterpriseFooter from './EnterpriseFooter';
 import './CaseStudyPage.css';
 
 const CaseStudyPage = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        document.title = "Bhagalpur Case Studies | Hikity Real-World Transformations";
+
+        const originalBg = document.body.style.backgroundColor;
+        const originalColor = document.body.style.color;
+        document.body.style.backgroundColor = '#fbfbfd';
+        document.body.style.color = '#0f172a';
+
+        return () => {
+            document.body.style.backgroundColor = originalBg;
+            document.body.style.color = originalColor;
+        };
+    }, []);
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
@@ -93,7 +108,7 @@ const CaseStudyPage = () => {
 
                     <div className="cs-solution-section">
                         <h4>💡 Hikity Engineering & Solution Architecture</h4>
-                        <p style={{ color: '#cbd5e1', lineHeight: '1.6', margin: 0, fontSize: '0.95rem' }}>
+                        <p className="cs-solution-desc">
                             We deployed a high-performance web catalog integrated with dynamic stock management and automated WhatsApp order routing. The system allowed Anita Gift House to maintain real-time inventory, publish new gift collections instantly, and track total store profits effortlessly.
                         </p>
                     </div>
@@ -148,7 +163,7 @@ const CaseStudyPage = () => {
 
                     <div className="cs-solution-section">
                         <h4>💡 Hikity Engineering & Solution Architecture</h4>
-                        <p style={{ color: '#cbd5e1', lineHeight: '1.6', margin: 0, fontSize: '0.95rem' }}>
+                        <p className="cs-solution-desc">
                             Hikity engineered a robust cloud platform custom-tailored for KLATAX's Bhagalpur office. It automated client appointment booking, document organization, and status dispatch, establishing a seamless modern operational workflow.
                         </p>
                     </div>

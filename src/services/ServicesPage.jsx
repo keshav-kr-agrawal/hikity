@@ -6,6 +6,7 @@ import './ServicesPage.css';
 const ServicesPage = () => {
     const [scrolled, setScrolled] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState('All Solutions');
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         window.scrollTo(0, 0);
